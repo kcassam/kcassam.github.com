@@ -9,3 +9,5 @@ tagline: just another how to
 	jekyll --server
 
 puis aller avec navigateur sur [http://localhost:4000](http://localhost:4000)
+
+Plus d'infos sur [jekyll](https://github.com/mojombo/jekyll/wiki/Usage)
