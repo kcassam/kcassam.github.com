@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/01/jQuery%201.4-9984442.html">Previous</a>
+&nbsp; 
+<a href="../../../index-7.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/texte%20sur%20image,%202%20m%C3%A9thodes-9863754.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>remarques sur http://blog.codeclarity.com/2009/12/02/integrating-symfony-and-wordpress/</h3>
+<div class='post_info'>
+<span class='post_time'>January 13 2010,  9:43 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>L'auteur de <a href="http://blog.codeclarity.com/2009/12/02/integrating-symfony-and-wordpress/">http://blog.codeclarity.com/2009/12/02/integrating-symfony-and-wordpress/</a> <br />ne semble pas autoriser les commentaires, donc voici mes remarques sur ce guide : <br />#1Step 4 : You may get a find error, so try <br /><code> 
+find . -name &lsquo;*.php&rsquo; -print | xargs sed -i &rsquo;s/\(\b\)esc_js\(\b\)/\1wp_esc_js\2/g&rsquo; 
+</code> <p /> #2Config : Symfony 1.2 &ndash; WP 2.9.1 <br />For some reason, the wrapping up (step 6) works strangly for me, I may have a pb in my htaccess which i modified a lot without full control <p /> #3 <br />Tip/Hack : Instead of going through all template files for removing the calls to <code>get_header()</code>, <code>get_footer()</code>, you can empty header.php and footer.php. Not really clean but time saving <p /> #4 <br />Url rewriting <br />If you enable the url rewriting in Wordpress there is actually nothing to do, since the symfony routing already routes any /blog/* url to the Wordpress action. However you must be very careful about the .htaccess that Wordpress automatically generates in its root folder and which will break everything ! <br />Therefore I created an empty <br /><code>wordpressfolder/.htaccess</code> <br />and removed any write access <br />(from <a href="http://www.theodo.fr/blog/2009/03/integrate-wordpress-into-symfony/">http://www.theodo.fr/blog/2009/03/integrate-wordpress-into-symfony/</a> and with some adaptations)</p>
+<p>&nbsp;</p>
+<p>#5&nbsp;</p>
+<p><span style="font-family: Verdana, BitStream vera Sans, Tahoma, Helvetica, sans-serif; font-size: 12px; color: #555555; line-height: 17px;">
+<p style="margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;">the __() function of Wordpress and symfony are conflicting..</p>
+<p style="margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;">Here is the solution :</p>
+<p style="margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;">rename wordpress&rsquo; __() function to wp__()</p>
+<p style="margin-top: 10px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px;">with Mac OS X, inside the wordpress folder, launch the find &amp; replace function :<br /><code> find . -name &lsquo;*.php&rsquo; | xargs perl -pi -e &rsquo;s/(\b)__(\b)/\1wp__\2/g&rsquo; </code></p>
+</span></p></div>
+<div class='post_responses'>
+<h4>230 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

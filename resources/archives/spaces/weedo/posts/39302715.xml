@@ -1,0 +1,59 @@
+<item>
+	<title>12 astuces pour récupérer de l'espace disque sur un système Mac OS X 10.6 Snow Leopard</title>
+	<link>http://posterous.weedo.fr/4-astuces-pour-recuperer-de-lespace-disque-su</link>
+	<pubDate>Tue Jul 12 06:06:00 -0700 2011</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/4-astuces-pour-recuperer-de-lespace-disque-su</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Mis à jour le 12 juillet 2011.</p>
+
+<p>Attention : A utiliser avec précaution.</p>
+
+<ul>
+<li>Vider dossier ~/Library/PubSub/ : <a href="http://discussions.info.apple.com/thread.jspa?threadID=2174894">http://discussions.info.apple.com/thread.jspa?threadID=2174894</a></li>
+<li>Vider dossier ~/Library/Preferences/Macromedia/</li>
+<li>Supprimer des fichiers mail qui ne servent plus : <a href="http://support.apple.com/kb/TA23076">http://support.apple.com/kb/TA23076</a></li>
+<li>Supprimer les langues que vous n'utilisez jamais : <a href="http://monolingual.sourceforge.net/">http://monolingual.sourceforge.net/</a></li>
+<li>Vider le contenu du dossier cache de votre dossier utilisateur : ~/Library/Caches/</li>
+<li>Rechercher tous les fichiers de type &lsquo;Archive&rsquo;, et supprimer ceux qui sont inutiles, en commençant par les plus gros.</li>
+<li>Rechercher tous les fichiers de type &lsquo;Image disque&rsquo;, et supprimer ceux qui sont inutiles, en commençant par les plus gros.</li>
+<li>Autre ressource : <a href="http://www.macworld.com/article/158659/2011/03/springclean.html">Spring Clean chez MacWorld</a></li>
+<li>Utiliser un logiciel de détection de doublons. Je conseille Tidy Up.
+
+<ul>
+<li><a href="http://www.hyperbolicsoftware.com/TidyUp.html">Tidy Up!</a></li>
+<li><a href="http://furry-rodents.com/">Chipmunk</a></li>
+</ul>
+</li>
+<li>Spécial bonus passage à Mac OS Lion : Supprimer vos applis Classic et PowerPC. <a href="http://www.macworld.com/article/160626/2011/06/native_not.html">Par ici pour les repérer</a></li>
+<li>L'application MobileMe Backup est obsolète (<a href="http://support.apple.com/kb/dl1025)">http://support.apple.com/kb/dl1025)</a>, supprimer le dossier /Users/ka/Library/Application Support/Backup</li>
+<li>Le dossier est backup d'iPhone se trouve ici : /Users/ka/Library/Application Support/MobileSync/Backup. Garder ce dossier de côté, faire un backup frais des iBidules et supprimer le dossier</li>
+</ul>
+
+
+<p>Combien avez-vous gagné d'espace disque en utilisant ces astuces ?<br />
+Partagez vos astuces dans les commentaires !</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Mis �  jour le 12 juillet 2011. Attention : A utiliser avec précaution. Vider dossier ~/Library/PubSub/ : http://discussions.info.apple.com/thread.jspa?threadID=2174894 Vider dossier ~/Library/Preferences/Macromedia/ Supprimer des fichiers mail q...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Jul 12 06:06:00 -0700 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>4-astuces-pour-recuperer-de-lespace-disque-su</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

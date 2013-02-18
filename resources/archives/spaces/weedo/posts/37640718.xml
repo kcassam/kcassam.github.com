@@ -1,0 +1,41 @@
+<item>
+	<title>Bien démarrer un site web en html en (ne) partant (pas) de zéro</title>
+	<link>http://posterous.weedo.fr/bien-demarrer-un-site-web-en-html-en-ne-parta</link>
+	<pubDate>Mon Dec 27 15:20:00 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/bien-demarrer-un-site-web-en-html-en-ne-parta</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>On sait démarrer un projet web côté serveur : LAMP stack + Symfony et/ou Wordpress. Côté client/template, les choses sont un peu moins claires.</p>
+
+<p>Voici comment on peut procéder :</p>
+
+<ul>
+<li><p>Couche &ldquo;Template&rdquo; : Utiliser <a href="http://fr.html5boilerplate.com/">http://fr.html5boilerplate.com/</a>. HTML5 Boilerplate est un template HTML/CSS/JS de base (&ldquo;starter&rdquo;) qui contient un nombre de fonctionnalités hallucinant.</p></li>
+<li><p>Couche &ldquo;Layout&rdquo; Utiliser <a href="http://www.yaml.de/en/home.html">http://www.yaml.de/en/home.html</a> pour positionner les éléments : colonnes, teaser, footer, etc. La version actuelle est la 3.3. Il existe un builder pour créer visuellement le positionnement, mais ce builder utilise la version 3.0.6 de YAML. La méthode manuelle est peut-être mieux. En tout cas, YAML est abondemment documenté.</p></li>
+<li><p>Qu'en pensez-vous ? Comment démarrer un projet html ? Ça intéresserait quelqu'un un package intégré comprenant MAMP ou LAMP+Symfony+Wordress+HTML5B+YAML ?</p></li>
+<li><p>Pour aller plus loin, mes bookmarks sur le sujet : <a href="http://www.delicious.com/kcassam/html+template?detail=3&amp;setcount=25&amp;sort=userdate&amp;order=asc">http://www.delicious.com/kcassam/html+template?detail=3&amp;setcount=25&amp;s...</a></p></li>
+</ul>]]></content:encoded>
+	<excerpt:encoded><![CDATA[On sait démarrer un projet web côté serveur : LAMP stack + Symfony et/ou Wordpress. Côté client/template, les choses sont un peu moins claires. Voici comment on peut procéder : Couche “Template” : Utiliser http://fr.html5boilerplate.com/. HTML5 Bo...]]></excerpt:encoded>	
+
+	<wp:post_date>Mon Dec 27 15:20:00 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>bien-demarrer-un-site-web-en-html-en-ne-parta</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

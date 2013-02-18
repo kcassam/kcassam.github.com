@@ -1,0 +1,133 @@
+<item>
+	<title>markdown starter template</title>
+	<link>http://posterous.weedo.fr/markdown-starter-template</link>
+	<pubDate>Thu Jul 01 13:24:00 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/markdown-starter-template</guid>
+	<description></description>
+	<content:encoded><![CDATA[<h1>Syntax Cheatsheet:</h1>
+
+<h2>Phrase Emphasis</h2>
+
+<p><em>italic</em>   <strong>bold</strong>
+<em>italic</em>   <strong>bold</strong></p>
+
+<h2>Links</h2>
+
+<h3>Inline:</h3>
+
+<p>An <a href="http://url.com/" title="Title">example</a>
+Reference-style labels (titles are optional):
+An <a href="/url/to/img.jpg" title="Title">example</a>. Then, anywhere
+else in the doc, define the link:</p>
+
+<h2>Images</h2>
+
+<h3>Inline (titles are optional):</h3>
+
+<p><img title="Title" src="/path/img.jpg" alt="alt text" /></p>
+
+<h3>Reference-style:</h3>
+
+<p><img title="Title" src="/url/to/img.jpg" alt="alt text" /></p>
+
+<h2>Headers</h2>
+
+<h3>Setext-style:</h3>
+
+<h1>Header 1</h1>
+
+<h2>Header 2</h2>
+
+<h3>atx-style (closing #&rsquo;s are optional):</h3>
+
+<h1>Header 1</h1>
+
+<h2>Header 2</h2>
+
+<h6>Header 6</h6>
+
+<h2>Lists</h2>
+
+<h3>Ordered, without paragraphs:</h3>
+
+<ol>
+<li>Foo</li>
+<li>Bar</li>
+</ol>
+
+
+<h3>Unordered, with paragraphs:</h3>
+
+<ul>
+<li><p>A list item.</p>
+
+<p>With multiple paragraphs.</p></li>
+<li><p>Bar</p>
+
+<h3>You can nest them:</h3></li>
+<li>Abacus
+
+<ul>
+<li>answer</li>
+</ul>
+</li>
+<li>Bubbles
+
+<ol>
+<li>bunk</li>
+<li>bupkis
+
+<ul>
+<li>BELITTLER</li>
+</ul>
+</li>
+<li>burper</li>
+</ol>
+</li>
+<li>Cunning
+
+<h2>Blockquotes</h2>
+
+<blockquote class="posterous_short_quote"><p>Email-style angle brackets
+are used for blockquotes.</p></blockquote></li>
+</ul>
+
+
+<blockquote><blockquote><p>And, they can be nested.</p></blockquote>
+
+<h4>Headers in blockquotes</h4>
+
+<ul>
+<li>You can quote a list.</li>
+<li>Etc.
+
+<h2>Code Spans</h2>
+
+<p>`</p></li>
+</ul>
+</blockquote>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Syntax Cheatsheet: Phrase Emphasis italic bold italic bold Links Inline: An example Reference-style labels (titles are optional): An example. Then, anywhere else in the doc, define the link: Images Inline (titles are optional): Reference-style: He...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Jul 01 13:24:00 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

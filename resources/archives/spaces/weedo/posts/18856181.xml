@@ -1,0 +1,82 @@
+<item>
+	<title>Quelques recos pour la gestion des css</title>
+	<link>http://posterous.weedo.fr/quelques-recos-pour-la-gestion-des-css</link>
+	<pubDate>Tue May 18 01:50:00 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/quelques-recos-pour-la-gestion-des-css</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p><span style="font-family: monospace; font-size: medium;">
+<p>Quelques recos pour la gestion des css, issue de ma petite expérience (ma petite expérience a pour l'instant constitué à faire ce qu'il ne fallait pas faire.... d'où sa pertinence !)</p>
+<p> </p>
+<p>Maintenabilité/Bonnes pratiques : </p>
+<p> </p>
+<p>  - Avant de commencer, passer une bonne journée à faire le point sur les bonnes pratiques et la littérature actuelle : </p>
+<p>  * 30 CSS Best Practices for Beginners : <a href="http://net.tutsplus.com/tutorials/html-css-techniques/30-css-best-practices-for-beginners/">http://net.tutsplus.com/tutorials/html-css-techniques/30-css-best-practices-f...</a></p>
+<p>  * Google CSS best practice : <a href="http://www.google.fr/search?q=best+practice+css">http://www.google.fr/search?q=best+practice+css</a></p>
+<p>  - Se poser la question du doctype : html5+css3 ou xhtml+css2 ?</p>
+<p>  - Pour démarrer sur de bonnes bases, utiliser un générateur : <a href="http://developer.yahoo.com/yui/grids/builder/">http://developer.yahoo.com/yui/grids/builder/</a> ou <a href="http://builder.yaml.de/">http://builder.yaml.de/</a></p>
+<p>  - Gestion des différents navigateurs : 1 css spécial de reset : voir google reset css <a href="http://www.google.fr/search?q=reset+css">http://www.google.fr/search?q=reset+css</a></p>
+<p>  - 1 css (ou groupe de css) général pour gérer les styles globaux au site.</p>
+<p>  - 1 css par module/template (au sens symfony) pour améliorer la maintenabilité qui ne contient que les éléments propres à ce module/template</p>
+<p>  - Pour chaque css qui en a besoin, faire un css séparé pour gérer les différents navigateurs (notamment ie6, ie7)</p>
+<p>  - Groupe de css : il peut être souhaitable de séparer le css en groupes logiques :</p>
+<p>  * typography.css for basic typographic rules,</p>
+<p>  * grid.css for grid-based layouts or</p>
+<p>  * layout.css for general layouts,</p>
+<p>  * form.css for basic form styling,</p>
+<p>  * general.css for further general rules</p>
+<p>  * etc.</p>
+<p>  - Astuce : Ne pas oublier qu'il est possible d'associer un style à plusieurs classes : Exemple :</p>
+<p>  .classe1, .classe2, #id1 {</p>
+<p>   font-size:11px;</p>
+<p>  }</p>
+<p>  - Après avoir terminé, valider le css <a href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a></p>
+<p> </p>
+<p>Performances : </p>
+<p> </p>
+<p>  Très important : Le travail sur les performances se fait toujours dans un 2e temps, plutôt en fin de projet ou même après la mise en production.</p>
+<p> </p>
+<p>  Si un module fait appel à 5 template, on peut se retrouver donc avec une dizaine de fichiers css ou même beaucoup plus plus si chaque template/module a besoin d'un css spécial pour ie6 et un spécial pour ie7 ! C'est facile à maintenir mais c'est pas bon pour les performances (multiplication des requêtes http). En effet, la préconisation est d'avoir un fichier css max par page : voir <a href="http://developer.yahoo.com/performance/rules.html">http://developer.yahoo.com/performance/rules.html</a></p>
+<p> </p>
+<p>  Pour concilier la maintenabilité et l'exigence de performance, on utilise le projet minify qui permet de combiner plusieurs css et de le minifier : voir <a href="http://code.google.com/p/minify/">http://code.google.com/p/minify/</a>. En gros, ce projet en php permet de générer à la volée en php un css unique, compressé et "cache-able"</p>
+<p> </p>
+<p>  En prime : Vous pouvez aller voir 2 cheat sheet css sur <a href="http://www.gosquared.com/liquidicity/archives/1010">http://www.gosquared.com/liquidicity/archives/1010</a> (téléchargé aussi dans /Fileservers/weedo/Docs techniques/css)</p>
+<p />
+</span></p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Quelques recos pour la gestion des css, issue de ma petite expérience (ma petite expérience a pour l'instant constitué �  faire ce qu'il ne fallait pas faire.... d'où sa pertinence !) Maintenabilité/Bonnes pratiques : - Avant de commencer, pa...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue May 18 01:50:00 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[]]></wp:comment_author>
+			<wp:comment_author_email></wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Tue Jun 29 03:57:18 -0700 2010</wp:comment_date>
+			<wp:comment_date_gmt>Tue Jun 29 03:57:18 -0700 2010</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Attention, si un système de cache est en place qui se passe du php, on ne pourra pas avoir une page différente pour ie et les autres sous la même URL...]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

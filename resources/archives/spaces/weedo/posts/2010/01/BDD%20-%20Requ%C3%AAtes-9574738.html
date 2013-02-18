@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/01/Petite%20liste%20de%20sites%20utiles-9577427.html">Previous</a>
+&nbsp; 
+<a href="../../../index-7.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/D%C3%A9sactiver%20le%20layout%20dans%20symfony-9574283.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>BDD - Requêtes</h3>
+<div class='post_info'>
+<span class='post_time'>January  7 2010,  2:39 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Les requêtes se déroulent en deux étapes :<br />1) préparation de la requête dans une instance de la table concernée<br />2) Exécution de la requête<p /><b>INSERT</b><br />(dans l&#39;action)<p /><p><a href="https://gist.github.com/271106">https://gist.github.com/271106</a></p><p /> J&#39;insère donc un nouvel enregistrement dans ma table Question, ayant pour champs &quot;question&quot; et &quot;reponse&quot;.<p />Autre façon de faire, au lieu de déclarer chaque champ comme ça, on peut tous les déclarer dans un tableau :<p /> <p><a href="https://gist.github.com/271109">https://gist.github.com/271109</a></p><p />Attention : les noms des champs prennent toujours une majuscule au début.<p /><b>SELECT</b><p />Sélectionner par clé primaire (ID) :<p /> <p><a href="https://gist.github.com/271118">https://gist.github.com/271118</a></p><p />Cette instruction va récupérer l&#39;enregistrement ayant pour ID &quot;2&quot;. Si je fais un print_r($question), un tableau associatif de l&#39;enregistrement s&#39;affiche, comme si j&#39;avais fait une requête suivie d&#39;un mysql_fetch_assoc. A savoir que les fonction se terminant par Peer servent à manipuler les données.<p /> Sélectionner selon des critères :<p /><p><a href="https://gist.github.com/271122">https://gist.github.com/271122</a></p><p />On déclare d&#39;abord le critère (new Criteria), que l&#39;on configure, puis un fait la requête. Ici, je souhaite tous les enregistrement dont le champ &quot;question&quot; a pour valeur &quot;Question Test&quot;, le tout classé par ID.<p /> Pour tous les critères, voir <a href="http://www.symfony-project.org/book/1_2/08-Inside-the-Model-Layer">http://www.symfony-project.org/book/1_2/08-Inside-the-Model-Layer</a>, juste avant le listing 8-14.<p />Ensuite, pour accéder aux valeurs de chaque enregistrement sélectionné :<p /> <p><a href="https://gist.github.com/271137">https://gist.github.com/271137</a></p><p />Remarque : Si vous ne voulez que le premier enregistrement, ou si vous savez que la requêtes ne va générer qu&#39;une réponse, utilisez doSelectOne()à la place de doSelect().<p /> <b>DELETE</b><p />Si vous travaillez déjà sur l&#39;instance d&#39;un enregistrement, il suffit d&#39;appeler :<br />$question-&gt;delete();<p />Sinon, pour supprimer un enregistrement selon certains critère :<p /> <p><a href="https://gist.github.com/271143">https://gist.github.com/271143</a></p><p />Supprime l&#39;enregistrement ayant pour ID &quot;4&quot;.<p /><b>UPDATE</b><p />Très similaire à un INSERT :<p /><p><a href="https://gist.github.com/271153">https://gist.github.com/271153</a></p><p /> <p />V</div>
+<div class='post_responses'>
+<h4>145 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

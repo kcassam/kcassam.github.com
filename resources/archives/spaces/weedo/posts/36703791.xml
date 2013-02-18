@@ -1,0 +1,47 @@
+<item>
+	<title>Gérer l'adresse email professionnel d'un collaborateur sortant avec Google Apps</title>
+	<link>http://posterous.weedo.fr/gerer-ladresse-email-professionnel-dun-collab</link>
+	<pubDate>Fri Dec 17 12:14:00 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/gerer-ladresse-email-professionnel-dun-collab</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Bien souvent, l'email professionnel d'un collaborateur qui quitte l'entreprise (appelons-le Joe) est pleine d'intérêt : échanges avec les clients, documentations, fichiers importants, mails anodins mais permettant de dater certaines actions. Il s'agit d'une information précieuse, qu'il convient de ne pas perdre et qui doit être indexée. De plus, des mails continuent à arriver vers cette boite, il est important de ne pas les perdre (un ancien client qui veut une nouvelle prestation, des abonnements intéressants, etc.).</p>
+
+<p>Il est rare que cet email professionnel contienne des échanges personnels car les gens sont maintenant habitués à avoir 2 comptes emails, l'un perso et l'autre pro. Toutefois, il apparait plus élégant d'expliquer à Joe la procédure avant de la mettre en place (dans le cas d'une rupture de contrat amiable).</p>
+
+<p>Voilà comment vous pouvez gèrer l'adresse email de Joe :</p>
+
+<ol>
+<li>Modifiez le mot de passe du compte de Joe (vous devez être l'administrateur Google Apps du nom de domaine).</li>
+<li>Activez l'IMAP sur ce compte, si ce n'est pas déjà le cas.</li>
+<li>Créez ce compte dans votre client email favori, afin de rapatrier toutes les données sur votre machine.</li>
+<li>Une fois que tous les mails sont synchronisés, supprimez le compte dans Google Apps.</li>
+<li>Enfin, si vous n'avez pas défini d'email collecteur pour votre domaine (Catch-all <a href="http://en.wikipedia.org/wiki/Catch-all)">http://en.wikipedia.org/wiki/Catch-all)</a>, créez un alias de l'adresse mail de Joe vers votre email, pour récupérer les futurs mails.</li>
+</ol>
+
+
+<p>C'est fini ! Trouvez-vous cette procédure intéressante ? Et vous, comment faites-vous ?</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Bien souvent, l'email professionnel d'un collaborateur qui quitte l'entreprise (appelons-le Joe) est pleine d'intérêt : échanges avec les clients, documentations, fichiers importants, mails anodins mais permettant de dater certaines actions. Il...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Dec 17 12:14:00 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>gerer-ladresse-email-professionnel-dun-collab</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

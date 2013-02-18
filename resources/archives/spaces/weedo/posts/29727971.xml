@@ -1,0 +1,43 @@
+<item>
+	<title>Récapitulatif des solutions pour faire tourner des applis Windows sur Mac</title>
+	<link>http://posterous.weedo.fr/recapitulatif-des-solutions-pour-faire-tourne</link>
+	<pubDate>Tue Oct 05 06:02:00 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/recapitulatif-des-solutions-pour-faire-tourne</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Ces solutions permettent de faire tourner des applications Windows sur Mac sans avoir à mettre les mains dans le cambouis :</p>
+
+<ol>
+<li>Crossover : <a href="http://www.codeweavers.com/products/cxmac/">http://www.codeweavers.com/products/cxmac/</a> &ndash;> Cette solution n'exige pas l'installation de Windows. Pas compatible avec tous les logiciels (liste des applications compatibles : <a href="http://www.codeweavers.com/compatibility/)">http://www.codeweavers.com/compatibility/)</a></li>
+<li>BootCamp : <a href="http://www.apple.com/fr/support/bootcamp/">http://www.apple.com/fr/support/bootcamp/</a> &ndash;> Cette solution n'exige pas l'installation d'une application tiers mais exige une installation Windows. Ne permet pas de lancer Windows et Mac OS X simultanément.</li>
+<li>Parallels Desktop : <a href="http://www.parallels.com/fr/products/desktop/">http://www.parallels.com/fr/products/desktop/</a> &ndash;> Cette solution exige l'installation d'une application tiers et de Windows. Permet de lancer Windows et Mac OS X simultanément.</li>
+<li>VMware Fusion : <a href="http://www.vmware.com/fr/products/fusion/">http://www.vmware.com/fr/products/fusion/</a> &ndash;> challenger de Parallels Desktop.</li>
+<li>Via un client VNC : Cette solution exige de disposer d'un PC Windows allumé et accessible sur le réseau, auquel on se connecte via un client VNC (par exemple Chicken of the VNC).</li>
+</ol>
+
+
+<p>Vous en connaissez d'autres ? Quelle est votre solution préférée ? Pour quel usage ?</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Ces solutions permettent de faire tourner des applications Windows sur Mac sans avoir �  mettre les mains dans le cambouis : Crossover : http://www.codeweavers.com/products/cxmac/ –> Cette solution n'exige pas l'installation de Windows. Pas comp...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Oct 05 06:02:00 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>recapitulatif-des-solutions-pour-faire-tourne</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

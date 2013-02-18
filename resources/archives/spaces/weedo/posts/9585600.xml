@@ -1,0 +1,32 @@
+<item>
+	<title>Admin - config</title>
+	<link>http://posterous.weedo.fr/admin-config</link>
+	<pubDate>Thu Jan 07 08:01:05 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Ballut Vincent]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/admin-config</guid>
+	<description></description>
+	<content:encoded><![CDATA[Nous avons donc notre admin à l&#39;adresse backend.php/questions. Lorsque ce module a été créé, un fichier generator.yml a également été généré, rangé dans le dossier config du module. C&#39;est dans ce fichier que beaucoup de choses se passent.<p /> Voilà le fichier généré :<p /><p><a href="https://gist.github.com/271262">https://gist.github.com/271262</a></p><p /><b>Les vues</b><p />L&#39;admin se compose à la base de trois &quot;views&quot; : <br />- list : le listing de tous les enregistrement<br /> - new : formulaire d&#39;ajout d&#39;un nouvel enregistrement<br />- edit: formulaire de modification d&#39;un enregistrement<p /><b>Modification des champs</b><p />On va pouvoir modifié l&#39;apparence et l&#39;affichage de chaque champ, soit dans les trois views, soit dans chacune. Tout va se passer sous la ligne config.<p /> Pour modifier un champ dans toutes les views, c&#39;est la ligne &quot;fields&quot; qui entre en jeu :<p /><p><a href="https://gist.github.com/271267">https://gist.github.com/271267</a></p><p />Pour modifier le champ uniquement dans la view new (donc dans le formulaire d&#39;ajout), il faut se placer sous la ligne &quot;new&quot; :<p /> <p><a href="https://gist.github.com/271274">https://gist.github.com/271274</a></p><p />Modifier l&#39;ordre des champs dans la vue list, et grouper les champs dans la vue new :<p /><p><a href="https://gist.github.com/271285">https://gist.github.com/271285</a></p><p /> <b>Changer le format des champs date :</b><p /><p><a href="https://gist.github.com/271313">https://gist.github.com/271313</a></p><p /><b>Modifier le titre de chaque view :</b><p /><p><a href="https://gist.github.com/271314">https://gist.github.com/271314</a></p><p /> <b>Changer le lien vers la vue edit :</b><p />Par défaut, dans la view list, il y a un lien vers le formulaire de modification sur la colonne ID. Pour supprimer la colonne ID et mettre le lien sur une autre colonne :<p /> <p><a href="https://gist.github.com/271316">https://gist.github.com/271316</a></p><p /><b>Changer le mode d&#39;affichage en view list</b><p />Par défaut, les données sont présentées sous forme de tableau. On peut cependant les afficher autrement, de cette façon :<p /> <p><a href="https://gist.github.com/271319">https://gist.github.com/271319</a></p><p />La suite au prochain épisode :)<p /><p />------<p />Vincent Ballut<br />Weedo Lucidea<br />Tel : 06 20 18 05 46<br />Email : <a href="mailto:vincent@weedo.fr">vincent@weedo.fr</a>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Nous avons donc notre admin �  l'adresse backend.php/questions. Lorsque ce module a été créé, un fichier generator.yml a également été généré, rangé dans le dossier config du module. C'est dans ce fichier que beaucoup de choses se passe...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Jan 07 08:01:05 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

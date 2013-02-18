@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2009/11/majuscules-ne-pas-les-mettre-en-dur.html">Previous</a>
+&nbsp; 
+<a href="../../../index-9.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2009/11/valeur-par-defaut-dans-les-champs-et-validati.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>JavaScript et Ajax dans Symfony</h3>
+<div class='post_info'>
+<span class='post_time'>November 20 2009,  3:30 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Symfony a prévu tout un tas de fonctions pour simplifier la mise en place de scripts JavaScript et Ajax. <p /><div class="CodeRay">
+  <div class="code"><pre>Initaliser les bibliothèques JavaScript fournies avec Symfony (obligatoire avant d'utiliser les fonctions JavaScript de Symfony). &lt;?php use_helper('Javascript') ?&gt;Insèrer les balises JavaScript (&lt;script type=......&gt;&lt;/script&gt; &lt;?php echo javascript_tag(&quot;  function foobar() { ... }&quot;) ?&gt; Insérer un lien déclenchant une fonction JS :&lt;?php echo link_to_function('Click me!', &quot;alert('foobar')&quot;) ?&gt; Insérer un bouton déclenchant une fonction JS :&lt;?php echo button_to_function('Click me!', &quot;alert('foobar')&quot;) ?&gt; Changer le contenu d'un élément (équivalent de getElementById().InnerHTML)&lt;?php echo javascript_tag( update_element_function('id de l'élément', array( 'content' =&gt; &quot;&lt;strong&gt;Data processing complete&lt;/strong&gt;&quot;, (Option) 'position' =&gt; 'after', (Pour modifier lélément qui suit)  (Option) 'condition' =&gt; $condition ? 'remove' : 'empty', (Pour ne faire les modifs que sous certaines conditions) ))) ?&gt; Ajax !Remplacer le contenu d'un élément par les données renvoyées par le serveur :&lt;?php echo javascript_tag( remote_function(array( 'update' =&gt; 'myzone', 'url' =&gt; 'mymodule/myaction', ))) ?&gt;Cette fonction va mettre à jour l'élément ayant pour id &quot;myzone&quot; avec ce que renvoie le fichier mymodule/myclass Déclencher une fonction Ajax via un lien :&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;&lt;?php echo link_to_remote('Delete this post', array( 'update' =&gt; 'feedback', 'url' =&gt; 'post/delete?id='.$post-&gt;getId(), )) ?&gt;Cette fonction va exécuter le code PHP de l'action post/delete et renvoyer le résultat dans l'élément ayant pour id &quot;feedback&quot;. Créer un formulaire préparé pour Ajax :&lt;?php echo form_remote_tag(array( 'update' =&gt; 'item_list', 'url' =&gt; 'item/add',)) ?&gt; Cette fonction va créer la balise &lt;form...&gt;. Lors de la validation du formulaire, les données seront envoyées par POST à l'action item/add, et la réponse sera indiquée dans l'élément ayant pour id &quot;item_list&quot;. Créer un bouton préparé pour Ajax :&lt;?php echo submit_to_remote('ajax_submit', 'Add in Ajax', array( 'update' =&gt; 'item_list', 'url' =&gt; '@item_add', )) ?&gt; Au lieu d'utiliser l'helper form_remote_tag, on peut aussi bien ne modifier que le bouton.Déclencher une fonction lors du changement d'un champ :&lt;?php echo observe_field('item', array( 'update' =&gt; 'item_suggestion', 'url' =&gt; '@item_being_typed', )) ?&gt;Cette fonction va observer le champ &quot;item&quot;, déclencher l'url spécifiée lors d'un changement, et retourner la réponse dans l'élément ayant pour id &quot;item_suggestion&quot;.</pre></div>
+</div></div>
+<div class='post_responses'>
+<h4>753 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

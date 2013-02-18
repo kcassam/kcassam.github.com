@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2009/11/valeur-par-defaut-dans-les-champs-et-validati.html">Previous</a>
+&nbsp; 
+<a href="../../../index-9.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2009/11/avant-de-modifier-des-fichiers.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Antisèche sur l'accès aux valeurs d'un formulaires</h3>
+<div class='post_info'>
+<span class='post_time'>November 17 2009,  2:13 PM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'>
+<div>
+<p>On a souvent besoin d'acc&eacute;der aux valeurs d'un formulaire' renseign&eacute;es par l'utilisateur. &Ccedil;a peut &ecirc;tre dans une classe action ou dans un template.</p>
+<p>Reportez-vous au module coutcredit, qui utilise les 2 m&eacute;canismes, pour voir comment faire :&nbsp;</p>
+<p>1. Pour acc&eacute;der aux valeurs d'un formulaire dans la classe action, il faut utiliser getValue :&nbsp;</p>
+<p>&lt;objetForm&gt;-&gt;getValue('&lt;nomDuChamp&gt;')</p>
+<p>Exemple :&nbsp;</p>
+<p>$this-&gt;form = new CoutCreditForm();</p>
+<p>...</p>
+<p>$var = $this-&gt;form-&gt;getValue('mensualite');</p>
+<p>2. Pour acc&eacute;der aux valeurs d'un formulaire dans le template, il faut utiliser le tableau ayant le m&ecirc;me nom que l'objet.</p>
+<p>&lt;NomdelobjetForm&gt;['&lt;nomDuChamp&gt;']-&gt;getValue();</p>
+<p>&lt;NomdelobjetForm&gt;-&gt;getValue('&lt;nomDuChamp&gt;');</p>
+<p>Exemple :&nbsp;</p>
+<p>$var= $form['mensualite']-&gt;getValue();</p>
+<p>ou&nbsp;</p>
+<p>$form-&gt;getValue('mensualite');</p>
+<p>A+</p>
+<p>K.</p>
+</div>
+<p>&nbsp;</p></div>
+<div class='post_responses'>
+<h4>128 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

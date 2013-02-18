@@ -1,0 +1,69 @@
+<item>
+	<title>easy install of hudson on MAC OS X</title>
+	<link>http://posterous.weedo.fr/easy-install-of-hudson-on-mac-os-x</link>
+	<pubDate>Fri Dec 17 08:20:00 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Stevan Gaillard]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/easy-install-of-hudson-on-mac-os-x</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>&nbsp;</p>
+<p>Here are the steps to use hudson on mac, without installing a server like TomCat or GlassFish :</p>
+<p>download the latest hudson build : <a href="http://hudson-ci.org/latest/hudson.war">http://hudson-ci.org/latest/hudson.war</a></p>
+<p>create a shell file :</p>
+<p>#!/bin/sh<br />nohup java -jar /Users/stevan/downloads/hudson.war</p>
+<p>or any directory u want to put.</p>
+<p>Go to system preferences, accounts, then open the "Login Items" panel (in french "Ouverture")</p>
+<p>Then add the shell file in the list and, at your next login, hudson will start automatically.</p>
+<p>&nbsp;</p>
+<p>the only annoying thing is the terminal window wich have to stay open, if you close it, hudson will stop...</p>
+<p>&nbsp;</p>
+<p>That's all, your done with the installation of hudson, now you can start using it by accessing <a href="http://localhost:8080/">http://localhost:8080/</a> (by default)</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Here are the steps to use hudson on mac, without installing a server like TomCat or GlassFish : download the latest hudson build : http://hudson-ci.org/latest/hudson.war create a shell file : #!/bin/shnohup java -jar /Users/stevan/downloads/hudson...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Dec 17 08:20:00 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>easy-install-of-hudson-on-mac-os-x</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[Armagan Amcalar]]></wp:comment_author>
+			<wp:comment_author_email></wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Fri May 27 02:16:38 -0700 2011</wp:comment_date>
+			<wp:comment_date_gmt>Fri May 27 02:16:38 -0700 2011</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[You're already using nohup, Hudson will not close if you close that terminal window.]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[Clau_botas]]></wp:comment_author>
+			<wp:comment_author_email>clau_botas@hotmail.com</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Fri Jan 04 13:46:12 -0800 2013</wp:comment_date>
+			<wp:comment_date_gmt>Fri Jan 04 13:46:12 -0800 2013</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[What about using javaw instead of java to avoid the output]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

@@ -1,0 +1,55 @@
+<item>
+	<title>Des petits trucs cools en CSS</title>
+	<link>http://posterous.weedo.fr/des-petits-trucs-cools-en-css</link>
+	<pubDate>Fri Jan 29 05:06:00 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Denis]]></dc:creator>
+	
+	
+		<category domain="tag" nicename="css"><![CDATA[css]]></category>
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/des-petits-trucs-cools-en-css</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Des petits trucs cools en CSS (+ JS pour le dernier)</p>
+
+<ul>
+<li><a href="http://www.romancortes.com/blog/pure-css-coke-can/">http://www.romancortes.com/blog/pure-css-coke-can/</a></li>
+<li><a href="http://ajaxian.com/archives/rolling-a-coke-can-around-with-pure-css">http://ajaxian.com/archives/rolling-a-coke-can-around-with-pure-css</a></li>
+<li><a href="http://www.romancortes.com/blog/css-paper-bird/">http://www.romancortes.com/blog/css-paper-bird/</a></li>
+<li><a href="http://www-archive.mozilla.org/start/1.0/demos/eagle-sun.html">http://www-archive.mozilla.org/start/1.0/demos/eagle-sun.html</a></li>
+</ul>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Des petits trucs cools en CSS (+ JS pour le dernier) http://www.romancortes.com/blog/pure-css-coke-can/ http://ajaxian.com/archives/rolling-a-coke-can-around-with-pure-css http://www.romancortes.com/blog/css-paper-bird/ http://www-archive.mozilla....]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Jan 29 05:06:00 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>des-petits-trucs-cools-en-css</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[Denis]]></wp:comment_author>
+			<wp:comment_author_email>denis@weedo.fr</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Fri Jan 29 08:36:00 -0800 2010</wp:comment_date>
+			<wp:comment_date_gmt>Fri Jan 29 08:36:00 -0800 2010</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Un autre que j'avais oublié : http://www.cssplay.co.uk/menu/amazing
+]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

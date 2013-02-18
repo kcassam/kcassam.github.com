@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/05/resoudre-lincompatibilite-entre-lautoload-sym.html">Previous</a>
+&nbsp; 
+<a href="../../../index-5.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/05/g%C3%A9nial%20:%20le%20fichier%20functions.php%20du%20theme%20wordpress-18211594.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Quelques recos pour la gestion des css</h3>
+<div class='post_info'>
+<span class='post_time'>May 18 2010,  1:50 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p><span style="font-family: monospace; font-size: medium;">
+<p>Quelques recos pour la gestion des css, issue de ma petite expérience (ma petite expérience a pour l'instant constitué à faire ce qu'il ne fallait pas faire.... d'où sa pertinence !)</p>
+<p> </p>
+<p>Maintenabilité/Bonnes pratiques : </p>
+<p> </p>
+<p>  - Avant de commencer, passer une bonne journée à faire le point sur les bonnes pratiques et la littérature actuelle : </p>
+<p>  * 30 CSS Best Practices for Beginners : <a href="http://net.tutsplus.com/tutorials/html-css-techniques/30-css-best-practices-for-beginners/">http://net.tutsplus.com/tutorials/html-css-techniques/30-css-best-practices-f...</a></p>
+<p>  * Google CSS best practice : <a href="http://www.google.fr/search?q=best+practice+css">http://www.google.fr/search?q=best+practice+css</a></p>
+<p>  - Se poser la question du doctype : html5+css3 ou xhtml+css2 ?</p>
+<p>  - Pour démarrer sur de bonnes bases, utiliser un générateur : <a href="http://developer.yahoo.com/yui/grids/builder/">http://developer.yahoo.com/yui/grids/builder/</a> ou <a href="http://builder.yaml.de/">http://builder.yaml.de/</a></p>
+<p>  - Gestion des différents navigateurs : 1 css spécial de reset : voir google reset css <a href="http://www.google.fr/search?q=reset+css">http://www.google.fr/search?q=reset+css</a></p>
+<p>  - 1 css (ou groupe de css) général pour gérer les styles globaux au site.</p>
+<p>  - 1 css par module/template (au sens symfony) pour améliorer la maintenabilité qui ne contient que les éléments propres à ce module/template</p>
+<p>  - Pour chaque css qui en a besoin, faire un css séparé pour gérer les différents navigateurs (notamment ie6, ie7)</p>
+<p>  - Groupe de css : il peut être souhaitable de séparer le css en groupes logiques :</p>
+<p>  * typography.css for basic typographic rules,</p>
+<p>  * grid.css for grid-based layouts or</p>
+<p>  * layout.css for general layouts,</p>
+<p>  * form.css for basic form styling,</p>
+<p>  * general.css for further general rules</p>
+<p>  * etc.</p>
+<p>  - Astuce : Ne pas oublier qu'il est possible d'associer un style à plusieurs classes : Exemple :</p>
+<p>  .classe1, .classe2, #id1 {</p>
+<p>   font-size:11px;</p>
+<p>  }</p>
+<p>  - Après avoir terminé, valider le css <a href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a></p>
+<p> </p>
+<p>Performances : </p>
+<p> </p>
+<p>  Très important : Le travail sur les performances se fait toujours dans un 2e temps, plutôt en fin de projet ou même après la mise en production.</p>
+<p> </p>
+<p>  Si un module fait appel à 5 template, on peut se retrouver donc avec une dizaine de fichiers css ou même beaucoup plus plus si chaque template/module a besoin d'un css spécial pour ie6 et un spécial pour ie7 ! C'est facile à maintenir mais c'est pas bon pour les performances (multiplication des requêtes http). En effet, la préconisation est d'avoir un fichier css max par page : voir <a href="http://developer.yahoo.com/performance/rules.html">http://developer.yahoo.com/performance/rules.html</a></p>
+<p> </p>
+<p>  Pour concilier la maintenabilité et l'exigence de performance, on utilise le projet minify qui permet de combiner plusieurs css et de le minifier : voir <a href="http://code.google.com/p/minify/">http://code.google.com/p/minify/</a>. En gros, ce projet en php permet de générer à la volée en php un css unique, compressé et "cache-able"</p>
+<p> </p>
+<p>  En prime : Vous pouvez aller voir 2 cheat sheet css sur <a href="http://www.gosquared.com/liquidicity/archives/1010">http://www.gosquared.com/liquidicity/archives/1010</a> (téléchargé aussi dans /Fileservers/weedo/Docs techniques/css)</p>
+<p />
+</span></p></div>
+<div class='post_responses'>
+<h4>429 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Jun 29 2010,  3:57 AM</div>
+<div class='response_name'>Karim Cassam Chenaï responded:</div>
+</div>
+<div class='response_body'>Attention, si un système de cache est en place qui se passe du php, on ne pourra pas avoir une page différente pour ie et les autres sous la même URL...</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

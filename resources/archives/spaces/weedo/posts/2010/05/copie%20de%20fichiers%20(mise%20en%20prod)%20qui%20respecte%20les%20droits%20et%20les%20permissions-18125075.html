@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/05/g%C3%A9nial%20:%20le%20fichier%20functions.php%20du%20theme%20wordpress-18211594.html">Previous</a>
+&nbsp; 
+<a href="../../../index-5.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/04/wp%20et%20champs%20personnalis%C3%A9s-17818718.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>copie de fichiers (mise en prod) qui respecte les droits et les permissions</h3>
+<div class='post_info'>
+<span class='post_time'>May  5 2010,  8:09 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Pour être sûr de faire une copie qui marche bien, même entre 2 serveurs et notamment qui respecte les droits et les permissions,faire une tarball des fichiers à copier sur le serveur source : exemple : <code> tar -cvf fichier.tar sf www </code><br />se placer sur le serveur de destination, dans le bon dossier et copier la tarball : <code> scp -pr root@&lt;serveur_source&gt;:/&lt;dossier&gt;/fichier.tar fichier.tar </code><br />et désarchiver la tarball sur le serveur de destination : <code> tar -xvf fichier.tar </code><p /> Ensuite, mise à jour du .htaccess et <code> php5 symfony cc </code><p /> et en gros ça fonctionne</p></div>
+<div class='post_tags'>
+<h4>Tags</h4>
+<div class='post_tags_list'>backup, copie, droits, sauvegarde, scp, tar, unix</div>
+</div>
+<div class='post_responses'>
+<h4>346 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

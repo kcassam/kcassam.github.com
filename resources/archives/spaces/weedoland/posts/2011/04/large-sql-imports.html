@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/01/libraries-php-a-connaitre-et-a-utiliser-0.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Large SQL imports</h3>
+<div class='post_info'>
+<span class='post_time'>April 27 2011,  2:05 AM</span>
+<span class='author'>&nbsp;by Stevan Gaillard</span>
+</div>
+</div>
+<div class='post_body'><p>1. Create an empty database in phpMyadmin. Rename the sql file you are trying to upload as your database's name. <br />You could also create a database in shell by typing: mysql: CREATE DATABASE databasename;<p />2. Move your sql file to the bin file in your Mysql directory<p />3. Log on into shell: mysql -u root -p. It will then ask you for your root password. Type it in<p />4. Let Mysql know which file you intend to use<p />-&nbsp;&nbsp; mysql&gt; USE file.sql;. If you fail to use the USE command you can end up with this error: &ldquo;error 1046 (3D0000): no database selected. If your database is large this error can freeze the screen<p />5. Dump the sql data file with this code: SOURCE c:/xampp/mysql/bin/file.sql<p />If your file is really big it could take over 30 minutes, be patience and your sql database will be imported.</p></div>
+<div class='post_tags'>
+<h4>Tags</h4>
+<div class='post_tags_list'>import, mysql, sql</div>
+</div>
+<div class='post_responses'>
+<h4>87 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

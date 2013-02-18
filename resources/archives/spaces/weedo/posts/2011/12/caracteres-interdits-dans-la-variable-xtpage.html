@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2012/07/fonction-slug-en-php.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/07/sqlstatehy000-general-error-2006-mysql-server.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Caractères interdits dans la variable xtpage d'un tag Xiti</h3>
+<div class='post_info'>
+<span class='post_time'>December  2 2011,  1:12 AM</span>
+<span class='author'>&nbsp;by Ev</span>
+</div>
+</div>
+<div class='post_body'>Extrait de la documentation Xiti :<p />La variable xt_page permet de renseigner le nom de la page et de créer les chapitres XiTi. Les libellés qui y <br />sont renseignés ne doivent contenir que des caractères suivants : <br />   Les lettres abcdefghijklmnopqrstuvwxyz en majuscules ou minuscules <br />  Les chiffres 123467890 <br />  Les points . <br />  Les slashs / <br />  Les moins - <br />  Les underscores _ <br />  Les tildes ~ <p />Il est donc nécessaire d’effectuer un retraitement des noms si l’affichage est fait dynamiquement, afin de <br /> nettoyer les caractères interdits lors du remplissage de cette variable. <p />Voici une petite fonction qui permet de le faire :<p /> function cleanStringForXiti($string,$replace){<br />        <br />        return  preg_replace(&quot;#[^a-zA-Z0-9_/\.~-]#&quot;,$replace, $string);<br />         <br /> }<p />On remplace chaque caractère interdit trouvé par un caractère au choisi.</div>
+<div class='post_responses'>
+<h4>423 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

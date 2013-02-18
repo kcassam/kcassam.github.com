@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/09/les-captcha-google-cest-un-peu-nimporte-quoi.html">Previous</a>
+&nbsp; 
+<a href="../../../index-3.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/09/comment-avoir-de-la-chance.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>php, forcer l'écriture dans un fichier</h3>
+<div class='post_info'>
+<span class='post_time'>September  3 2010,  3:36 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><h1>Forcer l'écriture dans un fichier</h1>
+
+<p>Sans révolutionner l'histoire de l'informatique, voici la fonction putByForce pour écrire dans un fichier. Le petit plus de cette fonction est que si on a pas les droits en écriture sur le fichier, on réessaye en effaçant d'abord le fichier. Donc si on a pas les droits en écriture sur le fichier mais qu'on a les droits sur le dossier, on va quand même réussir à écrire dans le fichier, contrairement à un simple fwrite.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">WDFile</span> {
+
+ <span class="comment">/**
+  * putByForce function.
+  * 
+  * Cette fonction fait une chose : elle essaye de mettre $content dans le fichier $filename, même si on a pas les droits en écriture sur le fichier, donc éventuellement en effaçant le fichier.
+  * On suppose que le dossier du fichier existe mais on pourrait compléter cette fonction avec la création du dossier dans le cas ou il n'existe pas.
+  * @access public
+  * @static
+  * @param mixed $filename
+  * @param mixed $content
+  * @return void
+  */</span>
+ <span class="keyword">static</span> <span class="keyword">function</span> <span class="function">putByForce</span> (<span class="local-variable">$filename</span>, <span class="local-variable">$content</span>) {
+ <span class="comment">// D'abord, on essaye la manière douce</span>
+   <span class="local-variable">$wrote</span> = <span class="predefined-constant">self</span>::put(<span class="local-variable">$filename</span>, <span class="local-variable">$content</span>);
+   <span class="keyword">if</span> (<span class="local-variable">$wrote</span> == <span class="predefined-constant">false</span>) {
+     <span class="comment">// L'écriture a échouée, j'essaye la manière forte : je supprime le fichier avant d'essayer de l'écrire.</span>
+     <span class="keyword">if</span> (<span class="predefined">is_file</span>(<span class="local-variable">$filename</span>)) {
+       <span class="predefined">unlink</span>(<span class="local-variable">$filename</span>);
+       <span class="local-variable">$wrote</span> = <span class="predefined-constant">self</span>::put(<span class="local-variable">$filename</span>, <span class="local-variable">$content</span>);
+     }
+   }
+ <span class="keyword">return</span> (<span class="local-variable">$wrote</span>);
+ }
+
+ <span class="comment">/**
+  * put function.
+  * 
+  * @access private
+  * @static
+  * @param mixed $filename
+  * @param mixed $content
+  * @return TRUE en cas de succès ou FALSE si une erreur survient.
+  */</span>
+ <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">function</span> <span class="function">put</span> (<span class="local-variable">$filename</span>, <span class="local-variable">$content</span>) {
+   <span class="local-variable">$filew</span> = <span class="exception">@</span><span class="predefined">fopen</span>(<span class="local-variable">$filename</span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>);
+   <span class="keyword">if</span> (<span class="local-variable">$filew</span> === <span class="predefined-constant">false</span>) {
+     <span class="keyword">return</span> (<span class="predefined-constant">false</span>);
+   } <span class="keyword">else</span> {
+     <span class="local-variable">$wrote</span> = <span class="predefined">fwrite</span>(<span class="local-variable">$filew</span>, <span class="local-variable">$content</span>);
+     <span class="keyword">if</span> (<span class="local-variable">$wrote</span> === <span class="predefined-constant">false</span>) {
+       <span class="keyword">return</span> (<span class="predefined-constant">false</span>);
+     } <span class="keyword">else</span> {
+       <span class="predefined">fclose</span>(<span class="local-variable">$filew</span>);
+       <span class="keyword">return</span> <span class="predefined-constant">true</span> ;
+     }
+   }
+ }
+}</pre></div>
+</div></div>
+<div class='post_responses'>
+<h4>2197 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

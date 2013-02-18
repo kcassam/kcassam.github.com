@@ -1,0 +1,220 @@
+<item>
+	<title>How to auto-check people with svn using svn+ssh</title>
+	<link>http://posterous.weedo.fr/how-to-auto-check-people-with-svn-using-svnss</link>
+	<pubDate>Tue Jan 04 04:03:00 -0800 2011</pubDate>
+	
+	<dc:creator><![CDATA[fix]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/how-to-auto-check-people-with-svn-using-svnss</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>It can be interesting to have his author name attributed by the svn server (particularly when using the same login to connect on the svn server over ssh). This post will show you how that can be done.</p>
+
+<p>This tutorial has been made and used to configure a multi-user svn environment on a OVH shared host (hébergement mutualisé).<br />
+The source guide is available here : <a href="http://help.ovh.co.uk/SVNMutu">http://help.ovh.co.uk/SVNMutu</a> (in english) and here : <a href="http://guides.ovh.com/SVNMutu">http://guides.ovh.com/SVNMutu</a> (in french). We push things a bit forward as we explain how to have access both by svn+ssh and by ssh and we resolve a common problem described here : <a href="http://forum.ovh.com/showthread.php?t=48610.">http://forum.ovh.com/showthread.php?t=48610.</a></p>
+
+<p>We simplify a bit this tutorial by not using ssh config file, but we&rsquo;ll try to use ssh config files in another version. If you want more information on ssh config file, type <code>man ssh_config</code> in you terminal or google it.</p>
+
+<p>As always, feedbacks/comments appreciated.</p>
+
+<p>Let&rsquo;s go !</p>
+
+<h3>1) Generating 2 rsa private/public key</h3>
+
+<p>Before configuring server, we need to generate 2 rsa private/public key, one for ssh protocol and one for ssh+svn protocol.</p>
+
+<p>To do so, do the following on your computer terminal.</p>
+
+<p>We generate :
+* a rsa key with the default name (id_rsa) to use it for ssh+svn protocol.
+* a rsa key with another name (id_rsa_hostname for example) to use it for ssh protocol. This second key is optional but recommended.</p>
+
+<p>So you&rsquo;ll have to do that twice :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>prompt$ ssh-keygen -t rsa</pre></div>
+</div>
+
+
+<p>Terminal will answer:</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa):</pre></div>
+</div>
+
+
+<p>You can enter a new filepath if you want to store the key to another location or with an other name. We suggest having a different key for each host you connect to and giving a meaningful name to your file. Example : <code>/home/user/.ssh/id_rsa_server_name</code>.</p>
+
+<p>Enter passphrase (empty for no passphrase):
+Enter same passphrase again:</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>Your identification has been saved /home/user/.ssh/in id_rsa_server_name.
+Your public key has been saved in id_rsa_server_name.pub.
+The key fingerprint is:
+5e:13:8c:62:f7:45:12:4g:x6:fd:67:r5:68:s5:78:k4 user@computername
+The key's randomart image is:
++--[ RSA 2048]----+
+|  . =..+D o      |
+|   . .*=o*       |
+|  . L . .+. .    |
+|   *  .o.+.o     |
+|        X .o     |
+|          .      |
+|                 |
+|                 |
+|                 |
++-----------------+</pre></div>
+</div>
+
+
+<h3>2) Copy public key files to server</h3>
+
+<p>To configure the server you will need the public key you generated previously, so copy it from local to server. To do that you can use <code>scp</code>.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>prompt$ scp path_to_public_key_file login_for_server@server_name:path_you_want_to_copy_file</pre></div>
+</div>
+
+
+<h3>3) Connection to server hosting svn</h3>
+
+<p>Launch a terminal and connect to server like that:</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>prompt$ ssh yourlogin@yourserver</pre></div>
+</div>
+
+
+<p>You should find the public key files you copy before in the path you specified to <code>scp</code> command.</p>
+
+<h3>4) Configuring server</h3>
+
+<p>First go into folder <code>.ssh</code> located in your home path or create it if not exist.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>yourlogin@yourserver# cd .ssh</pre></div>
+</div>
+
+
+<p>In the folder, open file <code>authorized_keys2</code> with an editor (<code>emacs</code>, <code>nano</code>, <code>vi</code>, <code>ee</code>).
+Add the following sentence at the end, replace <code>svnserve_bin_path</code> by the path to svnserve binary (<code>/usr/bin/svnserve</code> ?), <code>home_path</code> by your home path (<code>/homez.XXX/yourlogin</code> ?), <code>root_path</code> by the path you want to be the root for the ssh connection, login_you_want by the login you want svn server attributes to you.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>command=&quot;svnserve_bin_path --root=home_path/root_path --tunnel --tunnel-user=login_you_want&quot;,no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty</pre></div>
+</div>
+
+
+<p>After that add the public key to the same line, you can type this command.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>yourlogin@yourserver# cat path_to_public_key_with_default_name &gt;&gt; authorized_keys2</pre></div>
+</div>
+
+
+<p>Check that the public key has been inserted on the same line with a space as separator that what you added previously to the file.</p>
+
+<p>For the other public key (the one with the non default name, just copy it on a new line :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>yourlogin@yourserver# cat path_to_public_key_2 &gt;&gt; authorized_keys2</pre></div>
+</div>
+
+
+<h3>5) Errors when connecting with command <code>ssh</code></h3>
+
+<p>Now that you configured the server to attribute author name to one person using svn, if you try to connect to the server over normal <code>ssh</code> connection, you will encounter problems.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>PTY allocation request failed on channel 0
+( success ( 1 2 ( ANONYMOUS EXTERNAL ) ( edit-pipeline svndiff1 absent-entries ) ) ) Connection to yourserver closed.</pre></div>
+</div>
+
+
+<ul>
+<li><p>If you did not make rsa key :
+To avoid this error, just launch <code>ssh</code> command with -i with an other identifying file path or nothing.
+  ssh -i . yourlogin@yourserver
+The password will be asked.</p></li>
+<li><p>If you made a rsa key :
+  ssh -i path_to_private_key_2 yourlogin@yourserver
+The password won&rsquo;t be asked.</p></li>
+</ul>
+
+
+<h3>6) Multi-user</h3>
+
+<p>To auto-attribute author name for other people, repeat this operation.
+Only one author name can be attributed for the same public key.</p>
+
+<h3>7) Multiple repositories</h3>
+
+<p>You can manage repositories for multiple projects on the same shared host. We ourselves manage 2 multi-users projects on the same shared host.</p>
+
+<h3>8) Test</h3>
+
+<div class="CodeRay">
+  <div class="code"><pre>svn checkout svn+ssh://yourlogin@yourserver/repository_folder</pre></div>
+</div>
+
+
+<p>(You must not mention here the full path (home_path/root_path), because it is taken from the command parameters in the authorized_keys file.)</p>
+
+<h3>9) Other information resources</h3>
+
+<p>in french : <a href="http://doc.fedora-fr.org/wiki/SSH">http://doc.fedora-fr.org/wiki/SSH</a><em>:</em>Authentification_par_cl%C3%A9
+in english : <a href="http://www.debuntu.org/ssh-key-based-authentication">http://www.debuntu.org/ssh-key-based-authentication</a></p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[It can be interesting to have his author name attributed by the svn server (particularly when using the same login to connect on the svn server over ssh). This post will show you how that can be done. This tutorial has been made and used to config...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Jan 04 04:03:00 -0800 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>how-to-auto-check-people-with-svn-using-svnss</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[Alex]]></wp:comment_author>
+			<wp:comment_author_email>contact@alexandre-vasseur.fr</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Sun Apr 24 11:41:30 -0700 2011</wp:comment_date>
+			<wp:comment_date_gmt>Sun Apr 24 11:41:30 -0700 2011</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Bonjour,
+en suivant à la lettre le tuto, et ayant passé la journée à tenter de faire fonctionner tout ça (réussi une fois et en recommençant non), je ne suis pas arrivé au checkout. 
+je tombe sur un &quot;No repository found in 'svn+ssh://monloginFTP@mondomaine.fr/monrepository' &quot; .
+
+quelque chose n'est pas clair pour moi, c'est l'histoire des deux clés public/privée.
+j'ai généré 4 fichiers en tout : 
+id_rsa, id_rsa.pub, id_rsa_mondomaine, id_rsa_mondomaine.pub (sachant que pour id_rsa_mondomaine.pub j'ai essayé d'attribuer un mot de passe, pas pour la cléf id_rsa)
+du coup j'ai copié les lignes comme indiqué, mais je ne suis pas sur que ça soit les bons fichier
+
+je me retrouve avec quelque chose dans le genre dans mon authorized_keys2
+
+command=&quot;/usr/bin/svnserve --root=/homez.xxx/loginFTP/svn --tunnel --tunnel-user=alexmac&quot;,no-port-forwarding,no-agent-forwarding,no-x11-forwarding,no-pty AAAAB3NzaC1yc2EAAAABIwAAAQEA0XaJ3CUqrmlGtW5m4M/E+DHypgteEEnWWejwxc2BgY8+2i3sCfDwzR5tcW9C9L9E+Qe1FGBf5gu83IgRpOuWhgK22DUU68SOn3NLkd33GRP5NBmzcjHSPTHPR5UNEZiXwel5NX7dwrC0B5rXQP/jPNGQaEIJTETThsSHFHEiztzQdgo/+Wspzp4mauPWOzdyl2d9RoFXWX0PX1Yn+wdN3cW096ljEHcsPz7g56FBP8jlZ9R78Y05B8CrzjdhSofzbjr+5nFlXCbTKJLhLltkpRzG2pl/AAqTkR7HyJE4ueHXudZLz95putaCCJXbri9dDl6k9x1E6qdrjwHfkJdqew== monusermac@MacBook-Pro-dexxxx.local
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxi4Ah9SrdZFA8MbBdwLUucl8hscL9T32MkW73fombeNzu+8jH+DlwFVrEiUiwyjxrf7ofjhdi3pAr8PbXdt+fNsNIhLaAsEtkQ9Woto+sdP54PRn0tewD98/mvT809zR7cfBOwV2gNBfU0jdDEnDWtHIRzs67iDy/bOUaSG7ei3V9IY3mGNg9zuBaXGlenIqBInwDg6ZQft+HAyPydD/0jSaR3Q1akNEVx03eD3swPYu5SXkkAJG0vjUig593H2zUI0hgZdsYjICwb7g/e2tFsSUjVRGMTC7vxk5MQvBz+5WNhBkQTwepXT1/WfiF3CNl1wWqlcyFj9fm2l282ZGbQ== monusermac@MacBook-Pro-dexxxx.local
+
+Pourriez vous m'éclairez svp?
+merci d'avance,
+
+cordialement
+
+]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

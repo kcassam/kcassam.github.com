@@ -1,0 +1,97 @@
+<item>
+	<title>Empêcher la selection d'un élément HTML</title>
+	<link>http://posterous.weedo.fr/empecher-la-selection-dun-element-html</link>
+	<pubDate>Thu Jan 27 03:08:00 -0800 2011</pubDate>
+	
+	<dc:creator><![CDATA[Stevan Gaillard]]></dc:creator>
+	
+	
+		<category domain="tag" nicename="css"><![CDATA[css]]></category>
+	
+		<category domain="tag" nicename="html"><![CDATA[html]]></category>
+	
+		<category domain="tag" nicename="jcarousel"><![CDATA[jcarousel]]></category>
+	
+		<category domain="tag" nicename="jquery"><![CDATA[jquery]]></category>
+	
+		<category domain="tag" nicename="selection"><![CDATA[selection]]></category>
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/empecher-la-selection-dun-element-html</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p style="padding-left: 30px;">&nbsp;</p>
+<p style="padding-left: 30px;">Souvent, lorsque l'on utilise des &eacute;l&eacute;ments d'interface graphique venant de librairies javascript telles que jQuery UI, on peut se retrouver confront&eacute; &agrave; des probl&egrave;mes de s&eacute;lection :</p>
+<p>&nbsp;</p>
+<ul>
+<li><span style="font-size: medium;">Par exemple avec <a href="http://sorgalla.com/jcarousel/">jcarousel</a>, si on double-clique sur les boutons de navigation, les images sont s&eacute;lectionn&eacute;es,</span></li>
+<li><span style="font-size: medium;">Lorsque l'on utilise une barre de d&eacute;filement, le m&ecirc;me probl&egrave;me peut appara&icirc;tre.</span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Pour l'emp&ecirc;cher, il suffit d'une simple r&egrave;gle css : (ici on emp&ecirc;che uniquement la s&eacute;lection d'image)</span></p>
+<blockquote class="posterous_medium_quote">img{<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-khtml-user-select: none;<br />&nbsp;&nbsp; &nbsp;-o-user-select: none;<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-moz-user-select: -moz-none;<br />&nbsp;&nbsp; &nbsp;-webkit-user-select: none;<br />&nbsp;&nbsp; &nbsp;}</blockquote>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p><span style="font-size: medium;">Le soucis est que les navigateurs ne se comportent pas de la m&ecirc;me fa&ccedil;on face &agrave; la s&eacute;lection par double-clic ou par d&eacute;filement, et vous aurez &agrave; adapter vos r&egrave;gles pour interdire la s&eacute;lection des &eacute;l&eacute;ments qui vous int&eacute;ressent.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Dans mon cas (emp&ecirc;cher une s&eacute;lection lors du clic sur les boutons de navigation), j'ai simplement fait :</span></p>
+<blockquote class="posterous_medium_quote">html{<br />/* safari s&eacute;lectionne &eacute;galement */<br />&nbsp;&nbsp; &nbsp;-webkit-user-select: none;<br />&nbsp;&nbsp; }<p />img{<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-khtml-user-select: none;<br />&nbsp;&nbsp; &nbsp;-o-user-select: none;<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-moz-user-select: -moz-none;<br />}</blockquote>
+<p><span style="font-size: medium;">&agrave; cause de safari, qui s&eacute;lectionnait des divs &eacute;galement.</span></p>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p><span style="text-decoration: underline; font-size: x-large;">Pour info :</span></p>
+<p>&nbsp;<span style="font-size: medium;">faire un</span></p>
+<blockquote class="posterous_short_quote">
+<p>html{<br /> -moz-user-select: -moz-none;<br /> }</p>
+</blockquote>
+<p><span style="font-size: medium;">n'emp&egrave;che pas firefox de s&eacute;lectionner certaines portions de texte sur un CTRL+a</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Le code permettant de ne rien s&eacute;lectionner ( le clic droit est toujours disponible) est :</span></p>
+<blockquote class="posterous_medium_quote">
+<p>html{<br />&nbsp;&nbsp; -moz-user-select: -moz-none;<br />&nbsp;&nbsp; -khtml-user-select: none;<br />&nbsp;&nbsp; -webkit-user-select: none;<br />&nbsp;&nbsp; -o-user-select: none;<br />&nbsp;&nbsp; user-select: none;<br />}<p /><br />::selection { background: transparent;color:inherit; }<br />::-moz-selection { background: transparent;color:inherit; }</p>
+</blockquote>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Le deuxi&egrave;me bloc est surtout destin&eacute; &agrave; FF, mais il reste un point g&ecirc;nant :</span></p>
+<p><span style="font-size: medium;">Certains morceaux de texte peuvent encore &ecirc;tre s&eacute;lectionn&eacute;s, m&ecirc;me si &ccedil;a ne se voit pas, et lorsque vous cliquez dans la barre d'URL, le background des zones s&eacute;lectionn&eacute;es devient gris.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">D'apr&egrave;s mes recherches, il s'agit d'une propri&eacute;t&eacute; client, mais si vous savez comment r&eacute;soudre ce probl&egrave;me, </span></p>
+<p>&nbsp;</p>
+<p>n'h&eacute;sitez pas &agrave; partager !</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Souvent, lorsque l'on utilise des éléments d'interface graphique venant de librairies javascript telles que jQuery UI, on peut se retrouver confronté �  des problèmes de sélection : Par exemple avec jcarousel, si on double-clique sur les bout...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Jan 27 03:08:00 -0800 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>empecher-la-selection-dun-element-html</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[vb078]]></wp:comment_author>
+			<wp:comment_author_email>vb078@msn.com</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Mon May 09 07:40:34 -0700 2011</wp:comment_date>
+			<wp:comment_date_gmt>Mon May 09 07:40:34 -0700 2011</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Tu aurais une idée pour que ça fonctionne sur des images? Si elles sont en position &quot;absoute&quot; ça doit pas fonctionner :) ?
+
+Merci en tout cas, belle centralisation des infos !]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

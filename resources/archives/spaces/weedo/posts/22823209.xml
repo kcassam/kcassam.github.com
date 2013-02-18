@@ -1,0 +1,137 @@
+<item>
+	<title>Benchmark javascript comparatif iPhone 3G, iPad, MacBook Pro/Safari</title>
+	<link>http://posterous.weedo.fr/benchmark-javascript-comparatif-iphone-3g-ipa</link>
+	<pubDate>Tue Jul 13 10:16:00 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/benchmark-javascript-comparatif-iphone-3g-ipa</guid>
+	<description></description>
+	<content:encoded><![CDATA[<h1>Benchmark javascript comparatif iPhone 3G, iPad, MacBook Pro/Safari</h1>
+
+<p>You can put your results in comments.
+Vous pouvez mettre vos résultats dans les commentaires.</p>
+
+<h2>Summary :</h2>
+
+<h3>SunSpider :</h3>
+
+<p>url : <a href="http://www2.webkit.org/perf/sunspider-0.9/sunspider.html">http://www2.webkit.org/perf/sunspider-0.9/sunspider.html</a></p>
+
+<p>en millisecondes</p>
+
+<p>iPhone 3G : 54032 ms</p>
+
+<p>iPad : 14540.2ms (3,7x mieux que l'iPhone 3G)</p>
+
+<p>Macbook pro/Safari : 277.2ms (200x mieux que l'iPhone 3G)</p>
+
+<h3>V8 Google :</h3>
+
+<p>url : <a href="http://v8.googlecode.com/svn/data/benchmarks/v5/run.html">http://v8.googlecode.com/svn/data/benchmarks/v5/run.html</a></p>
+
+<p>score &ldquo;higher is better&rdquo;</p>
+
+<p>iPhone 3G : estimé à 20 (ne s'achève pas, voir détail)</p>
+
+<p>iPad : 102 (5 fois mieux que l'iPhone 3G ?)</p>
+
+<p>MacBook Pro/Safari : 2387 (23x mieux que l'iPad)</p>
+
+<h2>Detail :</h2>
+
+<h3>iPhone 3G :</h3>
+
+<h4>SunSpider :</h4>
+
+<p><a href="http://www2.webkit.org/perf/sunspider-0.9/sunspider-results.html?%7B%223d-cube%22:%5B1967,2262,2233,3755,2232%5D,%223d-morph%22:%5B2444,2503,2518,4430,2504%5D,%223d-raytrace%22:%5B2366,2535,2639,5626,2523%5D,%22access-binary-trees%22:%5B879,674,705,967,688%5D,%22access-fannkuch%22:%5B989,1005,1026,1993,1023%5D,%22access-nbody%22:%5B2210,2463,2316,4663,2287%5D,%22access-nsieve%22:%5B468,471,469,566,468%5D,%22bitops-3bit-bits-in-byte%22:%5B355,356,361,1284,360%5D,%22bitops-bits-in-byte%22:%5B473,483,477,474,479%5D,%22bitops-bitwise-and%22:%5B463,456,459,1344,464%5D,%22bitops-nsieve-bits%22:%5B896,950,900,974,911%5D,%22controlflow-recursive%22:%5B355,364,352,718,358%5D,%22crypto-aes%22:%5B819,910,888,2055,893%5D,%22crypto-md5%22:%5B763,831,818,1608,845%5D,%22crypto-sha1%22:%5B863,768,795,1288,748%5D,%22date-format-tofte%22:%5B2122,2063,2028,3513,2136%5D,%22date-format-xparb%22:%5B3715,3772,3775,4355,3857%5D,%22math-cordic%22:%5B1974,1821,2043,1837,1704%5D,%22math-partial-sums%22:%5B3439,3194,3259,2979,3294%5D,%22math-spectral-norm%22:%5B1228,1253,1288,1155,1121%5D,%22regexp-dna%22:%5B4066,4314,9377,3899,3852%5D,%22string-base64%22:%5B1576,1478,5294,1506,1470%5D,%22string-fasta%22:%5B2343,2581,3482,2367,2384%5D,%22string-tagcloud%22:%5B3396,3401,7696,3458,3341%5D,%22string-unpack-code%22:%5B3847,3761,7737,3774,3687%5D,%22string-validate-input%22:%5B3401,3389,5227,3458,3348%5D%7D">SunSpider iPhone 3G</a></p>
+
+<h4>V8 Google :</h4>
+
+<p>Running: 89% completed.</p>
+
+<p>Richards: 18.0</p>
+
+<p>DeltaBlue: 13.4</p>
+
+<p>Crypto: 23.0</p>
+
+<p>RayTrace: 18.3</p>
+
+<p>EarleyBoyer: 38.9</p>
+
+<p>RegExp: 7.88</p>
+
+<h3>iPad :</h3>
+
+<h4>SunSpider :</h4>
+
+<p><a href="http://www2.webkit.org/perf/sunspider-0.9/sunspider-results.html?%7B%223d-cube%22:%5B1373,1235,1245,1237,1224%5D,%223d-morph%22:%5B1053,1097,1107,1039,1035%5D,%223d-raytrace%22:%5B756,869,870,803,805%5D,%22access-binary-trees%22:%5B121,116,114,120,120%5D,%22access-fannkuch%22:%5B551,551,551,551,617%5D,%22access-nbody%22:%5B1591,1601,1596,1592,1599%5D,%22access-nsieve%22:%5B184,191,187,189,194%5D,%22bitops-3bit-bits-in-byte%22:%5B167,165,186,167,165%5D,%22bitops-bits-in-byte%22:%5B219,157,158,157,157%5D,%22bitops-bitwise-and%22:%5B138,141,140,137,138%5D,%22bitops-nsieve-bits%22:%5B499,501,501,502,507%5D,%22controlflow-recursive%22:%5B134,133,136,135,134%5D,%22crypto-aes%22:%5B221,221,219,217,219%5D,%22crypto-md5%22:%5B378,380,367,376,386%5D,%22crypto-sha1%22:%5B379,376,375,375,389%5D,%22date-format-tofte%22:%5B340,336,337,335,335%5D,%22date-format-xparb%22:%5B422,417,415,424,432%5D,%22math-cordic%22:%5B898,884,883,881,883%5D,%22math-partial-sums%22:%5B996,995,995,996,998%5D,%22math-spectral-norm%22:%5B622,623,623,626,625%5D,%22regexp-dna%22:%5B1021,1083,1084,1081,1081%5D,%22string-base64%22:%5B364,377,371,366,371%5D,%22string-fasta%22:%5B481,497,485,478,504%5D,%22string-tagcloud%22:%5B387,398,397,404,394%5D,%22string-unpack-code%22:%5B643,649,682,648,649%5D,%22string-validate-input%22:%5B590,590,585,594,590%5D%7D">SunSpider iPad</a></p>
+
+<h4>V8 Google :</h4>
+
+<p>Score: 102</p>
+
+<p>Richards: 96.4</p>
+
+<p>DeltaBlue: 81.4</p>
+
+<p>Crypto: 38.9</p>
+
+<p>RayTrace: 187</p>
+
+<p>EarleyBoyer: 229</p>
+
+<p>RegExp: 59.0</p>
+
+<p>Splay: 146</p>
+
+<h3>Macbook pro Safari :</h3>
+
+<h4>SunSpider :</h4>
+
+<p><a href="http://www2.webkit.org/perf/sunspider-0.9/sunspider-results.html?%7B%223d-cube%22:%5B14,14,14,16,12%5D,%223d-morph%22:%5B10,11,10,13,9%5D,%223d-raytrace%22:%5B11,12,12,13,11%5D,%22access-binary-trees%22:%5B4,3,4,4,5%5D,%22access-fannkuch%22:%5B13,15,15,16,15%5D,%22access-nbody%22:%5B9,9,8,9,8%5D,%22access-nsieve%22:%5B6,7,7,6,5%5D,%22bitops-3bit-bits-in-byte%22:%5B2,3,3,3,5%5D,%22bitops-bits-in-byte%22:%5B6,7,8,9,8%5D,%22bitops-bitwise-and%22:%5B3,3,4,3,5%5D,%22bitops-nsieve-bits%22:%5B6,7,7,7,8%5D,%22controlflow-recursive%22:%5B2,4,3,4,4%5D,%22crypto-aes%22:%5B12,13,15,13,12%5D,%22crypto-md5%22:%5B5,6,4,5,4%5D,%22crypto-sha1%22:%5B4,4,4,4,4%5D,%22date-format-tofte%22:%5B16,19,17,16,15%5D,%22date-format-xparb%22:%5B14,21,15,14,13%5D,%22math-cordic%22:%5B7,7,7,6,7%5D,%22math-partial-sums%22:%5B12,12,13,13,13%5D,%22math-spectral-norm%22:%5B6,4,4,6,5%5D,%22regexp-dna%22:%5B11,13,13,11,13%5D,%22string-base64%22:%5B9,10,9,10,9%5D,%22string-fasta%22:%5B14,16,15,12,11%5D,%22string-tagcloud%22:%5B22,23,21,22,21%5D,%22string-unpack-code%22:%5B32,33,33,35,32%5D,%22string-validate-input%22:%5B13,14,14,13,17%5D%7D">SunSpider MacBook Pro</a></p>
+
+<h4>V8 Google :</h4>
+
+<p>Score: 2387</p>
+
+<p>Richards: 3056</p>
+
+<p>DeltaBlue: 2197</p>
+
+<p>Crypto: 2121</p>
+
+<p>RayTrace: 3059</p>
+
+<p>EarleyBoyer: 2521</p>
+
+<p>RegExp: 948</p>
+
+<p>Splay: 4246</p>
+
+<h2>Téléchargement</h2>
+
+<p>On peut compléter ces tests par un test de téléchargement d'un fichier js de 1 Mo: <a href="http://www.stevesouders.com/blog/2010/07/12/mobile-cache-file-sizes/">Mobile cache file sizes</a>, sachant que l'iPhone 3G a du wifi 802.11g et l'iPad et le MacBook Pro ont du wifi 802.11n, donc 4 fois plus rapide.</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Benchmark javascript comparatif iPhone 3G, iPad, MacBook Pro/Safari You can put your results in comments. Vous pouvez mettre vos résultats dans les commentaires. Summary : SunSpider : url : http://www2.webkit.org/perf/sunspider-0.9/sunspider.html...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Jul 13 10:16:00 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>benchmark-javascript-comparatif-iphone-3g-ipa</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

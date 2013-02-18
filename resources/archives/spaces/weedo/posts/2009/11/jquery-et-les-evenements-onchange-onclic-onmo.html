@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2009/12/la-maniere-la-plus-simple-pour-faire-passer-u.html">Previous</a>
+&nbsp; 
+<a href="../../../index-8.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2009/11/config-de-lappli.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>jQuery et les évenements (onchange, onclic, onmouseover)</h3>
+<div class='post_info'>
+<span class='post_time'>November 29 2009,  3:29 PM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>jQuery propose une solution pour &eacute;viter de m&eacute;langer javascript et html :&nbsp;</p>
+<p />
+<div>Au lieu de faire un&nbsp;</div>
+<p />
+<div>&lt;?php echo $form['pret_mensualite1']-&gt;render(array('class' =&gt; 'money',<strong>'onchange'=&gt;'FormatMyNombre(this);</strong>')); ?&gt; &euro;<p /></div>
+<div>on peut laisser l'input tranquille et &eacute;crire, dans la partie javascript :&nbsp;</div>
+<p />
+<p />
+<div>&lt;script language="Javascript" type="text/javascript"&gt;<br />&nbsp;&nbsp; &nbsp;//&lt;![CDATA[<br />&nbsp;jQuery(document).ready(function(){<p />&nbsp;&nbsp; &nbsp;<strong>&nbsp;&nbsp; &nbsp;jQuery("#id_input").change(function () {<br />&nbsp;&nbsp; &nbsp; &nbsp;FormatMyNombre(jQuery(this));<br />&nbsp;&nbsp; &nbsp;});<br /></strong>&nbsp;&nbsp;});<br />....</div>
+<p />
+<div>
+<div>Idem par exemple pour les effets hover sur les images.</div>
+<p />
+<div>=&gt; A utiliser dor&eacute;navant.</div>
+<p />
+</div></div>
+<div class='post_responses'>
+<h4>545 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

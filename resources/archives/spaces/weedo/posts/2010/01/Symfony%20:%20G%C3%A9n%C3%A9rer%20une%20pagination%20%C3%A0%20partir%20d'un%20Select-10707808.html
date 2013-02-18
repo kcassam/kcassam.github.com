@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/01/Prot%C3%A9ger%20l'acc%C3%A8s%20%C3%A0%20un%20r%C3%A9pertoire%20par%20une%20authentification%20apache-10715597.html">Previous</a>
+&nbsp; 
+<a href="../../../index-6.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/PHP%20Code%20Optimization%20Tips-10705350.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Symfony : Générer une pagination à partir d'un Select</h3>
+<div class='post_info'>
+<span class='post_time'>January 28 2010,  3:23 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Voici comment générer automatiquement une pagination à partir d&#39;une requête Select :<br />La tête d&#39;une requête SELECT normale, qui sélectionne tous les éléments de la table Faq et les classe par ID :<p /><code>
+ 
+&lt;div&gt;$c = new Criteria();&lt;/div&gt;&lt;div&gt;$c-&gt;addAscendingOrderByColumn(FaqItemPeer::ID);&lt;/div&gt;$this-&gt;faqItem = FaqItemPeer::doSelect($c);;&lt;div&gt;
+&lt;div&gt;&lt;div&gt;</code><p /><div>La pagination dans Symfony se fait via la classe&nbsp;sfPropelPager, et la requête Select donne :</div> <p /><div><code>&lt;/div&gt;&lt;div&gt;&lt;div&gt;$c = new Criteria();&lt;/div&gt;&lt;div&gt;$c-&gt;addAscendingOrderByColumn(FaqItemPeer::ID);&lt;/div&gt;&lt;div&gt;$pager = new sfPropelPager(&#39;FaqItem&#39;, 2); //Déclaration de sfPropelPager en lui précisant la classe sur laquelle travailler (ici FaqItem) et le nombre d&#39;éléments par page (ici 2).&lt;/div&gt; &lt;div&gt;$pager-&gt;setCriteria($c); //On donne le critère à manger au Pager.&lt;/div&gt;&lt;div&gt;$pager-&gt;setPage($this-&gt;getRequestParameter(&#39;page&#39;, 1));&lt;/div&gt;&lt;div&gt;$pager-&gt;init();&lt;/div&gt;&lt;div&gt;$this-&gt;pager = $pager; //On peut maintenant utiliser $pager dans le template, qui est un tableau contenant deux éléments, qui diffèrent selon la page sur laquelle on se trouve.&lt;/div&gt; &lt;/div&gt;&lt;div&gt;</code></div><p /><div>Dans mon template :</div><p /><div><code>&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;?php foreach ($pager-&gt;getResults() as $faqItem): ?&gt;&lt;/div&gt;&lt;div&gt;&nbsp;&nbsp; &lt;div class=&quot;faqItem&quot;&gt;&lt;/div&gt; &lt;div&gt;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;	&lt;/span&gt;&lt;h2 class=&quot;champTitre&quot;&gt;&lt;?php echo $faqItem-&gt;getTitre(); ?&gt;&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;	&lt;/span&gt;&lt;div class=&quot;champQuestion&quot;&gt;&lt;span class=&quot;questionQuote&quot;&gt;&#8223;&lt;/span&gt;&lt;?php echo $faqItem-&gt;getQuestion(); ?&gt;&lt;/div&gt;&lt;/div&gt; &lt;div&gt;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;champReponse&quot;&gt;&lt;?php echo $faqItem-&gt;getReponse(); ?&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&nbsp;&nbsp; &lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;?php endforeach ?&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;</code></div><p /> <div> Et pour finir, les liens de la pagination à placer où on veut dans le template :</div><p /><div><code>&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div class=&quot;pagination&quot;&gt;&lt;/div&gt;&lt;div&gt;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;	&lt;/span&gt;&lt;?php if ($pager-&gt;haveToPaginate()):&nbsp;&lt;/div&gt; &lt;div&gt;&nbsp;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;echo link_to(&#39;&amp;laquo; &#39;, &#39;faq/index?page=&#39;.$pager-&gt;getFirstPage(), array(&#39;wdBrouillage&#39; =&gt; false));&lt;/div&gt;&lt;div&gt;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;echo link_to(&#39;&amp;lt; &#39;, &#39;faq/index?page=&#39;.$pager-&gt;getPreviousPage(), array(&#39;wdBrouillage&#39; =&gt; false));&lt;/div&gt; &lt;div&gt;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;$links = $pager-&gt;getLinks(); foreach ($links as $page):&nbsp;&lt;/div&gt;&lt;div&gt;&nbsp;&nbsp; &nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;			&lt;/span&gt;echo ($page == $pager-&gt;getPage()) ? $page : link_to($page, &#39;faq/index?page=&#39;.$page, array(&#39;wdBrouillage&#39; =&gt; false));&lt;/div&gt; &lt;div&gt;&nbsp;&nbsp; &nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;			&lt;/span&gt;if ($page != $pager-&gt;getCurrentMaxLink()): echo &#39; - &#39;; endif;&lt;/div&gt;&lt;div&gt;&nbsp;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;endforeach;&lt;/div&gt; &lt;div&gt;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;echo link_to(&#39; &amp;gt;&#39;, &#39;faq/index?page=&#39;.$pager-&gt;getNextPage(), array(&#39;wdBrouillage&#39; =&gt; false));&lt;/div&gt;&lt;div&gt;&nbsp;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;		&lt;/span&gt;echo link_to(&#39; &amp;raquo;&#39;, &#39;faq/index?page=&#39;.$pager-&gt;getLastPage(), array(&#39;wdBrouillage&#39; =&gt; false));&lt;/div&gt; &lt;div&gt;&lt;span class="Apple-tab-span" style="white-space:pre"&gt;	&lt;/span&gt;endif ?&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;</code></div><p /><div>Et ça donne ... tada!&nbsp;<a href="http://dev.rachat-creditdomus.com/rcd_dev.php/faq/index/?page=1">http://dev.rachat-creditdomus.com/rcd_dev.php/faq/index/?page=1</a></div> <div>Plus d&#39;infos :&nbsp;<a href="http://www.symfony-project.org/cookbook/1_2/en/pager">http://www.symfony-project.org/cookbook/1_2/en/pager</a><p />V </div></div>
+<div class='post_responses'>
+<h4>442 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Jan 28 2010,  3:27 AM</div>
+<div class='response_name'>Ballut Vincent responded:</div>
+</div>
+<div class='response_body'>Bah, tout pourri le code :(</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

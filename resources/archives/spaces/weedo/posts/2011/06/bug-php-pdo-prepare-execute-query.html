@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/07/snippet-pour-rendre-une-methode-applicable-a.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/06/generic-javascript-css-image-crop.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>bug php pdo prepare execute query</h3>
+<div class='post_info'>
+<span class='post_time'>June 30 2011,  7:35 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Je suis tombé sur un bug PDO qui m'a fait perdre beaucoup de temps :</p>
+
+<p>J'avais cette requête :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$query</span> = <span class="local-variable">$pdo</span>-&gt;prepare(<span class="local-variable">$sql</span>);
+<span class="local-variable">$result</span> = <span class="local-variable">$query</span>-&gt;execute();
+<span class="keyword">if</span> (<span class="local-variable">$result</span> === <span class="predefined-constant">false</span>) {
+    <span class="predefined">var_dump</span>(<span class="local-variable">$result</span>);
+    <span class="predefined">echo</span> <span class="local-variable">$pdo</span>-&gt;errorCode();
+    <span class="predefined">var_dump</span>(<span class="local-variable">$pdo</span>-&gt;errorInfo());
+}</pre></div>
+</div>
+
+
+<p>J'obtenais :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>(<span class="predefined-type">bool</span>)<span class="predefined-constant">false</span>
+<span class="integer">00000</span>
+<span class="predefined">Array</span>() <span class="comment">/* c'est à dire tableau vide, pas de message d'erreur */</span></pre></div>
+</div>
+
+
+<p><code>execute()</code> échouait mais sans code ni message d'erreur</p>
+
+<p>J'ai remplacé mon code par :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$result</span> = <span class="local-variable">$pdo</span>-&gt;query(<span class="local-variable">$sql</span>);
+<span class="keyword">if</span> (<span class="local-variable">$result</span> === <span class="predefined-constant">false</span>) {
+    <span class="predefined">var_dump</span>(<span class="local-variable">$result</span>);
+    <span class="predefined">echo</span> <span class="local-variable">$pdo</span>-&gt;errorCode();
+    <span class="predefined">var_dump</span>(<span class="local-variable">$pdo</span>-&gt;errorInfo());
+}</pre></div>
+</div>
+
+
+<p>Et là j'ai eu mon message erreur :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>(<span class="predefined-type">bool</span>)<span class="predefined-constant">false</span>
+<span class="integer">00000</span>
+[<span class="integer">0</span>] =&gt; <span class="integer">42</span><span class="constant">S02</span>
+[<span class="integer">1</span>] =&gt; <span class="integer">1146</span>
+[<span class="integer">2</span>] =&gt; <span class="constant">Table</span> <span class="string"><span class="delimiter">'</span><span class="content">xxxx</span><span class="delimiter">'</span></span> doesn<span class="string"><span class="delimiter">'</span><span class="content">t exist</span></span></pre></div>
+</div>
+
+
+<p>Conclusion, si votre <code>prepare()/execute()</code> ne fonctionne pas sans message d'erreur, remplacez le temporairement par un <code>query()</code> qui sera peut-être plus bavard.</p>
+
+<p>[EDIT] Ce bug est le même que celui décrit ici : <a href="https://bugs.php.net/bug.php?id=37285">https://bugs.php.net/bug.php?id=37285</a></p>
+
+<p>K.</p></div>
+<div class='post_responses'>
+<h4>684 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Mar 14 2012,  2:33 AM</div>
+<div class='response_name'>balap responded:</div>
+</div>
+<div class='response_body'>Pour un prepare execute, l'objet sur lequel porte l'erreur est PDOStatement, il faut utiliser la méthode errorInfo sur l'objet query<br />Je suis tombé sur un bug PDO qui m'a fait perdre beaucoup de temps :<p>$query = $pdo->prepare($sql);<br />$result = $query->execute();<br />if ($result === false) {<br />    var_dump($result);<br />    echo $pdo->errorCode();<br />    echo $query->errorCode();<br />    var_dump($pdo->errorInfo());<br />}</p></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

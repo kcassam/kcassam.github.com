@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/11/conventions-a-respecter-weedo-weedo123-123.html">Previous</a>
+&nbsp; 
+<a href="../../../index-2.html">Index</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Some tips of the week</h3>
+<div class='post_info'>
+<span class='post_time'>November 13 2010,  8:28 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><h3>How to log debug messages in firebug instead of using invasive alerts</h3>
+
+<h4>Firebug</h4>
+
+<p>Use javascript &amp; firebug like this :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>console.log(&quot;hello world&quot;)</pre></div>
+</div>
+
+
+<p>instead of this :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>alert(&quot;goodbye world&quot;)</pre></div>
+</div>
+
+
+<ul>
+<li>example : <a href="http://benalman.com/code/projects/javascript-debug/examples/debug/">http://benalman.com/code/projects/javascript-debug/examples/debug/</a></li>
+<li>tuto : <a href="http://michaelsync.net/2007/09/09/firebug-tutorial-logging-profiling-and-commandline-part-i">http://michaelsync.net/2007/09/09/firebug-tutorial-logging-profiling-and-comm...</a></li>
+<li>ref : <a href="http://getfirebug.com/logging">http://getfirebug.com/logging</a></li>
+</ul>
+
+
+<h4>Php</h4>
+
+<p>With php, you echo a javascript console.log or, you can use as well firephp which is a php class to send console.log via response headers and will not interfere with the content on your page.<br />
+<a href="http://www.firephp.org/">http://www.firephp.org/</a></p>
+
+<h4>Symfony built-in debugger</h4>
+
+<p><a href="https://github.com/symfony/symfony1-docs/blob/master/gentle-introduction/en/16-Application-Management-Tools.markdown">https://github.com/symfony/symfony1-docs/blob/master/gentle-introduction/en/1...</a></p>
+
+<h3>End Of Line with PHP</h3>
+
+<p>Please use the constant PHP_EOL instead of &ldquo;<code>\n</code>&rdquo;.<br />
+You can also check other useful PHP Predefined Constants : <a href="http://php.net/manual/en/reserved.constants.php">http://php.net/manual/en/reserved.constants.php</a></p>
+
+<h3>include a file</h3>
+
+<h4>Php</h4>
+
+<p>you can include files with <code>include()</code> or <code>require()</code><br />
+You can specify the path to the  <code>dirname( __FILE__ )</code> :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>require( dirname( __FILE__ ) . '/../../subdir/somefile.php' );</pre></div>
+</div>
+
+
+<p><a href="http://stackoverflow.com/questions/786542/including-files-without-having-to-specify-serverdocument-root">http://stackoverflow.com/questions/786542/including-files-without-having-to-s...</a>
+Do not use :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>require(../../subdir/somefile.php' );</pre></div>
+</div>
+
+
+<p>Because  if your file is an included file as well from another folder, this will not work (the path will be resolved from the parent).</p>
+
+<h4>Symfony</h4>
+
+<p>With Symfony, you can check thos pages to learn how this problem has been resolved :
+Configuration File Principles : <a href="https://github.com/symfony/symfony1-docs/blob/master/reference/en/03-Configuration-Files-Principles.markdown">https://github.com/symfony/symfony1-docs/blob/master/reference/en/03-Configur...</a><br />
+File structure : <a href="http://trac.symfony-project.org/wiki/Documentation/fr_FR/book/trunk/file_structure">http://trac.symfony-project.org/wiki/Documentation/fr_FR/book/trunk/file_stru...</a><br />
+include_partial : <a href="https://github.com/symfony/symfony1-docs/blob/master/gentle-introduction/en/07-Inside-the-View-Layer.markdown">https://github.com/symfony/symfony1-docs/blob/master/gentle-introduction/en/0...</a></p></div>
+<div class='post_responses'>
+<h4>1054 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

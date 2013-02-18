@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/12/gerer-ladresse-email-professionnel-dun-collab.html">Previous</a>
+&nbsp; 
+<a href="../../../index-2.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/12/filter-actions-with-admin-generator-in-symfon.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>easy install of hudson on MAC OS X</h3>
+<div class='post_info'>
+<span class='post_time'>December 17 2010,  8:20 AM</span>
+<span class='author'>&nbsp;by Stevan Gaillard</span>
+</div>
+</div>
+<div class='post_body'><p>&nbsp;</p>
+<p>Here are the steps to use hudson on mac, without installing a server like TomCat or GlassFish :</p>
+<p>download the latest hudson build : <a href="http://hudson-ci.org/latest/hudson.war">http://hudson-ci.org/latest/hudson.war</a></p>
+<p>create a shell file :</p>
+<p>#!/bin/sh<br />nohup java -jar /Users/stevan/downloads/hudson.war</p>
+<p>or any directory u want to put.</p>
+<p>Go to system preferences, accounts, then open the "Login Items" panel (in french "Ouverture")</p>
+<p>Then add the shell file in the list and, at your next login, hudson will start automatically.</p>
+<p>&nbsp;</p>
+<p>the only annoying thing is the terminal window wich have to stay open, if you close it, hudson will stop...</p>
+<p>&nbsp;</p>
+<p>That's all, your done with the installation of hudson, now you can start using it by accessing <a href="http://localhost:8080/">http://localhost:8080/</a> (by default)</p></div>
+<div class='post_responses'>
+<h4>6772 views and 3 responses</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Dec 18 2010,  7:10 AM</div>
+<div class='response_name'>Karim Cassam Chenaï liked this post.</div>
+</div>
+</li>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>May 27 2011,  2:16 AM</div>
+<div class='response_name'>Armagan Amcalar responded:</div>
+</div>
+<div class='response_body'>You're already using nohup, Hudson will not close if you close that terminal window.</div>
+</li>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Jan  4 2013,  1:46 PM</div>
+<div class='response_name'>Clau_botas responded:</div>
+</div>
+<div class='response_body'>What about using javaw instead of java to avoid the output</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

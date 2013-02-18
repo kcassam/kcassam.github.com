@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/04/weedo-cherche-un-developpeur-web-lamphtmlcssj.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/07/4-astuces-pour-recuperer-de-lespace-disque-su.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Empêcher la selection d'un élément HTML</h3>
+<div class='post_info'>
+<span class='post_time'>January 27 2011,  3:08 AM</span>
+<span class='author'>&nbsp;by Stevan Gaillard</span>
+</div>
+</div>
+<div class='post_body'><p style="padding-left: 30px;">&nbsp;</p>
+<p style="padding-left: 30px;">Souvent, lorsque l'on utilise des &eacute;l&eacute;ments d'interface graphique venant de librairies javascript telles que jQuery UI, on peut se retrouver confront&eacute; &agrave; des probl&egrave;mes de s&eacute;lection :</p>
+<p>&nbsp;</p>
+<ul>
+<li><span style="font-size: medium;">Par exemple avec <a href="http://sorgalla.com/jcarousel/">jcarousel</a>, si on double-clique sur les boutons de navigation, les images sont s&eacute;lectionn&eacute;es,</span></li>
+<li><span style="font-size: medium;">Lorsque l'on utilise une barre de d&eacute;filement, le m&ecirc;me probl&egrave;me peut appara&icirc;tre.</span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Pour l'emp&ecirc;cher, il suffit d'une simple r&egrave;gle css : (ici on emp&ecirc;che uniquement la s&eacute;lection d'image)</span></p>
+<blockquote class="posterous_medium_quote">img{<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-khtml-user-select: none;<br />&nbsp;&nbsp; &nbsp;-o-user-select: none;<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-moz-user-select: -moz-none;<br />&nbsp;&nbsp; &nbsp;-webkit-user-select: none;<br />&nbsp;&nbsp; &nbsp;}</blockquote>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p><span style="font-size: medium;">Le soucis est que les navigateurs ne se comportent pas de la m&ecirc;me fa&ccedil;on face &agrave; la s&eacute;lection par double-clic ou par d&eacute;filement, et vous aurez &agrave; adapter vos r&egrave;gles pour interdire la s&eacute;lection des &eacute;l&eacute;ments qui vous int&eacute;ressent.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Dans mon cas (emp&ecirc;cher une s&eacute;lection lors du clic sur les boutons de navigation), j'ai simplement fait :</span></p>
+<blockquote class="posterous_medium_quote">html{<br />/* safari s&eacute;lectionne &eacute;galement */<br />&nbsp;&nbsp; &nbsp;-webkit-user-select: none;<br />&nbsp;&nbsp; }<p />img{<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-khtml-user-select: none;<br />&nbsp;&nbsp; &nbsp;-o-user-select: none;<br />&nbsp;&nbsp; &nbsp;user-select: none;<br />&nbsp;&nbsp; &nbsp;-moz-user-select: -moz-none;<br />}</blockquote>
+<p><span style="font-size: medium;">&agrave; cause de safari, qui s&eacute;lectionnait des divs &eacute;galement.</span></p>
+<p>&nbsp;</p>
+<p><!--more--></p>
+<p><span style="text-decoration: underline; font-size: x-large;">Pour info :</span></p>
+<p>&nbsp;<span style="font-size: medium;">faire un</span></p>
+<blockquote class="posterous_short_quote">
+<p>html{<br /> -moz-user-select: -moz-none;<br /> }</p>
+</blockquote>
+<p><span style="font-size: medium;">n'emp&egrave;che pas firefox de s&eacute;lectionner certaines portions de texte sur un CTRL+a</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Le code permettant de ne rien s&eacute;lectionner ( le clic droit est toujours disponible) est :</span></p>
+<blockquote class="posterous_medium_quote">
+<p>html{<br />&nbsp;&nbsp; -moz-user-select: -moz-none;<br />&nbsp;&nbsp; -khtml-user-select: none;<br />&nbsp;&nbsp; -webkit-user-select: none;<br />&nbsp;&nbsp; -o-user-select: none;<br />&nbsp;&nbsp; user-select: none;<br />}<p /><br />::selection { background: transparent;color:inherit; }<br />::-moz-selection { background: transparent;color:inherit; }</p>
+</blockquote>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">Le deuxi&egrave;me bloc est surtout destin&eacute; &agrave; FF, mais il reste un point g&ecirc;nant :</span></p>
+<p><span style="font-size: medium;">Certains morceaux de texte peuvent encore &ecirc;tre s&eacute;lectionn&eacute;s, m&ecirc;me si &ccedil;a ne se voit pas, et lorsque vous cliquez dans la barre d'URL, le background des zones s&eacute;lectionn&eacute;es devient gris.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: medium;">D'apr&egrave;s mes recherches, il s'agit d'une propri&eacute;t&eacute; client, mais si vous savez comment r&eacute;soudre ce probl&egrave;me, </span></p>
+<p>&nbsp;</p>
+<p>n'h&eacute;sitez pas &agrave; partager !</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div>
+<div class='post_tags'>
+<h4>Tags</h4>
+<div class='post_tags_list'>css, html, jcarousel, jquery, selection</div>
+</div>
+<div class='post_responses'>
+<h4>8025 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>May  9 2011,  7:40 AM</div>
+<div class='response_name'>vb078 responded:</div>
+</div>
+<div class='response_body'>Tu aurais une idée pour que ça fonctionne sur des images? Si elles sont en position "absoute" ça doit pas fonctionner :) ?<p>Merci en tout cas, belle centralisation des infos !</p></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

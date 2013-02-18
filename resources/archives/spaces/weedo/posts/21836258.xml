@@ -1,0 +1,52 @@
+<item>
+	<title>Itérer récursivement sur un dossier de manière élégante en php</title>
+	<link>http://posterous.weedo.fr/iterer-recursivement-sur-un-dossier-de-manier</link>
+	<pubDate>Fri Jul 02 10:07:00 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/iterer-recursivement-sur-un-dossier-de-manier</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Pour itérer récursivement sur un dossier en php, vous pouvez utiliser le code suivant :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$iterator</span> = <span class="keyword">new</span> <span class="constant">RecursiveIteratorIterator</span>(<span class="keyword">new</span> <span class="constant">RecursiveDirectoryIterator</span>(<span class="local-variable">$pathname</span>), <span class="constant">RecursiveIteratorIterator</span>::<span class="constant">SELF_FIRST</span>);</pre></div>
+</div>
+
+
+<p>Exemple : Changer les droits des éléments inclus dans un dossier :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$pathname</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">/chemin/du/dossier/</span><span class="delimiter">&quot;</span></span>;
+
+<span class="local-variable">$iterator</span> = <span class="keyword">new</span> <span class="constant">RecursiveIteratorIterator</span>(<span class="keyword">new</span> <span class="constant">RecursiveDirectoryIterator</span>(<span class="local-variable">$pathname</span>), <span class="constant">RecursiveIteratorIterator</span>::<span class="constant">SELF_FIRST</span>); 
+
+<span class="keyword">foreach</span>(<span class="local-variable">$iterator</span> <span class="keyword">as</span> <span class="local-variable">$item</span>) { 
+  <span class="predefined">chmod</span>(<span class="local-variable">$item</span>, <span class="integer">0777</span>);
+}</pre></div>
+</div>
+
+
+<p>Classe, non ?</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Pour itérer récursivement sur un dossier en php, vous pouvez utiliser le code suivant : $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($pathname), RecursiveIteratorIterator::SELF_FIRST); Exemple : Changer les droits des é...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Jul 02 10:07:00 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

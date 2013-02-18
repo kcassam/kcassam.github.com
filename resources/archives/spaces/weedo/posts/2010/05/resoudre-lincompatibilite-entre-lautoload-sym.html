@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../index-5.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/05/Quelques%20recos%20pour%20la%20gestion%20des%20css-18856181.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Résoudre l'incompatibilité entre l'autoload symfony et les fichiers de backup</h3>
+<div class='post_info'>
+<span class='post_time'>May 19 2010,  8:43 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Si vous laissez un fichier de backup avec l'extension .php dans symfony, il risque d'être chargé à tort pas l'autoload symfony !<br />Les fichiers de backup ne doivent pas se terminer par .php mais, par exemple, par php.backup<br />exemple valide : nomdufichier-2010-05-19-135629-kcc.php.backup et non nomdufichier-2010-05-19-135629-kcc.php</p>
+<p>En parallèle, rajouter l'instruction suivant dans les fichiers .htaccess, pour éviter que ces fichiers de backup soient accessibles depuis l'extérieur :</p>
+<p><code>&lt;FilesMatch "\.backup$"&gt;
+Order Allow,Deny
+Deny from all
+&lt;/FilesMatch&gt;</code></p>
+<p>En effet, dans certaines configurations, ces fichiers .backup pourraient apparaitre comme du texte, donnant ainsi accès à votre code source dans le meilleur des cas et aux login/mots de passe de vos bdd dans le pire...</p>
+<p>ref autoload symfony : <a href="http://www.symfony-project.org/book/1_2/19-Mastering-Symfony-s-Configuration-Files#chapter_19_extending_the_autoloading_feature">http://www.symfony-project.org/book/1_2/19-Mastering-Symfony-s-Configuration-...</a><br />ref htaccess FilesMatch : <a href="http://www.askapache.com/htaccess/using-filesmatch-and-files-in-htaccess.html">http://www.askapache.com/htaccess/using-filesmatch-and-files-in-htaccess.html</a></p>
+<div> </div></div>
+<div class='post_responses'>
+<h4>432 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Jan  6 2011,  4:06 AM</div>
+<div class='response_name'>Karim Cassam Chenaï responded:</div>
+</div>
+<div class='response_body'>2 autres solutions pour éviter qu'un fichier dont l'extension n'est pas php puisse apparaitre en clair : <br />- Placer ce fichier en dehors de www<br />- Ajouter .php après l'extension du fichier. Par exemple, options.ini devient options.ini.php ou bdd.yaml devient bdd.yaml.php.</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

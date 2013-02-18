@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/06/a-simpler-email-address-validator-for-zend.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/05/weedo-recrute-un-developpeur-web-lampsymfonyz.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Zend : Utiliser le router dans une classe (form/entity) sans avoir besoin de lui passer la vue</h3>
+<div class='post_info'>
+<span class='post_time'>June  7 2011,  5:24 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><a href="http://stackoverflow.com/questions/3288901/zend-form-setaction-using-named-routes">http://stackoverflow.com/questions/3288901/zend-form-setaction-using-named-ro...</a> <p /> // in your form <br />public function init() <br />{ <br /> $router = Zend_Controller_Front::getInstance()->getRouter(); <br /> $url = $router->assemble( <br /> array( <br /> 'paramterName0' => 'parameterValue0', <br /> 'paramterName1' => 'parameterValue1', <br /> ), <br /> 'routeName' <br /> ); <p />  $this->setAction($url); <br /> ... <br />} <p /> ou <p /> // in your form public function init() <br />{ <br /> $url = Zend_Layout::getMvcInstance()->getView()->url(array(), 'routeName'; <br /> $this->setAction($url); <br /> ... <br />}</div>
+<div class='post_responses'>
+<h4>277 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

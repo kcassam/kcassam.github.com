@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/07/bonnes-pratiques-petits-projets-php-sans-fram.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/06/bug-php-pdo-prepare-execute-query.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Snippet pour rendre une méthode applicable à une collection d'éléments</h3>
+<div class='post_info'>
+<span class='post_time'>July  2 2011,  8:25 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><h4>Snippet pour rendre myFunction applicable à une collection</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="comment">/*
+ * myFunctionArray function.      
+ * Replace 'myFunction' with the name of the function you want to use. Keep the quotes.      
+ * @param array $array, collection of elements to pass to the function      
+ * @return array of elements which have been processed by the function      
+ */</span>
+
+<span class="keyword">function</span> <span class="function">myFunctionArray</span>(<span class="predefined">array</span> <span class="local-variable">$array</span>) {
+    <span class="keyword">return</span> <span class="predefined">array_map</span>(<span class="predefined">array</span>(<span class="local-variable">$this</span>, <span class="string"><span class="delimiter">'</span><span class="content">myFunction</span><span class="delimiter">'</span></span>), <span class="local-variable">$array</span>);
+}</pre></div>
+</div>
+
+
+<h4>Snippet d'une fonction qui rend n'importe quelle méthode de l'objet applicable à une collection, en passant le nom de la fonction en paramètre</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="comment">/*
+ * anyFunctionArray function.
+ * Pour une méthode static, remplacer `$this` par `self`
+ * @param string $functionName, Name of the function to call
+ * @param array $array, collection of elements to pass to the function
+ * @return array of elements which have been processed by the function
+ */</span>
+
+<span class="keyword">function</span> <span class="function">anyFunctionArray</span>(<span class="local-variable">$functionName</span>, <span class="predefined">array</span> <span class="local-variable">$array</span>) {
+    <span class="keyword">return</span> <span class="predefined">array_map</span>(<span class="predefined">array</span>(<span class="local-variable">$this</span>, <span class="local-variable">$functionName</span>), <span class="local-variable">$array</span>);
+}</pre></div>
+</div>
+
+
+<p>On peut aussi utiliser une boucle foreach, mais c'est moins élégant.</p></div>
+<div class='post_responses'>
+<h4>444 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

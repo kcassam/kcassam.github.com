@@ -1,0 +1,32 @@
+<item>
+	<title>Javascript dans un script Ajax</title>
+	<link>http://posterous.weedo.fr/javascript-dans-un-script-ajax</link>
+	<pubDate>Wed Jan 06 05:44:13 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Ballut Vincent]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/javascript-dans-un-script-ajax</guid>
+	<description></description>
+	<content:encoded><![CDATA[Je continue sur ma série Ajax... <p /> Par défaut, les scripts Javascripts présents dans un template généré <br />par une requête en Ajax sont ignorés (pour des raisons de sécurité). <br />Pour les activer, il suffit d'ajouter l'option script = true : <p /> <p><a href="https://gist.github.com/270280">https://gist.github.com/270280</a></p><p /> Attention, si le Javascript est activé, il sera bien exécuté, mais il <br />n'apparaîtra pas dans Firebug ou autre... Nul mais normal d'après la <br />doc : "Even if you enable script execution for the remote response, <br />you won't actually see the scripts in the remote code, if you use a <br />tool to check the generated code. The scripts will execute but will <br />not appear in the code. Although peculiar, this behavior is perfectly <br />normal." <p /> La suite au prochain épisode ! <p />  <br />V]]></content:encoded>
+	<excerpt:encoded><![CDATA[Je continue sur ma série Ajax... Par défaut, les scripts Javascripts présents dans un template généré par une requête en Ajax sont ignorés (pour des raisons de sécurité). Pour les activer, il suffit d'ajouter l'option script = true : Attention, si...]]></excerpt:encoded>	
+
+	<wp:post_date>Wed Jan 06 05:44:13 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

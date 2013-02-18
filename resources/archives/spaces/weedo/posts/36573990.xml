@@ -1,0 +1,47 @@
+<item>
+	<title>Filter actions with admin generator in symfony and Doctrine</title>
+	<link>http://posterous.weedo.fr/filter-actions-with-admin-generator-in-symfon</link>
+	<pubDate>Thu Dec 16 07:13:00 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Stevan Gaillard]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/filter-actions-with-admin-generator-in-symfon</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;">You can directly access to precise data in the admin pages by using the filter action wich is automaticaly generated with build-all option:</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">if you try a request like: <a target="_blank"><span style="color: #808080;"><strong>http://localhost/<span style="color: #ff6600;">myApp.php</span>/<span style="color: #ff6600;">myModule</span>/filter/action?<span style="color: #ff6600;">tableName</span>_filters[<span style="color: #ff6600;">attribute</span>]=value</strong></span></a></p>
+<p style="text-align: left;">You will get your page filtered.</p>
+<p style="text-align: left;">In my case for the module soinsFormule, and filtering on the formule_id it gives :</p>
+<p style="text-align: left;"><a target="_blank"><span style="color: #808080;"><strong>http://localhost/<span style="color: #ff6600;">backend_dev.php</span>/<span style="color: #ff6600;">soinsFormules</span>/filter/action?<span style="color: #ff6600;">soins_formule</span>_filters[<span style="color: #ff6600;">formule_id</span>]=2</strong></span></a></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">with a schema.yml defined like that :</p>
+<p style="padding-left: 30px;"><span style="color: #808080;"><strong>SoinsFormule:</strong></span><br /><span style="color: #808080;"><strong>&nbsp; tableName: soins_formule</strong></span><br /><span style="color: #808080;"><strong>&nbsp; columns:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp; soin_id:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type: integer(4)</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp; formule_id:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</strong></span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">It is very usefull when you got a 1:N relation between objects, in my case a Formule have 40 Soins, so i can access to the Soins page directly from a link on the Formule Page.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">If you've got CSRF protection enabled in the app, you'll need to  disable it, or this method won't work. This is set in  apps/myApp/config/settings.yml. There will be a setting in there  called csrf_secret - it should be set to false to disable csrf.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">And you, why do you use filter's actions ?</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[You can directly access to precise data in the admin pages by using the filter action wich is automaticaly generated with build-all option: if you try a request like: http://localhost/myApp.php/myModule/filter/action?tableName_filters[attribute]=v...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Dec 16 07:13:00 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>filter-actions-with-admin-generator-in-symfon</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

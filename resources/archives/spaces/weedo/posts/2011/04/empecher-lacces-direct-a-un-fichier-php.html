@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/03/ou-placer-le-code-javascript-dans-une-page-ht.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/04/weedo-cherche-un-developpeur-web-lamphtmlcssj.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Empêcher l'accès direct à un fichier php</h3>
+<div class='post_info'>
+<span class='post_time'>April  6 2011,  7:42 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Si vous voulez qu'un fichier php ne soit jamais appelé directement via un navigateur mais seulement par des include par exemple, vous pouvez utiliser la solution suivante :</p>
+
+<p>Définir une fonction :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>function forbidDirectAccess($file) {
+    $self = getcwd().&quot;/&quot;.trim($_SERVER[&quot;PHP_SELF&quot;], &quot;/&quot;);
+    (substr_compare($file, $self, -strlen($self)) != 0) or die('Restricted access');
+}</pre></div>
+</div>
+
+
+<p>Appeler la fonction depuis le fichier à protéger :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>forbidDirectAccess(__FILE__);</pre></div>
+</div>
+
+
+<p>Cette solution a l'avantage d'être 100% php, invariable &amp; autonome et compatible http et cli.</p>
+
+<p>Pour approfondir : <a href="http://stackoverflow.com/questions/409496/prevent-direct-access-to-a-php-include-file">http://stackoverflow.com/questions/409496/prevent-direct-access-to-a-php-incl...</a></p></div>
+<div class='post_responses'>
+<h4>4411 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

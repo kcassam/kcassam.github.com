@@ -1,0 +1,107 @@
+<item>
+	<title>Mac OS X 10.6 : Mémento des étapes d'une migration manuelle</title>
+	<link>http://posterous.weedo.fr/mac-os-x-106-memento-des-etapes-dune-migratio</link>
+	<pubDate>Fri Apr 29 03:27:00 -0700 2011</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/mac-os-x-106-memento-des-etapes-dune-migratio</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p><em>Dans la plupart des cas, sous Mac OS X, pour changer de machine ou de disque dur, il est inutile de faire une migration manuelle et il suffit d'utiliser l'Assistant de Migration dans le dossier Utilitaires. Ce mémento s'adresse à ceux qui souhaitent faire une migration manuellement sans passer par l'Assistant de Migration.</em></p>
+
+<ul>
+<li>Débrancher les DD externes</li>
+<li>Installer Mac OS X 10.6 à partir du DVD, clé USB Apple ou de votre disque d'installation Apple.</li>
+<li>Renseigner votre  identifiant Apple (utilisé pour iTunes ou Mobile me)</li>
+<li>Aller dans Préférences Système/Économie d'énergie et modifier le réglage Ordinateur en veille : régler sur &lsquo;Jamais&rsquo;</li>
+<li>Faire la mise à jour combo (&ndash;> 10.6.last)</li>
+<li>Configurer les préférences du Finder</li>
+<li>Configurer le nom de la machine dans les préférences systèmes/partage</li>
+</ul>
+
+
+<p>PIM : Comme pour l'iPhone, ces données sont gérables sur le cloud. Ne pas les migrer donc, configurer simplement vos comptes.</p>
+
+<ul>
+<li>Carnet d'adresses : Mon carnet d'adresse est sur mon compte gmail => Préférences Synchroniser avec Google</li>
+<li>iCal : Préférences, ajouter un compte google</li>
+<li>Mail : Créer votre compte google (IMAP). Supprimer les RSS créés automatiquement</li>
+</ul>
+
+
+<p>Mots de passe (keychain access/trousseau d'accès)</p>
+
+<ul>
+<li>Ouvrir votre disque de sauvegarde à cette adresse: <code>Nom_du_disque_de_sauvegarde/Utilisateurs/votredossier/Bibliothèque/</code></li>
+<li>Glisser le dossier &ldquo;Keychains&rdquo; sur le bureau.</li>
+<li>Ouvrir votre disque cible tout neuf et glisser le dossier &ldquo;Keychains&rdquo; à cet endroit : <code>Nom_du_disque_tout_neuf/Utilisateurs/votredossier/Bibliothèque/</code></li>
+</ul>
+
+
+<p>Copier/coller le contenu des dossiers du compte</p>
+
+<ul>
+<li>~/Bureau</li>
+<li>~/Documents</li>
+<li>~/Images</li>
+<li>~/Musique</li>
+<li>~/Videos</li>
+<li>~/Sites</li>
+<li>/Users/Shared/</li>
+</ul>
+
+
+<p>iTunes</p>
+
+<ul>
+<li>vérifier ou choisir dossier itunes music</li>
+<li>Choisir Fichier/Bibliothèque/Organiser</li>
+<li><p>lire <a href="http://support.apple.com/kb/HT1449?viewlocale=fr_FR">http://support.apple.com/kb/HT1449?viewlocale=fr_FR</a></p></li>
+<li><p>Activer Time Machine</p></li>
+</ul>
+
+
+<p>Applis : Comme sur iphone, les applis qui avaient été installées avec l'app store devraient être téléchargeables gratuitement si vous avez bien gardé votre compte en ligne App Store. : là aussi, on est dans le cloud
+Quelques applis indispensables :</p>
+
+<ul>
+<li>iPhoto : J'avais la version 8. Plutot que de réinstaller une vieille version, j'ai installé la version 9.1.1 avec l'App Store</li>
+<li>Dropbox, configuer le compte, les fichiers se synchronisent</li>
+<li>1password, faire le lien avec son fichier keychain (1password + dropbox fonctionnent très bien ensemble)</li>
+<li>Spotify, configurer son compte</li>
+<li>Installer easyfind</li>
+<li>Installer airfoil</li>
+<li>Configurer iChat</li>
+</ul>
+
+
+<p>Rebrancher les DD externes.</p>
+
+<p>Sources :</p>
+
+<ul>
+<li><a href="http://www.procata.com/blog/archives/2007/02/16/how-to-transfer-mac-os-x-application-data-between-computers/">http://www.procata.com/blog/archives/2007/02/16/how-to-transfer-mac-os-x-appl...</a></li>
+<li><a href="http://cuk.ch/articles/3230">http://cuk.ch/articles/3230</a></li>
+</ul>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Dans la plupart des cas, sous Mac OS X, pour changer de machine ou de disque dur, il est inutile de faire une migration manuelle et il suffit d'utiliser l'Assistant de Migration dans le dossier Utilitaires. Ce mémento s'adresse �  ceux qui souhai...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Apr 29 03:27:00 -0700 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>mac-os-x-106-memento-des-etapes-dune-migratio</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

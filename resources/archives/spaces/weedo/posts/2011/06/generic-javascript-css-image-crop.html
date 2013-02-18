@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/06/bug-php-pdo-prepare-execute-query.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/06/a-simpler-email-address-validator-for-zend.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Generic JavaScript CSS Image Crop</h3>
+<div class='post_info'>
+<span class='post_time'>June 24 2011,  4:49 AM</span>
+<span class='author'>&nbsp;by Stevan Gaillard</span>
+</div>
+</div>
+<div class='post_body'><p>Dans le cadre de la r&eacute;alisation d'un site web j'ai eu pour mission de cropper des images dont je ne pouvais conna&icirc;tre la taille par avance.</p>
+<p>Le Layout &eacute;tait fix&eacute;, il nous fallait donc afficher les images toujours &agrave; la m&ecirc;me taille, et &agrave; la m&ecirc;me proportion, quelle que soit les proportions d'origine de l'image (par exemple des images en portrait devait &ecirc;tre affich&eacute;e en paysage...)</p>
+<p>&nbsp;</p>
+<p>La premi&egrave;re solution abord&eacute;e fut d'effectuer ce crop en php/css gr&acirc;ce &agrave; la fonction getimagesize.</p>
+<p>Seulement, quand le nombre d'images &agrave; cropper dans la page commence &agrave; monter (mettons, un vingtaine), les performances diminuent de mani&egrave;re flagrante si les images ne sont pas h&eacute;berg&eacute;es sur le m&ecirc;me serveur.</p>
+<p>&nbsp;</p>
+<p>Ainsi je me suis donc tourn&eacute; vers la r&eacute;dation d'une fonction javascript impl&eacute;mentant le m&ecirc;me algorithme, d'abord en utilisant le framework jQuery, puis en &eacute;crivant une fonction uniquement en javascript.</p>
+<p>Ainsi, aucune d&eacute;pendance n'est n&eacute;cessaire pour ex&eacute;cuter ce script, il peut commencer &agrave; s'ex&eacute;cuter d&egrave;s le chargement du DOM, sans attendre que jQuery soit charg&eacute;. Ainsi il n'y a pas de sacade entre l'instant o&ugrave; les images sont charg&eacute;es, et celui o&ugrave; le script est ex&eacute;cut&eacute;e.</p>
+<p>pour utiliser ce script 2 choses sont n&eacute;cessaires pour le moment :</p>
+<p>Les balises images doivent contenir une classe particuli&egrave;re, et une div doit entourer cette image :</p>
+<blockquote>
+<p style="padding-left: 30px;">&lt;div style<span style="color: #000000;">="overflow:hidden;position:relative;</span><span style="color: #ff0000;"><strong>width:630px;height:356px;</strong></span>"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img <span style="color: #000000;">style="display:block;position:absolute;" <strong><span style="color: #ff0000;">c</span></strong></span><span style="color: #ff0000;"><strong>lass="toCrop" </strong><span style="color: #000000;">src="chemin-vers-l'image"</span></span>/&gt;<br />&lt;/div&gt;</p>
+</blockquote>
+<p><strong><span style="color: #ff0000;">Les informations en rouge</span></strong><span style="color: #000000;"> sont n&eacute;cessaires au Crop :</span></p>
+<p><span style="color: #000000;">- width repr&eacute;sente la largeur de l'image, telle que voulez la voir sur la page</span></p>
+<p><span style="color: #000000;">- height repr&eacute;sente la hauteur de l'image, telle que voulez la voir sur la page</span></p>
+<p><span style="color: #000000;">- class est libre, et sera utilis&eacute; lors de l'appel de la fonction javascript</span></p>
+<p>&nbsp;</p>
+<p><span style="color: #000000;">Notez que vous pourrez tout &agrave; fait utiliser des classes css plut&ocirc;t que de mettre les informations de style directement dans les balises.</span></p>
+<p><span style="color: #000000;">ensuite pour effectuer le crop, il suffit d'inclure dans votre page ce script : </span></p>
+<p><span style="color: #000000;"><br /></span></p>
+<blockquote>
+<p>cropImage("<strong><span style="color: #ff0000;">toCrop</span></strong>");</p>
+<p>function cropImage(cssClass){<br />&nbsp;&nbsp;&nbsp; var doc =window.document;<br />&nbsp;&nbsp;&nbsp; var ll = window.document.images.length;<br />&nbsp;&nbsp;&nbsp; for (var i=0;i&lt;ll;i++){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var img = doc.images[i];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (img.className===cssClass){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var imagesize = new Array();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imagesize[0] = img.naturalWidth;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imagesize[1] = img.naturalHeight;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var sizes = new Array();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizes[0] = parseFloat(img.parentNode.style.width.substring(0,img.parentNode.style.width.length-2));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizes[1] = parseFloat(img.parentNode.style.height.substring(0,img.parentNode.style.height.length-2));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //L'index 0 contient la largeur. L'index 1 contient la hauteur.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (typeof(imagesize[0])=="undefined") {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; imagesize = sizes;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<p />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var rapportCible = sizes[0]/sizes[1];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var rapportSource = imagesize[0]/imagesize[1];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var marge = 0;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rapportSource&gt;rapportCible){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //crop horizontal<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; marge = (imagesize[0]/(imagesize[1]/sizes[1])-sizes[0])/2;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.left = '-'+marge+'px';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.height = sizes[1]+"px";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.clip = 'rect(auto,'+(marge+sizes[0])+'px,auto,'+marge+'px)';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }else if (rapportSource&lt;rapportCible){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //crop vertical<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; marge = (imagesize[1]/(imagesize[0]/sizes[0])-sizes[1])/2;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.top = '-'+marge+'px';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.width = sizes[0]+"px";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.clip = 'rect('+(marge)+'px,auto,'+(marge+sizes[1])+'px,auto)';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.height = sizes[1]+'px';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.style.width = sizes[0]+"px";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery(img).css({width:sizes[0]+'px',height:sizes[1]+'px'});<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //pas de crop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; } <br />}</p>
+</blockquote></div>
+<div class='post_responses'>
+<h4>2 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

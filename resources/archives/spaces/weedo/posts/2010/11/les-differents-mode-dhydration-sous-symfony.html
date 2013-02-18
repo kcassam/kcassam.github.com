@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/11/10-services-et-solutions-alternatives-a-labon.html">Previous</a>
+&nbsp; 
+<a href="../../../index-2.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/11/commande-find.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Les differents mode d'hydration sous symfony</h3>
+<div class='post_info'>
+<span class='post_time'>November 29 2010,  1:26 AM</span>
+<span class='author'>&nbsp;by fix</span>
+</div>
+</div>
+<div class='post_body'><p>Symfony permet de recuperer les resultats d'une requete de differentes
+manieres.
+Par default, il les recupere sous la forme d'objets.</p>
+
+<p>Pour changer le mode de recuperation des resultats de la requete, il faut
+passer un parametre a la methode <em>execute</em> de la <strong>Doctrine_Query</strong>.</p>
+
+<p>Les differents modes d'hydration peuvent etre:</p>
+
+<ol>
+<li>Doctrine::HYDRATE_RECORD &ndash;> celui par default</li>
+<li>Doctrine::HYDRATE_ARRAY &ndash;> retourne les resultats sous forme de
+tableau associatif. Peut etre utilise pour booster les performances.</li>
+<li>Doctrine::HYDRATE_SCALAR &ndash;> retourne les resultats de la requete dans
+un tableau associatif.</li>
+<li>Doctrine::HYDRATE_SINGLE_SCALAR &ndash;> retourne un seul champs.</li>
+<li>Doctrine::HYDRATE_NONE &ndash;> retourne un tableau avec index numerique.</li>
+</ol>
+
+
+<h4>Exemple</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$query</span> = <span class="constant">Doctrine_Query</span>::create()
+-&gt;select(<span class="string"><span class="delimiter">'</span><span class="content">t.id, t.name</span><span class="delimiter">'</span></span>)
+-&gt;from(<span class="string"><span class="delimiter">'</span><span class="content">Table t</span><span class="delimiter">'</span></span>)
+-&gt;where(<span class="string"><span class="delimiter">'</span><span class="content">t.condition &lt;&gt; 1</span><span class="delimiter">'</span></span>)
+-&gt;execute(<span class="constant">Doctrine</span>::<span class="constant">HYDRATE_SCALAR</span>);</pre></div>
+</div>
+
+
+<p>L'on peut egalement creer ses propres modes d'hydration si jamais on a un
+besoin specifique.</p></div>
+<div class='post_responses'>
+<h4>1781 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

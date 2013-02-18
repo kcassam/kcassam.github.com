@@ -1,0 +1,32 @@
+<item>
+	<title>Admin - générer une admin</title>
+	<link>http://posterous.weedo.fr/admin-generer-une-admin</link>
+	<pubDate>Thu Jan 07 05:55:27 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Ballut Vincent]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/admin-generer-une-admin</guid>
+	<description></description>
+	<content:encoded><![CDATA[Symfony peut créer une interface administration servant à gérer les enregistrements en base de données via quelques lignes de commandes simples. Avant tout, il nous faut déjà avoir configuré une base de donnée et une table (voir les billets sur la config BDD). En résumé, configurer une table pour Symfony revient à modifier le fichier schema.yml dans config. Symfony va de baser sur ce fichier pour générer l&#39;admin.<p /> Voici la table que j&#39;utilise :<p /><p><a href="https://gist.github.com/271232">https://gist.github.com/271232</a></p><p />Il faut ensuite commencer par créer l&#39;application qui contiendra toutes les pages (tous les modules) de l&#39;admin : backend. Je l&#39;ai déjà créé, mais voici la ligne de commande pour ça :<p /> <p><a href="https://gist.github.com/271233">https://gist.github.com/271233</a></p><p />Créons ensuite le module qui va nous servir à gérer la table &quot;Question&quot; :<p /><p><a href="https://gist.github.com/271234">https://gist.github.com/271234</a></p><p /> Mon module s&#39;appelle donc &quot;questions&quot;<p />Ce n&#39;est pas dans la doc, mais pour que tout fonctionne, il faut également saisir les lignes de commande suivantes, qui servent à créer certaines classes indispensables :<p /> <p><a href="https://gist.github.com/271235">https://gist.github.com/271235</a></p><p />Et voilà, on a maintenant une interface admin basique permettant de créer, supprimer, modifier et filtrer nos enregistrements. :)<p /> V]]></content:encoded>
+	<excerpt:encoded><![CDATA[Symfony peut créer une interface administration servant �  gérer les enregistrements en base de données via quelques lignes de commandes simples. Avant tout, il nous faut déj�  avoir configuré une base de donnée et une table (voir les billet...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Jan 07 05:55:27 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

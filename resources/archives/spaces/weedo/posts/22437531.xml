@@ -1,0 +1,57 @@
+<item>
+	<title>variables dans les templates html -&gt; back to basic</title>
+	<link>http://posterous.weedo.fr/variables-dans-les-templates-html-back-to-bas</link>
+	<pubDate>Fri Jun 10 06:05:00 -0700 2011</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/variables-dans-les-templates-html-back-to-bas</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Lorsque vous utilisez des variables dans des vues html, il faut faire attention aux caractères spéciaux html : quote, double quote, &lt; >, etc., qui pourraient être contenus dans la variable et interférer avec le html</p>
+
+<p>Exemple, cas réel :
+<code>a href = '$variable'</code></p>
+
+<p>avec <code>$variable</code> qui contient <code>COTE D'AZUR</code>&hellip; => #fail (cas réel).</p>
+
+<p>Donc, au niveau de la vue :</p>
+
+<ul>
+<li>Passez toujours vos variables dans la fonction <code>htmlspecialchars($variable, ENT_COMPAT ,'UTF-8')</code></li>
+<li>Utilisez toujours UTF-8 quand c'est possible.</li>
+<li>Préférez les double quotes dans la vue : <code>a href = "$variable"</code> plutôt que <code>a href = '$variable'</code> car les doubles quotes sont moins fréquents dans l'écrit (en français en tout cas). Cela permet aussi d'utiliser htmlspecialchars ou htmlentities avec le deuxième paramètre par défaut.</li>
+</ul>
+
+
+<p>Snippet :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$converted</span> = <span class="predefined">htmlspecialchars</span>(<span class="local-variable">$variable</span>, <span class="predefined-constant">ENT_COMPAT</span> ,<span class="string"><span class="delimiter">'</span><span class="content">UTF-8</span><span class="delimiter">'</span></span>);</pre></div>
+</div>
+
+
+<p>link :<a href="http://php.net/manual/en/function.htmlspecialchars.php">php.net/htmlspecialchars</a></p>
+
+<p>K.</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Lorsque vous utilisez des variables dans des vues html, il faut faire attention aux caractères spéciaux html : quote, double quote, , etc., qui pourraient être contenus dans la variable et interférer avec le html Exemple, cas réel : a href = '$var...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Jun 10 06:05:00 -0700 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>variables-dans-les-templates-html-back-to-bas</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

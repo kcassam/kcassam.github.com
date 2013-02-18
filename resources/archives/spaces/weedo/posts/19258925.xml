@@ -1,0 +1,32 @@
+<item>
+	<title>tag canonical, intérêt et utilisation</title>
+	<link>http://posterous.weedo.fr/tag-canonical-interet-et-utilisation</link>
+	<pubDate>Wed May 26 03:25:45 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/tag-canonical-interet-et-utilisation</guid>
+	<description></description>
+	<content:encoded><![CDATA[Il y a un moyen simple de faire en sorte que Google indexe tout le temps la meme page quelques soient les paramètres : le tag CANONICAL <p /> Sur la homepage, vous mettez dans le head : <br />[code][code] <br />Comme ça, si Google arrive sur http://weedo.fr?parametre=bidon, il saura que la page à indexer est celle dans le canonical. Sinon il y a toujours la possibilité de faire une redirection 301 classique, mais le CANONICAL a l'avantage d'avoir été inventé par Google, et c'est en train de devenir une norme, donc tout bénef. <p /> Bien sûr, cela peut être utilisé sur n'importe quelle page, pour virer les paramètres bidons, pas uniquement sur la home. <p /> Plus d'infos:http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html <br /><a href="http://www.goopilation.com/2009/10/google-webmasters-seo-referencement-duplicate-content-traitement-parametres.html">http://www.goopilation.com/2009/10/google-webmasters-seo-referencement-duplic...</a> <p /> K.]]></content:encoded>
+	<excerpt:encoded><![CDATA[Il y a un moyen simple de faire en sorte que Google indexe tout le temps la meme page quelques soient les paramètres : le tag CANONICAL Sur la homepage, vous mettez dans le head : [code][code] Comme ça, si Google arrive sur http://weedo.fr?param...]]></excerpt:encoded>	
+
+	<wp:post_date>Wed May 26 03:25:45 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

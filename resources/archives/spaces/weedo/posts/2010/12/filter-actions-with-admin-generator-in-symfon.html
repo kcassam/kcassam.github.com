@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/12/easy-install-of-hudson-on-mac-os-x.html">Previous</a>
+&nbsp; 
+<a href="../../../index-2.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/11/recrutement-developpeur-ios-en-stage-tag-obje.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Filter actions with admin generator in symfony and Doctrine</h3>
+<div class='post_info'>
+<span class='post_time'>December 16 2010,  7:13 AM</span>
+<span class='author'>&nbsp;by Stevan Gaillard</span>
+</div>
+</div>
+<div class='post_body'><p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;">You can directly access to precise data in the admin pages by using the filter action wich is automaticaly generated with build-all option:</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">if you try a request like: <a target="_blank"><span style="color: #808080;"><strong>http://localhost/<span style="color: #ff6600;">myApp.php</span>/<span style="color: #ff6600;">myModule</span>/filter/action?<span style="color: #ff6600;">tableName</span>_filters[<span style="color: #ff6600;">attribute</span>]=value</strong></span></a></p>
+<p style="text-align: left;">You will get your page filtered.</p>
+<p style="text-align: left;">In my case for the module soinsFormule, and filtering on the formule_id it gives :</p>
+<p style="text-align: left;"><a target="_blank"><span style="color: #808080;"><strong>http://localhost/<span style="color: #ff6600;">backend_dev.php</span>/<span style="color: #ff6600;">soinsFormules</span>/filter/action?<span style="color: #ff6600;">soins_formule</span>_filters[<span style="color: #ff6600;">formule_id</span>]=2</strong></span></a></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">with a schema.yml defined like that :</p>
+<p style="padding-left: 30px;"><span style="color: #808080;"><strong>SoinsFormule:</strong></span><br /><span style="color: #808080;"><strong>&nbsp; tableName: soins_formule</strong></span><br /><span style="color: #808080;"><strong>&nbsp; columns:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp; soin_id:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type: integer(4)</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp; formule_id:</strong></span><br /><span style="color: #808080;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</strong></span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">It is very usefull when you got a 1:N relation between objects, in my case a Formule have 40 Soins, so i can access to the Soins page directly from a link on the Formule Page.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">If you've got CSRF protection enabled in the app, you'll need to  disable it, or this method won't work. This is set in  apps/myApp/config/settings.yml. There will be a setting in there  called csrf_secret - it should be set to false to disable csrf.</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">And you, why do you use filter's actions ?</p></div>
+<div class='post_responses'>
+<h4>2694 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

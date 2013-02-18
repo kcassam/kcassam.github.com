@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/01/D%C3%A9sactiver%20le%20layout%20dans%20symfony-9574283.html">Previous</a>
+&nbsp; 
+<a href="../../../index-7.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/BDD%20:%20configuration%20des%20tables-9542294.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>tracking des includes et commentaires html</h3>
+<div class='post_info'>
+<span class='post_time'>September 27 2010,  7:08 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Au début et à la fin de tous les fichiers des dossier template, merci d'inclure, au fil de l'eau, le morceau de code suivant :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="keyword">if</span> (sfConfig::get(<span class="string"><span class="delimiter">'</span><span class="content">app_debug</span><span class="delimiter">'</span></span>)  === <span class="predefined-constant">true</span>) {   
+  <span class="predefined">echo</span> (<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;!-- DEBUG MODE file:</span><span class="delimiter">&quot;</span></span>. <span class="predefined-constant">__FILE__</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content"> line:</span><span class="delimiter">&quot;</span></span>. <span class="predefined-constant">__LINE__</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content"> --&gt;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);   
+  include_partial(<span class="string"><span class="delimiter">'</span><span class="content">global/debug</span><span class="delimiter">'</span></span>);   
+}</pre></div>
+</div>
+
+
+<p>Cela nous permettra parfois de déterminer plus rapidement les fichiers sur lesquels intervenir. L'équivalent brut php &ldquo;non-symfony&rdquo; est :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="keyword">if</span>(<span class="constant">DEBUG</span> === <span class="predefined-constant">true</span>) {
+  <span class="predefined">echo</span> (<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;!-- DEBUG MODE file:</span><span class="delimiter">&quot;</span></span>.<span class="predefined-constant">__FILE__</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content"> line:</span><span class="delimiter">&quot;</span></span>.<span class="predefined-constant">__LINE__</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content"> function:</span><span class="delimiter">&quot;</span></span>.<span class="predefined-constant">__FUNCTION__</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content"> --&gt;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+  <span class="exception">@</span><span class="predefined">include</span> (<span class="constant">ROOT_FOLDER</span>.<span class="string"><span class="delimiter">&quot;</span><span class="content">/include/debug_begin.inc</span><span class="delimiter">&quot;</span></span>);
+}</pre></div>
+</div>
+
+
+<p>Merci aussi de conditionner, au fil de l'eau, tous les commentaires html avec le code php suivant :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="keyword">if</span>(sfConfig::get(<span class="string"><span class="delimiter">'</span><span class="content">app_htmlComment</span><span class="delimiter">'</span></span>) === <span class="predefined-constant">true</span>)</pre></div>
+</div>
+
+
+<p>Ce qui nous permettra de sortir une version en prod sans commentaire html inutiles
+Ces &ldquo;constantes&rdquo; de configuration sont définies dans app.yml</p>
+
+<p>Ka.</p></div>
+<div class='post_responses'>
+<h4>1791 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../index-2.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/04/la-creation-dun-site-web-pour-les-non-develop.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Installer PHPUnit pour l'utiliser avec MAMP</h3>
+<div class='post_info'>
+<span class='post_time'>April  8 2011,  6:25 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Voici une check-list de ressources pour installer un package PEAR/PHP (exemple de PHPUnit) pour l'utiliser avec MAMP/MAC OS X.
+Le nombre d'infos qu'il faut connaitre pour faire ça est assez incroyable. Je pense avoir rassemblé ici la liste des ressources d'informations que j'ai utilisé.</p>
+
+<h4>Comment installer PHPUnit</h4>
+
+<p><a href="http://www.phpunit.de/manual/current/en/installation.html">http://www.phpunit.de/manual/current/en/installation.html</a></p>
+
+<h4>Comment mettre à jour pear</h4>
+
+<p><a href="http://serverfault.com/questions/184741/upgrading-pear-from-1-9-0-to-1-9-1-fails">http://serverfault.com/questions/184741/upgrading-pear-from-1-9-0-to-1-9-1-fails</a></p>
+
+<h4>Comment installer pear (prérequis : l'exécutable php de MAMP)</h4>
+
+<p>Attention, ce n'est pas précisé dans la doc, mais il faut se mettre dans le bon dossier !
+<a href="http://pear.php.net/manual/en/installation.getting.php">http://pear.php.net/manual/en/installation.getting.php</a></p>
+
+<h4>Comment vérifier la config de pear</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>pear config-show</pre></div>
+</div>
+
+
+<h4>Comment savoir quelle version de php j'utilise</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ which php</pre></div>
+</div>
+
+
+<h4>Comment pointer vers l'exécutable php et pear de MAMP via la variable $path</h4>
+
+<p>Editer le fichier de setup du shell utilisé (Le fichier de setup shell est le shell appelé au moment du login) . Par exemple, pour tcsh, il s'agira de .tcshrc :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>setenv PATH /usr/local/bin:$PATH
+set path=($path /Developer/Tools)
+set path=(/Applications/MAMP/bin/php5.3/bin $path)</pre></div>
+</div>
+
+
+<p>exemple, pour bash, il peut s'agir de .bash :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>export PATH=/Applications/MAMP/bin/php5.3/bin:$PATH</pre></div>
+</div>
+
+
+<p><a href="http://docstore.mik.ua/orelly/unix3/upt/ch03_03.htm">http://docstore.mik.ua/orelly/unix3/upt/ch03_03.htm</a><br />
+<a href="http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf">http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf</a></p>
+
+<h4>Comment pointer vers l' exécutable php de MAMP via lien symbolique (préférer la méthode ci-dessus, utilisant la variable $path)</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ cd /usr/bin
+$ cp php php.bak (Backup the old version)
+$ ln -s /Applications/MAMP/bin/php5.3/bin/php (link to the version of MAMP php)</pre></div>
+</div>
+
+
+<h4>Comment s'assurer que les scripts dans /Applications/MAMP/bin/php5.3/bin/php sont exécutables</h4>
+
+<p>Cas d'obtention du message<br />
+<code>/Applications/MAMP/bin/php5.2/bin/php: Permission denied.</code><br />
+ou<br />
+<code>/Applications/MAMP/bin/php5.3/bin/php: Permission denied.</code></p>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ sudo chmod 0554 /Applications/MAMP/bin/php5.3/bin/* (makes all the scripts executable)</pre></div>
+</div>
+
+
+<h4>Comment lire les variables d'environnement du shell</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ set</pre></div>
+</div>
+
+
+<h4>Logs, Message d'erreur</h4>
+
+<ul>
+<li>Problème Failed opening required /Filter.php
+
+<ul>
+<li><p>Log</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>PHP Fatal error:  require_once(): Failed opening required 'PHP/CodeCoverage/Filter.php' (include_path='.:/Applications/MAMP/bin/php5.3/lib/php') in /Applications/MAMP/bin/php5.3/bin/phpunit on line 38</pre></div>
+</div>
+</li>
+<li><p>Solution<br />
+Modifier php.ini :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>;;;;;;;;;;;;;;;;;;;;;;;;;
+; Paths and Directories ;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; UNIX: &quot;/path1:/path2&quot;  
+include_path = &quot;.:/Applications/MAMP/bin/php5.3/lib/php&quot;
+include_path = &quot;.:/Applications/MAMP/bin/php5.3/lib/php/PEAR&quot;</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul></div>
+<div class='post_responses'>
+<h4>7405 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

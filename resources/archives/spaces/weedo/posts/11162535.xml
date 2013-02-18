@@ -1,0 +1,32 @@
+<item>
+	<title>What Beautiful HTML Code Looks Like</title>
+	<link>http://posterous.weedo.fr/what-beautiful-html-code-looks-like</link>
+	<pubDate>Fri Feb 05 03:50:44 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Denis]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/what-beautiful-html-code-looks-like</guid>
+	<description></description>
+	<content:encoded><![CDATA[Voilà un article que j&#39;ai trouvé très intéressant sur la manière de bien structurer ses pages en HTML5 (valable aussi pour d&#39;autres doctype).<br />Il y a des points qui méritent réfléxion selon le type de sites ou projets qu&#39;on veut entamer, mais on peut retenir certaines idées assez intéressantes comme :<p />  - Utilisation d&#39;une feuille de style pour tous les navigateurs sauf IE 6 qui lui aura une feuille de style dites &quot;universelle&quot;. Du coups les personnes naviguant sous IE 6 n&#39;auront pas une présentation de folie avec plein d&#39;image et CSS 3, mais une présentation basique qui leur suffira amplement pour naviguer.<p />  - Chargement des librairies JS depuis Google ou autres gros serveurs. Ainsi les fichiers sont mis en cache par le navigateur et partagés entre plusieurs site. Bien sûr il faut avoir confiance en le fournisseur.<p />  - Liens relatifs pour éviter les temps de résolution de nom de domaine.<p /> - Fichiers JS placés en fin de fichier pour que leur chargement (notamment lorsqu&#39;ils sont volumineux) n&#39;interfèrent pas avec le chargement du contenu HTML.<p /> Tout ça sur : <a href="http://css-tricks.com/what-beautiful-html-code-looks-like/">http://css-tricks.com/what-beautiful-html-code-looks-like/</a>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Voil�  un article que j'ai trouvé très intéressant sur la manière de bien structurer ses pages en HTML5 (valable aussi pour d'autres doctype).Il y a des points qui méritent réfléxion selon le type de sites ou projets qu'on veut entamer, mai...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Feb 05 03:50:44 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

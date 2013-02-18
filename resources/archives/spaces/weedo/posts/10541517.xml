@@ -1,0 +1,32 @@
+<item>
+	<title>Brouillage des liens</title>
+	<link>http://posterous.weedo.fr/brouillage-des-liens</link>
+	<pubDate>Mon Jan 25 05:18:11 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Ballut Vincent]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/brouillage-des-liens</guid>
+	<description></description>
+	<content:encoded><![CDATA[Je viens de déployer le brouillage des liens sur l&#39;ensemble du site en dev. <p /><b>Brouillage des liens ?</b><br />Le principe du brouillage de lien est de &quot;masquer&quot; les liens en double pour des raisons liées au référencement. Lorsqu&#39;un lien est en double, la structure html <a></a> est remplacée par un lien JavaScript, que Google ne peut pas suivre.<p /> <b>Procédé</b><br />Pour déployer cette fonctionnalité, j&#39;ai été modifié la fonction native de Symfony link_to (dans lib/symfony/helper/urlHelper). Désormais, à chaque appel de link_to, Symfony va stocker le lien dans un tableau. Si le lien est déjà présent dans le tableau, le lien est brouillé, sinon, aucun effet. <p /> <b>Forcer le brouillage de lien</b><br />Il se peut qu&#39;on veuille brouiller un lien même s&#39;il n&#39;est présent qu&#39;une seule fois dans la page. Pour se faire, il suffit de faire passer une option à la fonction link_to :<p /> &lt;code&gt;<br />&lt;?php echo link_to(&#39;outils&#39;, &#39;outilssimulation/index&#39;, array(&#39;wdBrouillage&#39; =&gt; true)); ?&gt;<br />&lt;/code&gt;<p />Au contraire, si on ne veut jamais brouiller un lien, même s&#39;il est plusieurs fois dans la page : <p /> &lt;code&gt;<br />&lt;?php echo link_to(&#39;outils&#39;, &#39;outilssimulation/index&#39;, array(&#39;wdBrouillage&#39; =&gt; false)); ?&gt;<br />&lt;/code&gt;<p />V]]></content:encoded>
+	<excerpt:encoded><![CDATA[Je viens de déployer le brouillage des liens sur l'ensemble du site en dev. Brouillage des liens ?Le principe du brouillage de lien est de "masquer" les liens en double pour des raisons liées au référencement. Lorsqu'un lien est en double, la ...]]></excerpt:encoded>	
+
+	<wp:post_date>Mon Jan 25 05:18:11 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

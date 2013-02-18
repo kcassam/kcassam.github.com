@@ -1,0 +1,32 @@
+<item>
+	<title>Quelques exemples d'utilisation du htaccess</title>
+	<link>http://posterous.weedo.fr/quelques-exemples-dutilisation-du-htaccess</link>
+	<pubDate>Wed Nov 25 15:10:48 -0800 2009</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/quelques-exemples-dutilisation-du-htaccess</guid>
+	<description></description>
+	<content:encoded><![CDATA[Voir ce lien : <a href="http://www.evolt.org/ultimate_htaccess_examplesUltimate">http://www.evolt.org/ultimate_htaccess_examplesUltimate</a> htaccess code snippets and examples <br />Surtout, très intéressant, lire la parti : "Dramatically Speed up your site by implementing Caching!" <br />K.]]></content:encoded>
+	<excerpt:encoded><![CDATA[Voir ce lien : http://www.evolt.org/ultimate_htaccess_examplesUltimate htaccess code snippets and examples Surtout, très intéressant, lire la parti : "Dramatically Speed up your site by implementing Caching!" K.]]></excerpt:encoded>	
+
+	<wp:post_date>Wed Nov 25 15:10:48 -0800 2009</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>quelques-exemples-dutilisation-du-htaccess</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

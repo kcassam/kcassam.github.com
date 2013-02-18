@@ -1,0 +1,117 @@
+<item>
+	<title>SQLSTATE[HY000]: General error: 2006 MySQL server has gone away</title>
+	<link>http://posterous.weedo.fr/sqlstatehy000-general-error-2006-mysql-server</link>
+	<pubDate>Wed Jul 27 16:10:00 -0700 2011</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/sqlstatehy000-general-error-2006-mysql-server</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Avoir accès à un objet PDO n'est pas suffisant pour être certain d'avoir une connexion à une bdd. Il arrive de passer une requête et d'obtenir l'erreur :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="constant">Fatal</span> error: <span class="constant">Uncaught</span> <span class="predefined-constant">exception</span> <span class="string"><span class="delimiter">'</span><span class="content">PDOException</span><span class="delimiter">'</span></span> with message <span class="string"><span class="delimiter">'</span><span class="content">SQLSTATE[HY000]: General error: 2006 MySQL server has gone away</span><span class="delimiter">'</span></span> in…</pre></div>
+</div>
+
+
+<p>Pour obtenir cette erreur, vous pouvez faire le test suivant :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+<span class="predefined">echo</span> <span class="predefined">get_class</span> (<span class="local-variable">$pdo</span>);
+<span class="comment">// On a bien un objet PDO</span>
+<span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1</span><span class="delimiter">'</span></span>);
+<span class="comment">// ça passe</span>
+<span class="predefined">sleep</span>(<span class="integer">20</span>);
+<span class="comment">// Vous avez 20 secondes pour killer manuellement la connexion mysql. Faites-le pour les besoins du tests, </span>
+<span class="predefined">echo</span> <span class="predefined">get_class</span> (<span class="local-variable">$pdo</span>);
+<span class="comment">// On a toujours un objet PDO, mais cet objet n'est pas informé que la connexion correspondante a été killée, ce qu'on va voir tout de suite : </span>
+<span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1</span><span class="delimiter">'</span></span>);
+<span class="comment">// !! ça casse : Erreur MySQL server has gone away. Pourtant, on avait bien un objet PDO</span></pre></div>
+</div>
+
+
+<p>Les raisons possibles de cette erreurs sont nombreuses : <a href="http://dev.mysql.com/doc/refman/5.0/en/gone-away.html">http://dev.mysql.com/doc/refman/5.0/en/gone-away.html</a></p>
+
+<p>En plus de/plutôt que/en attendant de résoudre le problème, j'ai trouvé 2 méthodes (assez proche) pour contourner le problème : On tente la connexion avec notre vieille connexion pdo, et si on obtient une erreur, on créé un nouvel objet pdo tout neuf.</p>
+
+<p>Méthode 1</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$sql</span> = <span class="string"><span class="delimiter">'</span><span class="content">SELECT count(*) FROM `TABLE`;</span><span class="delimiter">'</span></span>;
+<span class="keyword">for</span> (<span class="local-variable">$i</span> = <span class="integer">1</span>; <span class="local-variable">$i</span> &lt;= <span class="integer">2</span>; <span class="local-variable">$i</span>++) {
+    <span class="keyword">try</span> {
+        <span class="local-variable">$nb</span> = <span class="local-variable">$pdo</span>-&gt;query(<span class="local-variable">$sql</span>)-&gt;fetchColumn();
+        <span class="keyword">if</span> (<span class="predefined">is_int</span>(<span class="local-variable">$nb</span>)) {
+            <span class="comment">// C'est bon, ma vieille connexion a fonctionné.</span>
+            <span class="keyword">break</span>;
+        }
+    } <span class="keyword">catch</span> (<span class="constant">PDOException</span> <span class="local-variable">$e</span>) {
+    <span class="comment">//Oups, j'ai une erreur de connexion</span>
+        <span class="keyword">if</span> (<span class="local-variable">$i</span> == <span class="integer">1</span>) {
+            <span class="comment">// C'est la première fois ? OK, je recréé une connexion.</span>
+            <span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+        } <span class="keyword">else</span> {
+            <span class="comment">// C'est la 2eme fois ? OK, c'est mort.</span>
+            <span class="local-variable">$nb</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">(nombre inconnu)</span><span class="delimiter">&quot;</span></span>;
+            <span class="predefined">echo</span> <span class="string"><span class="delimiter">'</span><span class="content">PDO Connection failed: </span><span class="delimiter">'</span></span> . <span class="local-variable">$e</span>-&gt;getMessage().<span class="string"><span class="delimiter">'</span><span class="content">. </span><span class="delimiter">'</span></span>;
+        }
+    }
+}</pre></div>
+</div>
+
+
+<p>Méthode 2</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="comment">// Je test si ma vieille connexion est OK avec une requête toute simple</span>
+<span class="keyword">try</span> {
+    <span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1;</span><span class="delimiter">'</span></span>)
+    <span class="comment">//C'est bon;</span>
+} <span class="keyword">catch</span> (<span class="constant">PDOException</span> <span class="local-variable">$e</span>) {
+    <span class="comment">//Oups, j'ai une erreur de connexion</span>
+    <span class="comment">// Je recréé une connexion.</span>
+    <span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+}
+<span class="comment">// Ici j'ai plus de chance d'avoir un objet pdo viable que si je n'avais pas fait le petit try/catch au-dessus =&gt; Je fais ma requête</span>
+<span class="local-variable">$sql</span> = <span class="string"><span class="delimiter">'</span><span class="content">SELECT count(*) FROM `TABLE`;</span><span class="delimiter">'</span></span>;
+<span class="local-variable">$nb</span> = <span class="local-variable">$pdo</span>-&gt;query(<span class="local-variable">$sql</span>)-&gt;fetchColumn();</pre></div>
+</div>
+
+
+<p>Comme d'hab, si quelqu'un a mieux, ce que j'espère, je suis preneur !</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Avoir accès �  un objet PDO n'est pas suffisant pour être certain d'avoir une connexion �  une bdd. Il arrive de passer une requête et d'obtenir l'erreur : Fatal error: Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General er...]]></excerpt:encoded>	
+
+	<wp:post_date>Wed Jul 27 16:10:00 -0700 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>sqlstatehy000-general-error-2006-mysql-server</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[zzzap]]></wp:comment_author>
+			<wp:comment_author_email></wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Sat Feb 02 07:04:43 -0800 2013</wp:comment_date>
+			<wp:comment_date_gmt>Sat Feb 02 07:04:43 -0800 2013</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Merci, cela a réglé mon problème ! :)]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

@@ -1,0 +1,32 @@
+<item>
+	<title>Cookies &amp; Symfony</title>
+	<link>http://posterous.weedo.fr/cookies-and-symfony</link>
+	<pubDate>Tue Jan 05 00:57:38 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Ballut Vincent]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/cookies-and-symfony</guid>
+	<description></description>
+	<content:encoded><![CDATA[Symfony a prévu des helpers pour gérer les cookies : <br /><a href="http://www.symfony-project.org/cookbook/1_2/en/cookie">http://www.symfony-project.org/cookbook/1_2/en/cookie</a> <p /> - pour créer un cookie : $this->getResponse()->setCookie('mycookie', $value); <br />ou avec des options : $this->getResponse()->setCookie('mycookie', <br />$value, $expire, $path, $domain, $secure); <p /> - pour récupérer le contenu d'un cookie: $string = <br />$this->getRequest()->getCookie('mycookie'); <p /> V]]></content:encoded>
+	<excerpt:encoded><![CDATA[Symfony a prévu des helpers pour gérer les cookies : http://www.symfony-project.org/cookbook/1_2/en/cookie - pour créer un cookie : $this->getResponse()->setCookie('mycookie', $value); ou avec des options : $this->getResponse()->setCookie('mycooki...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Jan 05 00:57:38 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

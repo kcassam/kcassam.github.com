@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/09/tracking-des-includes-et-commentaires-html.html">Previous</a>
+&nbsp; 
+<a href="../../../index-7.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/Javascript%20dans%20un%20script%20Ajax-9532716.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>BDD : configuration des tables</h3>
+<div class='post_info'>
+<span class='post_time'>January  6 2010,  9:54 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Deux fichiers sont à connaître en ce qui concerne la gestion des bases de données :<br />- config/database.yml : informations concernant la base de donnée et ses accès (login/mot de passe)<br />- config/schema.yml : informations concernant les tables (nom, structure)<p /> Le fichier database.yml est configuré pour se connecter à la base de donnée rachatcr via l&#39;utilisateur rachatcr. Normallement, plus besoin d&#39;y toucher sauf si on change le mot de passe ou autre. A savoir aussi, on peut faire un fichier database.yml pour chaque application (connexion à rachatcr pour RCD et à creditdocredit pour CD) en plaçant ces fichiers dans les dossiers config de chaque application.<p /> Passons au fichier schema.yml... Un peu plus compliqué :)<p />Pour que Symfony sache avec quoi elle travaille (oui, Symfony est une femme), il faut lui indiquer la structure de chaque table, et maintenir le fichier à jour dès qu&#39;on change la structure d&#39;une table. Exemple de table :<p /> <p><a href="https://gist.github.com/270453">https://gist.github.com/270453</a></p><p />Cette table se nomme &quot;questions&quot;, j&#39;ai nommé sa classe &quot;Question&quot;, et j&#39;ai déclaré chaque champ (nom du champ suivi de son type). Attention pour les types, seuls sont autorisés b<span style="font-family: courier new,monospace;">oolean, integer, float, date, varchar(size), longvarchar</span>.<p /> Il faut ensuite dire à Symfony de prendre en compte les modifs que vous avez apporté à schema.yml. pour cela, c&#39;est simple, une petite ligne de commande :<p /><span style="font-family: courier new,monospace;">php5 symfony propel:build-model</span><p /> Symfony va se créer tous les fichiers dont elle a besoin, et pis voila. :)<p />Oh, et faut vider le cache, comme d&#39;hab.<br /><code></code><br />V</div>
+<div class='post_responses'>
+<h4>132 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

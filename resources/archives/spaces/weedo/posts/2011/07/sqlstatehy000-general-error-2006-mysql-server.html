@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/12/caracteres-interdits-dans-la-variable-xtpage.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/07/de-la-bonne-utilisation-de-header-location-en.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>SQLSTATE[HY000]: General error: 2006 MySQL server has gone away</h3>
+<div class='post_info'>
+<span class='post_time'>July 27 2011,  4:10 PM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Avoir accès à un objet PDO n'est pas suffisant pour être certain d'avoir une connexion à une bdd. Il arrive de passer une requête et d'obtenir l'erreur :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="constant">Fatal</span> error: <span class="constant">Uncaught</span> <span class="predefined-constant">exception</span> <span class="string"><span class="delimiter">'</span><span class="content">PDOException</span><span class="delimiter">'</span></span> with message <span class="string"><span class="delimiter">'</span><span class="content">SQLSTATE[HY000]: General error: 2006 MySQL server has gone away</span><span class="delimiter">'</span></span> in…</pre></div>
+</div>
+
+
+<p>Pour obtenir cette erreur, vous pouvez faire le test suivant :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+<span class="predefined">echo</span> <span class="predefined">get_class</span> (<span class="local-variable">$pdo</span>);
+<span class="comment">// On a bien un objet PDO</span>
+<span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1</span><span class="delimiter">'</span></span>);
+<span class="comment">// ça passe</span>
+<span class="predefined">sleep</span>(<span class="integer">20</span>);
+<span class="comment">// Vous avez 20 secondes pour killer manuellement la connexion mysql. Faites-le pour les besoins du tests, </span>
+<span class="predefined">echo</span> <span class="predefined">get_class</span> (<span class="local-variable">$pdo</span>);
+<span class="comment">// On a toujours un objet PDO, mais cet objet n'est pas informé que la connexion correspondante a été killée, ce qu'on va voir tout de suite : </span>
+<span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1</span><span class="delimiter">'</span></span>);
+<span class="comment">// !! ça casse : Erreur MySQL server has gone away. Pourtant, on avait bien un objet PDO</span></pre></div>
+</div>
+
+
+<p>Les raisons possibles de cette erreurs sont nombreuses : <a href="http://dev.mysql.com/doc/refman/5.0/en/gone-away.html">http://dev.mysql.com/doc/refman/5.0/en/gone-away.html</a></p>
+
+<p>En plus de/plutôt que/en attendant de résoudre le problème, j'ai trouvé 2 méthodes (assez proche) pour contourner le problème : On tente la connexion avec notre vieille connexion pdo, et si on obtient une erreur, on créé un nouvel objet pdo tout neuf.</p>
+
+<p>Méthode 1</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$sql</span> = <span class="string"><span class="delimiter">'</span><span class="content">SELECT count(*) FROM `TABLE`;</span><span class="delimiter">'</span></span>;
+<span class="keyword">for</span> (<span class="local-variable">$i</span> = <span class="integer">1</span>; <span class="local-variable">$i</span> &lt;= <span class="integer">2</span>; <span class="local-variable">$i</span>++) {
+    <span class="keyword">try</span> {
+        <span class="local-variable">$nb</span> = <span class="local-variable">$pdo</span>-&gt;query(<span class="local-variable">$sql</span>)-&gt;fetchColumn();
+        <span class="keyword">if</span> (<span class="predefined">is_int</span>(<span class="local-variable">$nb</span>)) {
+            <span class="comment">// C'est bon, ma vieille connexion a fonctionné.</span>
+            <span class="keyword">break</span>;
+        }
+    } <span class="keyword">catch</span> (<span class="constant">PDOException</span> <span class="local-variable">$e</span>) {
+    <span class="comment">//Oups, j'ai une erreur de connexion</span>
+        <span class="keyword">if</span> (<span class="local-variable">$i</span> == <span class="integer">1</span>) {
+            <span class="comment">// C'est la première fois ? OK, je recréé une connexion.</span>
+            <span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+        } <span class="keyword">else</span> {
+            <span class="comment">// C'est la 2eme fois ? OK, c'est mort.</span>
+            <span class="local-variable">$nb</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">(nombre inconnu)</span><span class="delimiter">&quot;</span></span>;
+            <span class="predefined">echo</span> <span class="string"><span class="delimiter">'</span><span class="content">PDO Connection failed: </span><span class="delimiter">'</span></span> . <span class="local-variable">$e</span>-&gt;getMessage().<span class="string"><span class="delimiter">'</span><span class="content">. </span><span class="delimiter">'</span></span>;
+        }
+    }
+}</pre></div>
+</div>
+
+
+<p>Méthode 2</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="comment">// Je test si ma vieille connexion est OK avec une requête toute simple</span>
+<span class="keyword">try</span> {
+    <span class="local-variable">$pdo</span>-&gt;query(<span class="string"><span class="delimiter">'</span><span class="content">select 1;</span><span class="delimiter">'</span></span>)
+    <span class="comment">//C'est bon;</span>
+} <span class="keyword">catch</span> (<span class="constant">PDOException</span> <span class="local-variable">$e</span>) {
+    <span class="comment">//Oups, j'ai une erreur de connexion</span>
+    <span class="comment">// Je recréé une connexion.</span>
+    <span class="local-variable">$pdo</span> = <span class="keyword">new</span> <span class="constant">PDO</span>(<span class="local-variable">$dsn</span>, <span class="local-variable">$user</span>, <span class="local-variable">$password</span>);
+}
+<span class="comment">// Ici j'ai plus de chance d'avoir un objet pdo viable que si je n'avais pas fait le petit try/catch au-dessus =&gt; Je fais ma requête</span>
+<span class="local-variable">$sql</span> = <span class="string"><span class="delimiter">'</span><span class="content">SELECT count(*) FROM `TABLE`;</span><span class="delimiter">'</span></span>;
+<span class="local-variable">$nb</span> = <span class="local-variable">$pdo</span>-&gt;query(<span class="local-variable">$sql</span>)-&gt;fetchColumn();</pre></div>
+</div>
+
+
+<p>Comme d'hab, si quelqu'un a mieux, ce que j'espère, je suis preneur !</p></div>
+<div class='post_responses'>
+<h4>1883 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Feb  2 2013,  7:04 AM</div>
+<div class='response_name'>zzzap responded:</div>
+</div>
+<div class='response_body'>Merci, cela a réglé mon problème ! :)</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

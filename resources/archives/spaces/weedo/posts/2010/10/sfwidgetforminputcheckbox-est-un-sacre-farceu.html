@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/10/call-to-action-install-iphone-webapp.html">Previous</a>
+&nbsp; 
+<a href="../../../index-3.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/10/recapitulatif-des-solutions-pour-faire-tourne.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>sfWidgetFormInputCheckbox est un sacré farceur</h3>
+<div class='post_info'>
+<span class='post_time'>October  6 2010,  6:30 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>sfWidgetFormInputCheckbox est un sacré farceur :</p>
+
+<p>D'abord, il ne faut pas confondre :</p>
+
+<ul>
+<li>sfWidgetFormInputCheckbox et</li>
+<li><p>sfWidgetFormSelectCheckbox</p></li>
+<li><p>sfWidgetFormInputCheckbox correspond à une checkbox unique, à utiliser pour une valeur boolean : <a href="http://www.symfony-project.org/forms/1_4/fr/A-Widgets#chapter_a_sub_sfwidgetforminputcheckbox">http://www.symfony-project.org/forms/1_4/fr/A-Widgets#chapter_a_sub_sfwidgetf...</a></p></li>
+<li>sfWidgetFormSelectCheckbox est un groupe de checkbox : <a href="http://www.symfony-project.org/forms/1_4/fr/A-Widgets#chapter_a_widgets_de_choix">http://www.symfony-project.org/forms/1_4/fr/A-Widgets#chapter_a_widgets_de_choix</a></li>
+</ul>
+
+
+<p>Revenons-en maintenant à sfWidgetFormInputCheckbox :
+D'après mon expérience, ce widget, quand il est relié au modèle, ne fonctionne que si au niveau du modèle, le champs associé est décrit explicitement comme un boolean. Ce topic décrit le problème qui découle de cet assujettissement : <a href="http://forum.symfony-project.org/viewtopic.php?t=29438&amp;p=104380">http://forum.symfony-project.org/viewtopic.php?t=29438&amp;p=104380</a></p>
+
+<p>Pour résumer, si vous générez votre schema.yml à partir de votre bdd mysql et que vos booleans sont définis comme des tinyint(1) (synonyme de boolean selon la doc officielle de mysql : <a href="http://dev.mysql.com/doc/refman/5.0/en/numeric-type-overview.html)">http://dev.mysql.com/doc/refman/5.0/en/numeric-type-overview.html)</a>, votre shema.yml ne considérera  pas, à juste titre, qu'il s'agit d'un boolean et vous n'arriverez pas à faire fonctionner sfWidgetFormInputCheckbox avec ce champ. Pour résoudre ce cas, il faut mettre à jour le fichier schema.yml à la main…</p>
+
+<p>Question : Définir les boolean comme des bit(1) dans MySQL permettrait-t'il de résoudre ce problème (sur lequel j'ai passé 3 heures + 1 heure pour rédiger ce post…) ?</p>
+
+<p>Amélioration à suggérer à Symfony : Prendre en compte ce cas et gérer correctement un sfWidgetFormInputCheckbox associé à un int(1) avec la convention : coché = 1/décoché = 0. Cette modification peut se faire dans la méthode render dans sfWidgetFormInputCheckbox.class.php (y'a peut être d'autres trucs à modifier, à voir.)</p></div>
+<div class='post_responses'>
+<h4>2194 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<item>
+	<title>Générer un fichier &quot;schema.yml&quot; depuis une BDD existante au format Symfony 1.4 - Doctrine</title>
+	<link>http://posterous.weedo.fr/generer-un-fichier-schemayml-depuis-une-bdd-e</link>
+	<pubDate>Tue Oct 05 08:54:55 -0700 2010</pubDate>
+	
+	<dc:creator><![CDATA[mysterty]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/generer-un-fichier-schemayml-depuis-une-bdd-e</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Bonjour,</p>
+<p>Si vous cherchez &agrave; g&eacute;n&eacute;rer un schema pour votre nouveau projet Symfony &agrave; partir d'une base de donn&eacute;e d&eacute;j&agrave; existante (<strong>php symfony doctrine:build-schema</strong>), il est possible que le message suivant apparaisse dans votre invite de commande :</p>
+<blockquote class="posterous_short_quote">
+<p>When using the attribute ATTR_AUTO_ACCESSOR_OVERRIDE you cannot use the field name "<strong>%</strong>" because it is reserved by Doctrine. You must choose another field name.</p>
+</blockquote>
+<p>Cela signifie qu'un nom de champ de la base de donn&eacute;e est r&eacute;serv&eacute; par doctrine, qui arr&ecirc;te donc le processus par mesure de s&eacute;curit&eacute; pour emp&ecirc;cher tout conflit par la suite.</p>
+<p>La solution est simplement d'enlever (temporairement) la v&eacute;rification des champs r&eacute;serv&eacute;s. Pour ce faire, il faut &eacute;diter le fichier <strong>sfDoctrinePluginConfiguration.class</strong> (<em>plugins/sfDoctrinePlugins/</em> ou <em>monProjetSymfony/lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/config</em>).<br />Commentez la ligne <strong>$manager-&gt;setAttribute(Doctrine::ATTR_AUTO_ACCESSOR_OVERRIDE, true);</strong>.</p>
+<p>Lancer ensuite la commande qui va construire le sch&eacute;ma : <strong>php symfony doctrine:build-schema</strong> (<em>ATTENTION, cette commande va &eacute;craser schema.yml si il existe d&eacute;j&agrave; ! </em>)</p>
+<p>Editer les champs en cause dans schema.yml en leur mettant un alias, ce qui emp&ecirc;chera tout conflit avec doctrine qui reconnaitra ces champs sous leurs noms d'alias :</p>
+<blockquote>
+<p><span style="color: #3366ff;">MaTable</span>:<br /><span style="color: #000000;">&nbsp; columns:</span></p>
+<p>[&hellip;]</p>
+<p><span style="color: #3366ff;">&nbsp;&nbsp; &nbsp;monChamp</span>:</p>
+<p><span style="color: #3366ff;"><span style="color: #000000;">&nbsp;&nbsp; &nbsp; &nbsp;name: </span>monChamp<span style="color: #000000;"> as </span>field_monChamp</span></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>Vous pouvez&nbsp;relancer la commande&nbsp;</p>
+<p><strong>doctrine:build --all</strong>&nbsp;</p>
+<p>ou, pour ne pas modifier la BDD :&nbsp;</p>
+<p><strong>doctrine:build --all-classes</strong></p>
+<p>ou</p>
+<p>
+<p>&nbsp;</p>
+<strong>
+<p>doctrine:build-model</p>
+<p>doctrine:build-forms</p>
+<p>doctrine:build-filters</p>
+<p />
+</strong></p>
+<p><span style="color: #000000;">Vous pouvez maintenant restaurer le fichier <strong>sfDoctrinePluginConfiguration.class</strong> &agrave; son &eacute;tat d'origine.</span></p>
+<p>enjoy ;)</p>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Bonjour, Si vous cherchez �  générer un schema pour votre nouveau projet Symfony �  partir d'une base de donnée déj�  existante (php symfony doctrine:build-schema), il est possible que le message suivant apparaisse dans votre invite de command...]]></excerpt:encoded>	
+
+	<wp:post_date>Tue Oct 05 08:54:55 -0700 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>generer-un-fichier-schemayml-depuis-une-bdd-e</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[Danil]]></wp:comment_author>
+			<wp:comment_author_email>mikachiari@gmail.com</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Wed Nov 10 06:11:07 -0800 2010</wp:comment_date>
+			<wp:comment_date_gmt>Wed Nov 10 06:11:07 -0800 2010</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[mmmmm, very usefull (:]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+		<wp:comment>
+			<!-- <wp:comment_id>5</wp:comment_id> -->
+			<wp:comment_author><![CDATA[ladnany kamal]]></wp:comment_author>
+			<wp:comment_author_email>ladnany.kamal@gmail.com</wp:comment_author_email>
+			<wp:comment_author_url></wp:comment_author_url>
+			<wp:comment_date>Fri Jun 01 04:08:06 -0700 2012</wp:comment_date>
+			<wp:comment_date_gmt>Fri Jun 01 04:08:06 -0700 2012</wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Merci tu m'a sauvé :D]]></wp:comment_content>
+			<wp:comment_approved>1</wp:comment_approved>
+			<wp:comment_type></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+		</wp:comment>
+	
+</item>

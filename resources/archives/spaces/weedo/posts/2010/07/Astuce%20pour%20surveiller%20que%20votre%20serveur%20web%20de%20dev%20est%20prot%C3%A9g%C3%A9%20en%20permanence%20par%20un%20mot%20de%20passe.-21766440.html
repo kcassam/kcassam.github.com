@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/07/It%C3%A9rer%20r%C3%A9cursivement%20sur%20un%20dossier%20de%20mani%C3%A8re%20%C3%A9l%C3%A9gante%20en%20php-21836258.html">Previous</a>
+&nbsp; 
+<a href="../../../index-4.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/07/posterous-markdown-syntax-cheatsheet.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Astuce pour surveiller que votre serveur web de dev est protégé en permanence par un mot de passe.</h3>
+<div class='post_info'>
+<span class='post_time'>July  1 2010,  2:18 PM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Lorsqu'on développe un site web, il est assez courant de travailler sur un serveur de dev et un serveur de prod.</p>
+
+<p>Classiquement, ces serveurs sont accessibles aux URLs http://<strong>dev</strong>.nomdedomaine_xoxoxoxox.com pour le serveur de dev et http://<strong>www</strong>.nomdedomaine_xoxoxoxox.com pour la production.</p>
+
+<p>Il est important, pour plusieurs raisons, que le serveur de dev soit protégé par un mot de passe (en général, un login/mot de passe apache, paramétré dans le fichier .htaccess)</p>
+
+<p>Les raisons sont :</p>
+
+<ul>
+<li>protéger les développements en cours de regards indiscrets, abus de failles etc.</li>
+<li>et surtout faire en sorte que le serveur de dev ne soit pas indexé par Google, ce qui pourrait poser de nombreux problèmes d'accès au site ou SEO.</li>
+</ul>
+
+
+<p>Or, il arrive que pour des mises en production ou pour certains tests, il soit utile de retirer temporairement cette protection et il arrive assez souvent aux développeurs d'oublier de remettre la protection, ce qui peut avoir des conséquences assez pénibles.</p>
+
+<p>L'astuce pour éviter ce problème est de monitorer le site de dev avec <a href="http://www.woozweb.com">www.woozweb.com</a>, de la même manière que le site de prod. A l'inverse du site de prod, le site de dev devra être en permanence inaccessible. Si un jour il devient accessible pendant plus d'une demi-heure, woozweb vous enverra un mail pour vous le signaler avec un message du type :</p>
+
+<blockquote class="posterous_short_quote"><p>[Alerte-Woozweb] [DEV XOXOXO] Fin d'alerte</p></blockquote>
+
+<p>Il ne vous restera plus qu'à réactiver la protection.</p>
+
+<p>Il s'agit, pour résumer, d'utiliser woozweb de manière <em>inversée</em>, non pas pour vérifier qu'un site est accessible mais pour s'assurer qu'un site reste bien protégé.</p></div>
+<div class='post_responses'>
+<h4>322 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Jul  2 2010, 12:13 AM</div>
+<div class='response_name'>bmoinet responded:</div>
+</div>
+<div class='response_body'>Pas mal, mais Woozweb ne t'envoie pas une alerte tous les quarts d'heure normalement, quand le htaccess est présent (me rappelle plus...) ?<p>Sinon, tu peux te faire la même chose avec une crontab, ce qui évite de déclarer son domaine "privé" à un service "public".</p></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

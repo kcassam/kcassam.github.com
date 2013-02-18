@@ -1,0 +1,32 @@
+<item>
+	<title>mettre du code sur posterous</title>
+	<link>http://posterous.weedo.fr/mettre-du-code-sur-posterous</link>
+	<pubDate>Fri Dec 11 03:37:11 -0800 2009</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/mettre-du-code-sur-posterous</guid>
+	<description></description>
+	<content:encoded><![CDATA[Lors de l'envoi d'un bout de code sur posterous, il arrive souvent que celui ci soit filtré à l'entrée, pour éviter l'injection de code. Le filtre de posterous n'est pas très tolérant et filtre en excès des bouts de code inoffensifs. <p /> Pour éviter ce problème, vous pouvez créer un gist <p /> Pour plus d'infos : Posterous now supports Gist code drops : <a href="http://blog.posterous.com/posterous-now-supports-traileraddict-embeds-a">http://blog.posterous.com/posterous-now-supports-traileraddict-embeds-a</a> <p /> Karim]]></content:encoded>
+	<excerpt:encoded><![CDATA[Lors de l'envoi d'un bout de code sur posterous, il arrive souvent que celui ci soit filtré �  l'entrée, pour éviter l'injection de code. Le filtre de posterous n'est pas très tolérant et filtre en excès des bouts de code inoffensifs. Pour �...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Dec 11 03:37:11 -0800 2009</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

@@ -1,0 +1,34 @@
+<item>
+	<title>Accéder à des infos de configuration du projet </title>
+	<link>http://posterous.weedo.fr/acceder-a-des-infos-de-configuration-du-proje</link>
+	<pubDate>Thu Nov 12 09:40:42 -0800 2009</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+		<category domain="tag" nicename="symfony123"><![CDATA[symfony123]]></category>
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/acceder-a-des-infos-de-configuration-du-proje</guid>
+	<description></description>
+	<content:encoded><![CDATA[Lire la partie sous <br />"The sfConfig Class" <br />dans http://www.symfony-project.org/book/1_0/05-Configuring-Symfony <p /> et l'API dans <br /><a href="http://www.symfony-project.org/api/1_2/sfConfig">http://www.symfony-project.org/api/1_2/sfConfig</a> <p /> Ça permet notamment d'obtenir tous les nom des dossiers de symfony, et c'est la seule manière autorisée d'y accéder. <p /> Si vous êtes curieux, un var_dump(sfConfig::getAll()) vous permettra d'afficher toutes les variables de configuration]]></content:encoded>
+	<excerpt:encoded><![CDATA[Lire la partie sous "The sfConfig Class" dans http://www.symfony-project.org/book/1_0/05-Configuring-Symfony et l'API dans http://www.symfony-project.org/api/1_2/sfConfig Ça permet notamment d'obtenir tous les nom des dossiers de symfony, et c'est...]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Nov 12 09:40:42 -0800 2009</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>acceder-a-des-infos-de-configuration-du-proje</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

@@ -1,0 +1,44 @@
+<item>
+	<title>très intéressant les slots (symfony)</title>
+	<link>http://posterous.weedo.fr/tres-interessant-les-slots-symfony</link>
+	<pubDate>Fri Jan 15 10:11:53 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/tres-interessant-les-slots-symfony</guid>
+	<description></description>
+	<content:encoded><![CDATA[Lire la partie sur les slots : <br /><a href="http://www.symfony-project.org/book/1_2/07-Inside-the-View-Layer">http://www.symfony-project.org/book/1_2/07-Inside-the-View-Layer</a> <p /> Ça permet de modifier le layout à partir d'un template. Très puissant. <p /> Exemple d'utilisation dans RCD, pour avoir le rss différent pour la partie cms : <br />Dans <code>/sf/apps/rcd/modules/wp/templates/indexSuccess.php</code> : <br /><code> 
+&lt;?php slot('rss') ?&gt; 
+ &lt;!-- custom rss code for the current template--&gt; 
+ &lt;!-- wp : a changer--&gt; 
+ &lt;link rel="alternate" type="application/rss+xml" href="/wp/feed/" /&gt;&lt;?php end_slot() ?&gt; 
+</code> <p /> Dans <code>/sf/apps/rcd/templates/layout.php</code> : <br /><code> 
+&lt;?php if (has_slot('rss')): ?&gt; 
+ &lt;?php include_slot('rss') ?&gt; 
+&lt;?php else: ?&gt; 
+ &lt;!-- default rss code --&gt; 
+ &lt;link rel="alternate" type="application/rss+xml" href="/flux" /&gt; 
+&lt;?php endif; ?&gt; 
+</code> <p /> c'est tout !]]></content:encoded>
+	<excerpt:encoded><![CDATA[Lire la partie sur les slots : http://www.symfony-project.org/book/1_2/07-Inside-the-View-Layer Ça permet de modifier le layout �  partir d'un template. Très puissant. Exemple d'utilisation dans RCD, pour avoir le rss différent pour la partie c...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Jan 15 10:11:53 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

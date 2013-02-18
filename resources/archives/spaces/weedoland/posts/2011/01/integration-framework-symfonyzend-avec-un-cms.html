@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/01/libraries-php-a-connaitre-et-a-utiliser.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/12/weedo-time-tracking.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>intégration framework (Symfony/Zend) avec un cms (wordpress)</h3>
+<div class='post_info'>
+<span class='post_time'>January 19 2011,  6:55 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><ol>
+<li>Intégrer Symfony &amp; Wordpress :
+<a href="http://blog.codeclarity.com/2009/12/02/integrating-symfony-and-wordpress/">http://blog.codeclarity.com/2009/12/02/integrating-symfony-and-wordpress/</a></li>
+</ol>
+
+
+<p>Le coeur du dispositif est celui-ci</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>public function executeIndex(sfWebRequest $request) {
+ob_start();
+wp();
+/* [...] */
+$this-&gt;blog = ob_get_clean();</pre></div>
+</div>
+
+
+<p>   }</p>
+
+<p>Ce dispositif a été mis en place sur CD. A dispo pour vous expliquer si besoin.</p>
+
+<p>=> On peut adapter pour Zend</p>
+
+<ol>
+<li>Une autre solution est la suivante :</li>
+</ol>
+
+
+<p>Une page est découpée en sections.
+une section est alimentée en allant chercher toutes les xx heures via
+Curl un bout de html sur un site tiers et génère un cache en cas de
+succès. Il est aussi possible de de faire un appel sans attendre le retour. C'est
+le cache qui est ensuite lu.
+Ce fonctionnement a été mis en place sur lux, sur la home, pour la
+partie Shopping lux. Voir les classes : wdflxm et WDCurl</p>
+
+<ol>
+<li>Layout : Bien lire ce post :
+<a href="http://posterous.weedo.fr/bien-demarrer-un-site-web-en-html-en-ne-parta">http://posterous.weedo.fr/bien-demarrer-un-site-web-en-html-en-ne-parta</a>
+et utiliser <a href="http://www.yaml.de/en/home.html">http://www.yaml.de/en/home.html</a> pour le layout</li>
+</ol></div>
+<div class='post_responses'>
+<h4>435 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

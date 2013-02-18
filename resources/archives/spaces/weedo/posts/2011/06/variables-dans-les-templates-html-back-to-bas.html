@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/07/PHP%20Tips-22487692.html">Previous</a>
+&nbsp; 
+<a href="../../../index-4.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/07/Toutes%20les%20ressources%20pour%20apprendre%20jQuery-22419755.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>variables dans les templates html -> back to basic</h3>
+<div class='post_info'>
+<span class='post_time'>June 10 2011,  6:05 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Lorsque vous utilisez des variables dans des vues html, il faut faire attention aux caractères spéciaux html : quote, double quote, &lt; >, etc., qui pourraient être contenus dans la variable et interférer avec le html</p>
+
+<p>Exemple, cas réel :
+<code>a href = '$variable'</code></p>
+
+<p>avec <code>$variable</code> qui contient <code>COTE D'AZUR</code>&hellip; => #fail (cas réel).</p>
+
+<p>Donc, au niveau de la vue :</p>
+
+<ul>
+<li>Passez toujours vos variables dans la fonction <code>htmlspecialchars($variable, ENT_COMPAT ,'UTF-8')</code></li>
+<li>Utilisez toujours UTF-8 quand c'est possible.</li>
+<li>Préférez les double quotes dans la vue : <code>a href = "$variable"</code> plutôt que <code>a href = '$variable'</code> car les doubles quotes sont moins fréquents dans l'écrit (en français en tout cas). Cela permet aussi d'utiliser htmlspecialchars ou htmlentities avec le deuxième paramètre par défaut.</li>
+</ul>
+
+
+<p>Snippet :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="local-variable">$converted</span> = <span class="predefined">htmlspecialchars</span>(<span class="local-variable">$variable</span>, <span class="predefined-constant">ENT_COMPAT</span> ,<span class="string"><span class="delimiter">'</span><span class="content">UTF-8</span><span class="delimiter">'</span></span>);</pre></div>
+</div>
+
+
+<p>link :<a href="http://php.net/manual/en/function.htmlspecialchars.php">php.net/htmlspecialchars</a></p>
+
+<p>K.</p></div>
+<div class='post_responses'>
+<h4>922 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

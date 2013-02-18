@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2011/07/sqlstatehy000-general-error-2006-mysql-server.html">Previous</a>
+&nbsp; 
+<a href="../../../index.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2011/07/permettre-la-creation-de-sous-domaine-dynamiq.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>De la bonne utilisation de header location en php</h3>
+<div class='post_info'>
+<span class='post_time'>July 22 2011,  7:42 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Après un</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="predefined">header</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">Location: </span><span class="local-variable">$url</span><span class="delimiter">&quot;</span></span>);</pre></div>
+</div>
+
+
+<p>Si vous ne voulez pas que la suite du php s'exécute, il faut le préciser, en mettant un <code>exit</code> juste derrière par exemple.</p>
+
+<p>Sinon, le script php continue de s'exécuter et la page est redirigée à la fin de l'exécution du script.</p>
+
+<p>Voici une démo :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="comment">// Le fichier toto.txt va être créé et écrit, et ce n'est qu'au bout des 10 sec d'exécution du script que le navigateur va être redirigé.</span>
+<span class="predefined">header</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">Location:http://www.weedo.fr</span><span class="delimiter">&quot;</span></span>);
+<span class="local-variable">$f</span> = <span class="predefined">fopen</span>(<span class="string"><span class="delimiter">'</span><span class="content">toto.txt</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">w</span><span class="delimiter">&quot;</span></span>);
+<span class="keyword">for</span> (<span class="local-variable">$i</span> = <span class="integer">1</span>; <span class="local-variable">$i</span> &lt;= <span class="integer">10</span>; <span class="local-variable">$i</span>++) {
+    <span class="predefined">sleep</span>(<span class="integer">1</span>);
+    <span class="predefined">fwrite</span>(<span class="local-variable">$f</span>, <span class="local-variable">$i</span>.<span class="predefined-constant">PHP_EOL</span>);
+}</pre></div>
+</div>
+
+
+<p>Jusqu'à maintenant je pensais que le header+location faisait un exit implicite, ce qui, après réflexion, n'est pas logique.</p></div>
+<div class='post_responses'>
+<h4>795 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

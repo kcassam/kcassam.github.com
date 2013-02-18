@@ -1,0 +1,138 @@
+<item>
+	<title>Installer PHPUnit pour l'utiliser avec MAMP</title>
+	<link>http://posterous.weedo.fr/installer-phpunit-pour-lutiliser-avec-mamp</link>
+	<pubDate>Fri Apr 08 06:25:00 -0700 2011</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/installer-phpunit-pour-lutiliser-avec-mamp</guid>
+	<description></description>
+	<content:encoded><![CDATA[<p>Voici une check-list de ressources pour installer un package PEAR/PHP (exemple de PHPUnit) pour l'utiliser avec MAMP/MAC OS X.
+Le nombre d'infos qu'il faut connaitre pour faire ça est assez incroyable. Je pense avoir rassemblé ici la liste des ressources d'informations que j'ai utilisé.</p>
+
+<h4>Comment installer PHPUnit</h4>
+
+<p><a href="http://www.phpunit.de/manual/current/en/installation.html">http://www.phpunit.de/manual/current/en/installation.html</a></p>
+
+<h4>Comment mettre à jour pear</h4>
+
+<p><a href="http://serverfault.com/questions/184741/upgrading-pear-from-1-9-0-to-1-9-1-fails">http://serverfault.com/questions/184741/upgrading-pear-from-1-9-0-to-1-9-1-fails</a></p>
+
+<h4>Comment installer pear (prérequis : l'exécutable php de MAMP)</h4>
+
+<p>Attention, ce n'est pas précisé dans la doc, mais il faut se mettre dans le bon dossier !
+<a href="http://pear.php.net/manual/en/installation.getting.php">http://pear.php.net/manual/en/installation.getting.php</a></p>
+
+<h4>Comment vérifier la config de pear</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>pear config-show</pre></div>
+</div>
+
+
+<h4>Comment savoir quelle version de php j'utilise</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ which php</pre></div>
+</div>
+
+
+<h4>Comment pointer vers l'exécutable php et pear de MAMP via la variable $path</h4>
+
+<p>Editer le fichier de setup du shell utilisé (Le fichier de setup shell est le shell appelé au moment du login) . Par exemple, pour tcsh, il s'agira de .tcshrc :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>setenv PATH /usr/local/bin:$PATH
+set path=($path /Developer/Tools)
+set path=(/Applications/MAMP/bin/php5.3/bin $path)</pre></div>
+</div>
+
+
+<p>exemple, pour bash, il peut s'agir de .bash :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>export PATH=/Applications/MAMP/bin/php5.3/bin:$PATH</pre></div>
+</div>
+
+
+<p><a href="http://docstore.mik.ua/orelly/unix3/upt/ch03_03.htm">http://docstore.mik.ua/orelly/unix3/upt/ch03_03.htm</a><br />
+<a href="http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf">http://www.kitebird.com/csh-tcsh-book/csh-intro.pdf</a></p>
+
+<h4>Comment pointer vers l' exécutable php de MAMP via lien symbolique (préférer la méthode ci-dessus, utilisant la variable $path)</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ cd /usr/bin
+$ cp php php.bak (Backup the old version)
+$ ln -s /Applications/MAMP/bin/php5.3/bin/php (link to the version of MAMP php)</pre></div>
+</div>
+
+
+<h4>Comment s'assurer que les scripts dans /Applications/MAMP/bin/php5.3/bin/php sont exécutables</h4>
+
+<p>Cas d'obtention du message<br />
+<code>/Applications/MAMP/bin/php5.2/bin/php: Permission denied.</code><br />
+ou<br />
+<code>/Applications/MAMP/bin/php5.3/bin/php: Permission denied.</code></p>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ sudo chmod 0554 /Applications/MAMP/bin/php5.3/bin/* (makes all the scripts executable)</pre></div>
+</div>
+
+
+<h4>Comment lire les variables d'environnement du shell</h4>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ set</pre></div>
+</div>
+
+
+<h4>Logs, Message d'erreur</h4>
+
+<ul>
+<li>Problème Failed opening required /Filter.php
+
+<ul>
+<li><p>Log</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>PHP Fatal error:  require_once(): Failed opening required 'PHP/CodeCoverage/Filter.php' (include_path='.:/Applications/MAMP/bin/php5.3/lib/php') in /Applications/MAMP/bin/php5.3/bin/phpunit on line 38</pre></div>
+</div>
+</li>
+<li><p>Solution<br />
+Modifier php.ini :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>;;;;;;;;;;;;;;;;;;;;;;;;;
+; Paths and Directories ;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; UNIX: &quot;/path1:/path2&quot;  
+include_path = &quot;.:/Applications/MAMP/bin/php5.3/lib/php&quot;
+include_path = &quot;.:/Applications/MAMP/bin/php5.3/lib/php/PEAR&quot;</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+	<excerpt:encoded><![CDATA[Voici une check-list de ressources pour installer un package PEAR/PHP (exemple de PHPUnit) pour l'utiliser avec MAMP/MAC OS X. Le nombre d'infos qu'il faut connaitre pour faire ça est assez incroyable. Je pense avoir rassemblé ici la liste des r...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Apr 08 06:25:00 -0700 2011</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>installer-phpunit-pour-lutiliser-avec-mamp</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

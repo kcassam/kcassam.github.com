@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/11/mettre-en-forme-vos-articles-sur-le-blog-tech.html">Previous</a>
+&nbsp; 
+<a href="../../../index-2.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/11/les-radiosbutton-sous-firefox-mac.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Lancer une commande Unix qui restera active même après déconnexion</h3>
+<div class='post_info'>
+<span class='post_time'>November 19 2010,  3:44 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p>Cette astuce peut servir si vous souhaitez lancer un script long avec une connexion fragile ou juste avant de fermer votre poste.</p>
+
+<p>Lorsque vous lancez une commande unix, au moment de la déconnexion, le démon qui détecte cette déconnexion (<code>telnetd</code>, <code>sshd</code>, &hellip;) envoie un signal <code>SIGHUP</code> (signal 1) aux processus enfants, et l'action associée par défaut à ce signal est la fin du processus.</p>
+
+<p><code>nohup</code> va ignorer le signal <code>SIGHUP</code> (d'où son nom) puis exécuter le programme indiqué en ligne de commande, de sorte que celui-ci sera immunisé contre le signal <code>SIGHUP</code> :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ nohup monprogramme &amp;</pre></div>
+</div>
+
+
+<p>ou, par exemple, avec un script php :</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>$ nohup php monscript.php &amp;</pre></div>
+</div>
+
+
+<p>Pour approfondir, les liens ci-dessous apportent quelques subtilités :</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/575345/how-to-run-a-php-script-through-the-command-line">http://stackoverflow.com/questions/575345/how-to-run-a-php-script-through-the...</a></li>
+<li><a href="http://fr.wikipedia.org/wiki/Nohup">http://fr.wikipedia.org/wiki/Nohup</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Nohup">http://en.wikipedia.org/wiki/Nohup</a></li>
+</ul></div>
+<div class='post_responses'>
+<h4>1167 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

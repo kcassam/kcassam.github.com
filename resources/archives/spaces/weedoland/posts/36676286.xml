@@ -1,0 +1,32 @@
+<item>
+	<title>A lire : Launchd (Mac OS X)</title>
+	<link>http://weedoland.posterous.com/a-lire-launchd-mac-os-x</link>
+	<pubDate>Fri Dec 17 07:00:51 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[Karim Cassam Chenaï]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://weedoland.posterous.com/a-lire-launchd-mac-os-x</guid>
+	<description></description>
+	<content:encoded><![CDATA[<a href="http://en.wikipedia.org/wiki/Launchd">http://en.wikipedia.org/wiki/Launchd</a> <p /> launchd is a unified, open source service management framework for starting, stopping and managing daemons, programs and scripts. Written and designed by Dave Zarzycki at Apple, it was introduced with Mac OS X v10.4/Darwin v8.0, and is licensed under the Apache License. <p /> En gros, c'est cron en 100 fois mieux. <p /> Vous pouvez aussi aller voir les dossiers : <br />/Users/ka/Library/LaunchAgents <br />/Library/LaunchDaemons <br />/Library/LaunchAgents <p /> Vous allez comprendre tout de suite. <p /> Pour une meilleure lisibilité, vous pouvez ouvrir les fichiers de ces dossiers avec Lingon.app (<a href="http://lingon.sourceforge.net/)">http://lingon.sourceforge.net/)</a> <p /> K.]]></content:encoded>
+	<excerpt:encoded><![CDATA[http://en.wikipedia.org/wiki/Launchd launchd is a unified, open source service management framework for starting, stopping and managing daemons, programs and scripts. Written and designed by Dave Zarzycki at Apple, it was introduced with Mac OS X ...]]></excerpt:encoded>	
+
+	<wp:post_date>Fri Dec 17 07:00:51 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name>a-lire-launchd-mac-os-x</wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>

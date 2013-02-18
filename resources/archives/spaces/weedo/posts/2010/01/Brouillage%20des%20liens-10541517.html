@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/01/Watch%20Symfony%20Framework%20Support%20in%20NetBeans%20IDE%206.8-10550800.html">Previous</a>
+&nbsp; 
+<a href="../../../index-6.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/01/Bonnes%20pratiques%20en%20CSS.-10379182.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Brouillage des liens</h3>
+<div class='post_info'>
+<span class='post_time'>January 25 2010,  5:18 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Je viens de déployer le brouillage des liens sur l&#39;ensemble du site en dev. <p /><b>Brouillage des liens ?</b><br />Le principe du brouillage de lien est de &quot;masquer&quot; les liens en double pour des raisons liées au référencement. Lorsqu&#39;un lien est en double, la structure html <a></a> est remplacée par un lien JavaScript, que Google ne peut pas suivre.<p /> <b>Procédé</b><br />Pour déployer cette fonctionnalité, j&#39;ai été modifié la fonction native de Symfony link_to (dans lib/symfony/helper/urlHelper). Désormais, à chaque appel de link_to, Symfony va stocker le lien dans un tableau. Si le lien est déjà présent dans le tableau, le lien est brouillé, sinon, aucun effet. <p /> <b>Forcer le brouillage de lien</b><br />Il se peut qu&#39;on veuille brouiller un lien même s&#39;il n&#39;est présent qu&#39;une seule fois dans la page. Pour se faire, il suffit de faire passer une option à la fonction link_to :<p /> &lt;code&gt;<br />&lt;?php echo link_to(&#39;outils&#39;, &#39;outilssimulation/index&#39;, array(&#39;wdBrouillage&#39; =&gt; true)); ?&gt;<br />&lt;/code&gt;<p />Au contraire, si on ne veut jamais brouiller un lien, même s&#39;il est plusieurs fois dans la page : <p /> &lt;code&gt;<br />&lt;?php echo link_to(&#39;outils&#39;, &#39;outilssimulation/index&#39;, array(&#39;wdBrouillage&#39; =&gt; false)); ?&gt;<br />&lt;/code&gt;<p />V</div>
+<div class='post_responses'>
+<h4>615 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

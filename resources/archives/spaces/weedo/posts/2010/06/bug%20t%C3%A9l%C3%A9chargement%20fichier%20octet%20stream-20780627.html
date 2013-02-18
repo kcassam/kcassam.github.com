@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/07/Centrer%20une%20carte%20OpenLayers%20sur%20sa%20position%20actuelle%20avec%20JS-21744718.html">Previous</a>
+&nbsp; 
+<a href="../../../index-4.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/06/Partager%20des%20fichiers%20sur%20Nomadesk%20via%20mail-20453519.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>bug téléchargement fichier octet stream</h3>
+<div class='post_info'>
+<span class='post_time'>June 22 2010,  7:35 AM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'><p><span style="font-family: Myriad Pro; font-size: medium;">Bonjour,</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">Voici un extrait de ce que contient le fichier téléchargé (j'ai laissé que le début et la fin et j'ai mis en </span><span style="font-family: Myriad Pro; font-size: medium;"><span style="color: #ff1813;">rouge</span></span><span style="font-family: Myriad Pro; font-size: medium;"> les problèmes) : </span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">============================================================================</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><span style="color: #ff1813;"> </span></span></p>
+<p>ã<span style="font-family: Myriad Pro; font-size: medium;"> </span></p>
+<p>HTTP/1.1 200 OK<span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">Date: Tue, 22 Jun 2010 13:29:31 GMT</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">Server: Apache/2.0.59 (Unix) mod_ssl/2.0.59 OpenSSL/0.9.8g</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">Content-Type: text/html</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><span style="color: #ff1813;">8e7f<br /></span></span><span style="font-family: Myriad Pro; font-size: medium;">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "</span><span style="font-family: Myriad Pro; font-size: medium;"><a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a></span><span style="font-family: Myriad Pro; font-size: medium;">"&gt;</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">&lt;html xmlns="</span><span style="font-family: Myriad Pro; font-size: medium;"><a href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a></span><span style="font-family: Myriad Pro; font-size: medium;">" xml:lang="fr" lang="fr"&gt;</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">&lt;head&gt;</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">[........]</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">&lt;/body&gt;</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">&lt;/html&gt;</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><span style="color: #ff1813;">0<br /></span></span><span style="font-family: Myriad Pro; font-size: medium;">============================================================================</span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">La présence de ces caractères est un problème. </span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">Ce bug est discuté notamment ici : </span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">1.</span><span style="font-family: Myriad Pro; font-size: medium;"> </span><span style="font-family: Myriad Pro; font-size: medium;"><a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=22951#c17">https://issues.apache.org/bugzilla/show_bug.cgi?id=22951#c17</a></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;">2.</span><span style="font-family: Myriad Pro; font-size: medium;"> </span><span style="font-family: Myriad Pro; font-size: medium;"><a href="http://www.php.net/manual/fr/function.header.php#92305">http://www.php.net/manual/fr/function.header.php#92305</a></span><span style="font-family: Myriad Pro; font-size: medium;"> </span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span><span style="font-family: Myriad Pro; font-size: medium;"><br /></span></p>
+<div style="font-family: Myriad Pro; font-size: medium;">Il s'agit d'un bug Apache, présent dans la version 2.0.59 (apparemment, d'après le 2e lien, seul Firefox se laisse avoir par ce bug)</div>
+<div style="font-family: Myriad Pro; font-size: medium;">
+<br />Pour le point 2, nous avons déjà fait le maximum.<br />Pour le point 1, je ne comprends pas tout, mais peut être que mettre ProxyErrorOverride Off dans le fichier de conf apache pourrait résoudre le problème (voir 2e lien). David, si tu peux enquêter ?<br />Sinon, nous devrons mettre à jour Apache car la version 2.0.59 a ce bug.</div>
+<div style="font-family: Myriad Pro; font-size: medium;">Je reste à votre entière disposition sur ce sujet.</div>
+<div style="font-family: Myriad Pro; font-size: medium;">Karim</div></div>
+<div class='post_responses'>
+<h4>357 views and 0 responses</h4>
+<ul class='post_responses list'>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

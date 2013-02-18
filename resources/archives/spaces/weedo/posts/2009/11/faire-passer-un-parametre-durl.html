@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2009/11/nom-du-module-this-context-getmodulename.html">Previous</a>
+&nbsp; 
+<a href="../../../index-9.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2009/11/acceder-a-des-infos-de-configuration-du-proje.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>Faire passer un paramètre d'URL</h3>
+<div class='post_info'>
+<span class='post_time'>November 13 2009,  5:45 AM</span>
+<span class='author'>&nbsp;by Ballut Vincent</span>
+</div>
+</div>
+<div class='post_body'>Pour faire passer un paramètre d&#39;URL dans un lien :<p />&lt;?php echo link_to(&#39;Pourquoi y avoir recours ?&#39;, &#39;comprendredetail/index&#39;, array(&#39;query_string&#39; =&gt; &#39;page=pourquoi_avoir_recours_rachat_pret.xml&#39;)); ?&gt;<p /> Ca donne : comprendredetail?page=pourquoi_avoir_recours_rachat_pret.xml<p />Je pense qu&#39;il existe un moyen plus simple de le faire, mais la doc n&#39;est pas très claire sur le sujet, voir <a href="http://www.symfony-project.org/book/1_0/09-Links-and-the-Routing-System">http://www.symfony-project.org/book/1_0/09-Links-and-the-Routing-System</a></div>
+<div class='post_responses'>
+<h4>111 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Nov 23 2009,  8:16 AM</div>
+<div class='response_name'>Karim Cassam Chenaï responded:</div>
+</div>
+<div class='response_body'>Non, il faut utiliser la formulation suivante : <br />// Internal URI syntax<br />&lt;module>/&lt;action>[?param1=value1][&param2=value2][&param3=value3]...<p>// Example internal URI, which never appears to the end user<br />article/permalink?year=2006&subject=finance&title=activity-breakdown</p><p>// Example external URL, which appears to the end user<br /><a href="http://www.example.com/articles/finance/2006/activity-breakdown.html" rel="nofollow">http://www.example.com/articles/finance/2006/activity-breakdown.html</a></p></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

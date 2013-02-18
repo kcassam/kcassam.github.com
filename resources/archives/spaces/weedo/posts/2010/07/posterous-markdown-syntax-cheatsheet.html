@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<link href='../../../exports.css' rel='stylesheet'>
+<link href='../../../exports.css' rel='stylesheet'>
+
+</head>
+<body>
+<div id='wrap'>
+<div id='header'>
+<h1>weedo tech blog</h1>
+<h2>This is an archived post
+This is an archived post
+</h2>
+</div>
+<div id='content'><div id='nav'>
+<a href="../../../posts/2010/07/Astuce%20pour%20surveiller%20que%20votre%20serveur%20web%20de%20dev%20est%20prot%C3%A9g%C3%A9%20en%20permanence%20par%20un%20mot%20de%20passe.-21766440.html">Previous</a>
+&nbsp; 
+<a href="../../../index-4.html">Index</a>
+&nbsp; 
+<a href="../../../posts/2010/07/markdown%20starter%20template-21762028.html">Next</a>
+</div>
+<div class='post'>
+<div class='post_header'>
+<h3>posterous markdown syntax Cheatsheet</h3>
+<div class='post_info'>
+<span class='post_time'>July  1 2010,  1:42 PM</span>
+<span class='author'>&nbsp;by Karim Cassam Chenaï</span>
+</div>
+</div>
+<div class='post_body'>
+<h2 style=""><a href="http://daringfireball.net/projects/markdown/dingus" title="Markdown syntax Cheatsheet : source">source</a></h2>
+<h2 style="">posterous markdown syntax Cheatsheet:</h2>
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;"><span style="font-family: Lucida Grande, Verdana, sans-serif; font-weight: normal; font-size: 11px; line-height: 17px;">
+<div class="CodeRay">
+  <div class="code"><pre>(A entourer entre
+&lt;markdown&gt;
+et
+&lt;/markdown&gt;
+)</pre></div>
+</div>
+
+<div> </div>
+<div><span style="font-family: Arial, Helvetica, sans-serif; line-height: normal; font-size: 13px; font-weight: bold;">Phrase Emphasis</span></div>
+</span></h3>
+<div class="CodeRay">
+  <div class="code"><pre>*italic*   **bold**
+_italic_   __bold__</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Links</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Inline:</p>
+<div class="CodeRay">
+  <div class="code"><pre>An [example](http://url.com/ &quot;Title&quot;)</pre></div>
+</div>
+
+<p style="margin-top: 0px; margin-bottom: 0px;">Reference-style labels (titles are optional):</p>
+<div class="CodeRay">
+  <div class="code"><pre>An [example][id]. Then, anywhere
+else in the doc, define the link:
+
+  [id]: http://example.com/  &quot;Title&quot;</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Images</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Inline (titles are optional):</p>
+<div class="CodeRay">
+  <div class="code"><pre>![alt text](/path/img.jpg &quot;Title&quot;)</pre></div>
+</div>
+
+<p style="margin-top: 0px; margin-bottom: 0px;">Reference-style:</p>
+<div class="CodeRay">
+  <div class="code"><pre>![alt text][id]
+
+[id]: /url/to/img.jpg &quot;Title&quot;</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Headers</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Setext-style:</p>
+<div class="CodeRay">
+  <div class="code"><pre>Header 1
+========
+
+Header 2
+--------</pre></div>
+</div>
+
+<p style="margin-top: 0px; margin-bottom: 0px;">atx-style (closing #'s are optional):</p>
+<div class="CodeRay">
+  <div class="code"><pre># Header 1 #
+
+## Header 2 ##
+
+###### Header 6</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Lists</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Ordered, without paragraphs:</p>
+<div class="CodeRay">
+  <div class="code"><pre>1.  Foo
+2.  Bar</pre></div>
+</div>
+
+<p style="margin-top: 0px; margin-bottom: 0px;">Unordered, with paragraphs:</p>
+<div class="CodeRay">
+  <div class="code"><pre>*   A list item.
+
+    With multiple paragraphs.
+
+*   Bar</pre></div>
+</div>
+
+<p style="margin-top: 0px; margin-bottom: 0px;">You can nest them:</p>
+<div class="CodeRay">
+  <div class="code"><pre>*   Abacus
+    * answer
+*   Bubbles
+    1.  bunk
+    2.  bupkis
+        * BELITTLER
+    3. burper
+*   Cunning</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Blockquotes</h3>
+<div class="CodeRay">
+  <div class="code"><pre>&gt; Email-style angle brackets
+&gt; are used for blockquotes.
+
+&gt; &gt; And, they can be nested.
+
+&gt; #### Headers in blockquotes
+&gt; 
+&gt; * You can quote a list.
+&gt; * Etc.</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Code Spans</h3>
+<div class="CodeRay">
+  <div class="code"><pre>`&lt;code&gt;` spans are delimited
+by backticks.
+
+You can include literal backticks
+like `` `this` ``.</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Preformatted Code Blocks</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Indent every line of a code block by at least 4 spaces or 1 tab.</p>
+<div class="CodeRay">
+  <div class="code"><pre>This is a normal paragraph.
+
+    This is a preformatted
+    code block.</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Horizontal Rules</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">Three or more dashes or asterisks:</p>
+<div class="CodeRay">
+  <div class="code"><pre>---
+
+* * *
+
+- - - -</pre></div>
+</div>
+
+<h3 style="font-size: 1em; font-weight: bold; margin-bottom: 0.25em; margin-top: 1.5em;">Manual Line Breaks</h3>
+<p style="margin-top: 0px; margin-bottom: 0px;">End a line with two or more spaces:</p>
+<div class="CodeRay">
+  <div class="code"><pre>Roses are red,   
+Violets are blue.</pre></div>
+</div>
+
+<p> </p></div>
+<div class='post_responses'>
+<h4>1660 views and 1 response</h4>
+<ul class='post_responses list'>
+<li class='response clearfix'>
+<div class='response_header'>
+<div class='response_time'>Dec 16 2010, 12:44 PM</div>
+<div class='response_name'>John Goodall liked this post.</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

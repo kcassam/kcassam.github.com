@@ -1,0 +1,32 @@
+<item>
+	<title>Désactiver le layout dans symfony</title>
+	<link>http://posterous.weedo.fr/desactiver-le-layout-dans-symfony</link>
+	<pubDate>Thu Jan 07 02:20:53 -0800 2010</pubDate>
+	
+	<dc:creator><![CDATA[jeremieweedo]]></dc:creator>
+	
+	
+
+	<category><![CDATA[Uncategorized]]></category>
+
+	<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+
+  <guid isPermaLink="false">http://posterous.weedo.fr/desactiver-le-layout-dans-symfony</guid>
+	<description></description>
+	<content:encoded><![CDATA[Il existe 2 méthodes pour désactiver le layout dans symfony.<p />La 1ère utilise un fichier de configuration <i>view.yml</i>:<p />indexSuccess:<br />     has_layout:  false<p />et la 2ème se fait directement dans l&#39;action:<p /> $this-&gt;setLayout(false);<p />Jérémie]]></content:encoded>
+	<excerpt:encoded><![CDATA[Il existe 2 méthodes pour désactiver le layout dans symfony.La 1ère utilise un fichier de configuration view.yml:indexSuccess: has_layout: falseet la 2ème se fait directement dans l'action: $this->setLayout(false);Jérémie]]></excerpt:encoded>	
+
+	<wp:post_date>Thu Jan 07 02:20:53 -0800 2010</wp:post_date>
+	<wp:post_date_gmt>%= display_date %></wp:post_date_gmt>
+	<wp:comment_status>open</wp:comment_status>
+	<wp:ping_status>open</wp:ping_status>
+	<wp:post_name></wp:post_name>
+	<wp:status>publish</wp:status>
+	<wp:post_parent>0</wp:post_parent>
+	<wp:menu_order>0</wp:menu_order>
+	<wp:post_type>post</wp:post_type>
+	<wp:post_password></wp:post_password>
+	<wp:is_sticky>0</wp:is_sticky>
+
+	
+</item>
